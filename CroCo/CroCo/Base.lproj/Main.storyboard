@@ -62,7 +62,7 @@
                                 <rect key="frame" x="308" y="19" width="30" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                <state key="normal" title="☣︎"/>
+                                <state key="normal" title="♒︎"/>
                                 <connections>
                                     <segue destination="DTJ-Ej-HmC" kind="show" id="vUQ-Dg-qAN"/>
                                 </connections>
