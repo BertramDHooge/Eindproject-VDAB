@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "container:"
-      name = "model">
-      <FileRef
-         location = "group:/Users/ward/Documents/GitHub/Eindproject-VDAB/CroCo/ContactInformation.swift">
-      </FileRef>
-      <FileRef
-         location = "group:Producer.swift">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:CroCo.xcodeproj">
    </FileRef>

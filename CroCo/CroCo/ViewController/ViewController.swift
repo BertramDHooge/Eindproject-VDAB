@@ -37,8 +37,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         mapView.delegate = self
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-//        pin = AnnotationPin(title: "Apple Farm", subTitle: "That's right", coordinate: coordinate)
-//        mapView.addAnnotation(pin)
+        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, openHours: "Always"))
+        mapView.addAnnotation(pin)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,9 +47,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "testPin")
-        annotationView.glyphText = "🍏"
-        annotationView.titleVisibility = .visible
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "Stuff")
+        annotationView.glyphText = pin.producer.mainProduce.rawValue
+//        annotationView.glyphText = "🍏"
+//        annotationView.titleVisibility = .visible
         return annotationView
         
     }
