@@ -16,6 +16,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var totalCostLabel: UILabel!
     
+    var arrayOfCrops: []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

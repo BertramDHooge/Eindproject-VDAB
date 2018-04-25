@@ -1,14 +1,14 @@
 //
-//  InfoproducerTableViewController.swift
+//  OrderHistoryTableViewController.swift
 //  CroCo
 //
-//  Created by Louis Loeckx on 24/04/2018.
+//  Created by Louis Loeckx on 25/04/2018.
 //  Copyright © 2018 VDAB. All rights reserved.
 //
 
 import UIKit
 
-class InfoproducerTableViewController: UITableViewController {
+class OrderHistoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,7 @@ class InfoproducerTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

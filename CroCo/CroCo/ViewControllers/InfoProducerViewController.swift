@@ -1,5 +1,5 @@
 //
-//  SettingViewController.swift
+//  InfoProducerViewController.swift
 //  CroCo
 //
 //  Created by Louis Loeckx on 25/04/2018.
@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class InfoProducerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     
-    @IBOutlet weak var settingsTableView: UITableView!
+
+    @IBOutlet weak var infoProducerTableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,18 +21,21 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
     }
     
-    
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "focus", for: indexPath)
         
         // Configure the cell...
         
-        return cell    }
+        return cell
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
