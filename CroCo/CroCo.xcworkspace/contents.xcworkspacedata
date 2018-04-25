@@ -5,10 +5,10 @@
       location = "container:"
       name = "model">
       <FileRef
-         location = "group:Name.swift">
+         location = "group:/Users/ward/Documents/GitHub/Eindproject-VDAB/CroCo/ContactInformation.swift">
       </FileRef>
       <FileRef
-         location = "group:Adress.swift">
+         location = "group:Producer.swift">
       </FileRef>
    </Group>
    <FileRef
