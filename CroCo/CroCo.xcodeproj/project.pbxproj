@@ -14,6 +14,8 @@
 		FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB473849208F08EB00DCE76A /* Assets.xcassets */; };
 		FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */; };
 		FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C52D20905E47004728A7 /* AnnotationPin.swift */; };
+		FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C53520909FE2004728A7 /* MainProduce.swift */; };
+		FB52C5382090A1FF004728A7 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C5372090A1FF004728A7 /* Producer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FB47384C208F08EB00DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB47384E208F08EB00DCE76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB52C52D20905E47004728A7 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
+		FB52C53520909FE2004728A7 /* MainProduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProduce.swift; sourceTree = "<group>"; };
+		FB52C5372090A1FF004728A7 /* Producer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
+				FB52C53520909FE2004728A7 /* MainProduce.swift */,
+				FB52C5372090A1FF004728A7 /* Producer.swift */,
 			);
 			path = CroCo;
 			sourceTree = "<group>";
@@ -186,7 +192,9 @@
 			files = (
 				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
 				FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */,
+				FB52C5382090A1FF004728A7 /* Producer.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
+				FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
