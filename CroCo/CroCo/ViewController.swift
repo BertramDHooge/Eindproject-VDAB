@@ -10,10 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    var pin: AnnotationPin!
+    
     //    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
@@ -21,13 +23,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        showLocation()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        locationManager.startUpdatingLocation()
+//        show()
         
-        //        locationAuthStatus()
+        mapView.delegate = self
+        
+        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
+        pin = AnnotationPin(title: "Apple Farm", subTitle: "That's right", coordinate: coordinate)
+        mapView.addAnnotation(pin)
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,15 +38,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func showLocation() {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "testPin")
+        annotationView.glyphText = "🍏"
+        annotationView.titleVisibility = .visible
+        return annotationView
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        show(locations.first!)
+    }
+    
+    func show(_ location: CLLocation) {
         
-        locationManager.startUpdatingLocation()
-        if let currentLocation = locationManager.location{
-            let region = MKCoordinateRegion(center: currentLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-            mapView.setRegion(region, animated: true)
-            mapView.showsUserLocation = true
-        }
-        locationManager.stopUpdatingLocation()
+        let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
+        print(location.coordinate.latitude)
+        print(location.coordinate.longitude)
     }
     
 }
