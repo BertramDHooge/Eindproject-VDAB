@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     @IBOutlet weak var producersListHomePageTableView: UITableView!
   
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
     private var producers = [Array<Producer>]()
  
     //    var currentLocation: CLLocation!
