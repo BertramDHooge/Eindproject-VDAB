@@ -21,7 +21,7 @@
 		FB473848208F08E900DCE76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB473846208F08E900DCE76A /* Main.storyboard */; };
 		FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB473849208F08EB00DCE76A /* Assets.xcassets */; };
 		FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */; };
-		FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C52D20905E47004728A7 /* AnnotationPin.swift */; };
+		FB52C53220908203004728A7 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C52D20905E47004728A7 /* AnnotationPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +82,7 @@
 		154C087E208F5DF1005526A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				154C087C208F5DE8005526A0 /* Producer.swift */,
 				154C087F208F5E03005526A0 /* user.swift */,
 			);
@@ -132,7 +133,6 @@
 				154C087E208F5DF1005526A0 /* Model */,
 				FB473846208F08E900DCE76A /* Main.storyboard */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
-				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
 			);
@@ -236,6 +236,7 @@
 				154C0880208F5E03005526A0 /* user.swift in Sources */,
 				154C0884208F67EC005526A0 /* ProducerInfoTableViewCell.swift in Sources */,
 				154C0882208F67B3005526A0 /* InfoproducerTableViewController.swift in Sources */,
+				FB52C53220908203004728A7 /* AnnotationPin.swift in Sources */,
 				1546D851209071C000C50922 /* SettingsViewController.swift in Sources */,
 				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
 				1546D853209074BF00C50922 /* SettingsTableViewController.swift in Sources */,
