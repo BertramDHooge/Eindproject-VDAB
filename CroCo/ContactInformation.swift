@@ -8,7 +8,7 @@
 import Foundation
 
 struct Name {
-    let surName: String
+    let firstName: String
     let lastName: String
 }
 
@@ -16,12 +16,12 @@ enum Place: String {
     case werchter = "Werchter"
     case tremelo = "Tremelo"
     case oudHeverlee = "Oud Heverlee"
-    case Leuven
-    case Betekom
-    case KesselLo = "Kessel-Lo"
+    case leuven = "Leuven"
+    case betekom = "Betekom"
+    case kesselLo = "Kessel-Lo"
 }
 
-struct Adress {
+struct Address {
     let streetName: String
     let streetNumber: String
     let postalCode: String
@@ -30,7 +30,7 @@ struct Adress {
 
 struct Contact {
     let name: Name
-    let adress: Adress
+    let address: Address
     let telephoneNumber: String
-    let emailAdress: String
+    let emailAddress: String
 }
