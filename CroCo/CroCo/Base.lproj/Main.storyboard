@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-55" y="-105"/>
         </scene>
         <!--Settings View Controller Scene-->
         <scene sceneID="w6O-i3-8qi">
@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwd-7i-o2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="133.5832083958021"/>
+            <point key="canvasLocation" x="718" y="-58"/>
         </scene>
         <!--Order History View Controller-->
         <scene sceneID="ZxM-Cu-doz">
@@ -674,7 +674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="907.1964017991005"/>
+            <point key="canvasLocation" x="-134" y="627"/>
         </scene>
     </scenes>
     <resources>
@@ -686,7 +686,7 @@
         <image name="Shopping Cart" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
-        <segue reference="4KI-NJ-cCn"/>
+        <segue reference="mKg-XC-sIL"/>
+        <segue reference="FSj-bM-sec"/>
     </inferredMetricsTieBreakers>
 </document>
