@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1546D84A20906B2200C50922 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D84920906B2200C50922 /* ShoppingCartTableViewCell.swift */; };
+		1546D853209074BF00C50922 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D852209074BF00C50922 /* SettingsTableViewController.swift */; };
+		1546D85720907FC700C50922 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D85620907FC700C50922 /* OrderHistoryTableViewController.swift */; };
+		1546D8592090817100C50922 /* InfoProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D8582090817100C50922 /* InfoProducerViewController.swift */; };
+		1546D85B2090845300C50922 /* Crops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D85A2090845300C50922 /* Crops.swift */; };
+		1546D85D209089D700C50922 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D85C209089D700C50922 /* Product.swift */; };
+		154C087B208F5983005526A0 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087A208F5983005526A0 /* ShoppingCartViewController.swift */; };
+		154C087D208F5DE8005526A0 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087C208F5DE8005526A0 /* Producer.swift */; };
+		154C0880208F5E03005526A0 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087F208F5E03005526A0 /* user.swift */; };
+		154C0884208F67EC005526A0 /* ProducerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C0883208F67EC005526A0 /* ProducerInfoTableViewCell.swift */; };
+		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
+		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
+		FB473848208F08E900DCE76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB473846208F08E900DCE76A /* Main.storyboard */; };
+		FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB473849208F08EB00DCE76A /* Assets.xcassets */; };
+		FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.release.xcconfig"; sourceTree = "<group>"; };
+		1546D84920906B2200C50922 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
+		1546D852209074BF00C50922 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1546D85620907FC700C50922 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
+		1546D8582090817100C50922 /* InfoProducerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoProducerViewController.swift; sourceTree = "<group>"; };
+		1546D85A2090845300C50922 /* Crops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Crops.swift; path = CroCo/Model/Crops.swift; sourceTree = SOURCE_ROOT; };
+		1546D85C209089D700C50922 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		154C087A208F5983005526A0 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		154C087C208F5DE8005526A0 /* Producer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producer.swift; sourceTree = "<group>"; };
+		154C087F208F5E03005526A0 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		154C0883208F67EC005526A0 /* ProducerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducerInfoTableViewCell.swift; sourceTree = "<group>"; };
+		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
+		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB473847208F08E900DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB473849208F08EB00DCE76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB47384C208F08EB00DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB47384E208F08EB00DCE76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB47383C208F08E900DCE76A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1546D84B20906C3900C50922 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				154C087A208F5983005526A0 /* ShoppingCartViewController.swift */,
+				1546D8582090817100C50922 /* InfoProducerViewController.swift */,
+				1546D852209074BF00C50922 /* SettingsTableViewController.swift */,
+				1546D85620907FC700C50922 /* OrderHistoryTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1546D84C20906D1F00C50922 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				154C0883208F67EC005526A0 /* ProducerInfoTableViewCell.swift */,
+				1546D84920906B2200C50922 /* ShoppingCartTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		154C087E208F5DF1005526A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1546D85C209089D700C50922 /* Product.swift */,
+				1546D85A2090845300C50922 /* Crops.swift */,
+				154C087C208F5DE8005526A0 /* Producer.swift */,
+				154C087F208F5E03005526A0 /* user.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		453ABCBAE29A1430C1A68B4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */,
+				07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D92882088FB55D4A50C56E38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB473836208F08E900DCE76A = {
+			isa = PBXGroup;
+			children = (
+				FB473841208F08E900DCE76A /* CroCo */,
+				FB473840208F08E900DCE76A /* Products */,
+				453ABCBAE29A1430C1A68B4B /* Pods */,
+				D92882088FB55D4A50C56E38 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB473840208F08E900DCE76A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB47383F208F08E900DCE76A /* CroCo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB473841208F08E900DCE76A /* CroCo */ = {
+			isa = PBXGroup;
+			children = (
+				FB473842208F08E900DCE76A /* AppDelegate.swift */,
+				1546D84B20906C3900C50922 /* ViewControllers */,
+				1546D84C20906D1F00C50922 /* View */,
+				154C087E208F5DF1005526A0 /* Model */,
+				FB473846208F08E900DCE76A /* Main.storyboard */,
+				FB473849208F08EB00DCE76A /* Assets.xcassets */,
+				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
+				FB47384E208F08EB00DCE76A /* Info.plist */,
+			);
+			path = CroCo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB47383E208F08E900DCE76A /* CroCo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB473851208F08EB00DCE76A /* Build configuration list for PBXNativeTarget "CroCo" */;
+			buildPhases = (
+				E495E64B868B73772B020011 /* [CP] Check Pods Manifest.lock */,
+				FB47383B208F08E900DCE76A /* Sources */,
+				FB47383C208F08E900DCE76A /* Frameworks */,
+				FB47383D208F08E900DCE76A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CroCo;
+			productName = CroCo;
+			productReference = FB47383F208F08E900DCE76A /* CroCo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB473837208F08E900DCE76A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = VDAB;
+				TargetAttributes = {
+					FB47383E208F08E900DCE76A = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = FB47383A208F08E900DCE76A /* Build configuration list for PBXProject "CroCo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB473836208F08E900DCE76A;
+			productRefGroup = FB473840208F08E900DCE76A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB47383E208F08E900DCE76A /* CroCo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB47383D208F08E900DCE76A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */,
+				FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */,
+				FB473848208F08E900DCE76A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E495E64B868B73772B020011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CroCo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB47383B208F08E900DCE76A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1546D84A20906B2200C50922 /* ShoppingCartTableViewCell.swift in Sources */,
+				154C0880208F5E03005526A0 /* user.swift in Sources */,
+				1546D85720907FC700C50922 /* OrderHistoryTableViewController.swift in Sources */,
+				154C0884208F67EC005526A0 /* ProducerInfoTableViewCell.swift in Sources */,
+				1546D853209074BF00C50922 /* SettingsTableViewController.swift in Sources */,
+				1546D85D209089D700C50922 /* Product.swift in Sources */,
+				154C087D208F5DE8005526A0 /* Producer.swift in Sources */,
+				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
+				1546D85B2090845300C50922 /* Crops.swift in Sources */,
+				1546D8592090817100C50922 /* InfoProducerViewController.swift in Sources */,
+				154C087B208F5983005526A0 /* ShoppingCartViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB473846208F08E900DCE76A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB473847208F08E900DCE76A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB47384C208F08EB00DCE76A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB47384F208F08EB00DCE76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB473850208F08EB00DCE76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB473852208F08EB00DCE76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CroCo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.vdab.bertramDHooge.CroCo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FB473853208F08EB00DCE76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CroCo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.vdab.bertramDHooge.CroCo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB47383A208F08E900DCE76A /* Build configuration list for PBXProject "CroCo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB47384F208F08EB00DCE76A /* Debug */,
+				FB473850208F08EB00DCE76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB473851208F08EB00DCE76A /* Build configuration list for PBXNativeTarget "CroCo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB473852208F08EB00DCE76A /* Debug */,
+				FB473853208F08EB00DCE76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB473837208F08E900DCE76A /* Project object */;
+}
