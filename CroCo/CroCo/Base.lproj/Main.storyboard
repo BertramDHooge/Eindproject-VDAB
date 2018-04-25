@@ -584,7 +584,7 @@
                                 <rect key="frame" x="329" y="50" width="30" height="30"/>
                                 <state key="normal" title="ℹ️"/>
                                 <connections>
-                                    <segue destination="Ca2-fC-bed" kind="show" id="mKg-XC-sIL"/>
+                                    <segue destination="Ca2-fC-bed" kind="show" id="G91-rJ-KL6"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjI-Qw-xsC">
