@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1546D84A20906B2200C50922 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D84920906B2200C50922 /* ShoppingCartTableViewCell.swift */; };
+		1546D851209071C000C50922 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D850209071C000C50922 /* SettingsViewController.swift */; };
+		1546D853209074BF00C50922 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D852209074BF00C50922 /* SettingsTableViewController.swift */; };
 		154C087B208F5983005526A0 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087A208F5983005526A0 /* ShoppingCartViewController.swift */; };
 		154C087D208F5DE8005526A0 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087C208F5DE8005526A0 /* Producer.swift */; };
 		154C0880208F5E03005526A0 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087F208F5E03005526A0 /* user.swift */; };
 		154C0882208F67B3005526A0 /* InfoproducerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C0881208F67B3005526A0 /* InfoproducerTableViewController.swift */; };
 		154C0884208F67EC005526A0 /* ProducerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C0883208F67EC005526A0 /* ProducerInfoTableViewCell.swift */; };
-		154C088A208F6FF9005526A0 /* ShoppingCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C0889208F6FF9005526A0 /* ShoppingCartTableViewController.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
 		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
 		FB473845208F08E900DCE76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* ViewController.swift */; };
@@ -25,12 +26,13 @@
 /* Begin PBXFileReference section */
 		07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.release.xcconfig"; sourceTree = "<group>"; };
 		1546D84920906B2200C50922 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
+		1546D850209071C000C50922 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1546D852209074BF00C50922 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		154C087A208F5983005526A0 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		154C087C208F5DE8005526A0 /* Producer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producer.swift; sourceTree = "<group>"; };
 		154C087F208F5E03005526A0 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		154C0881208F67B3005526A0 /* InfoproducerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoproducerTableViewController.swift; sourceTree = "<group>"; };
 		154C0883208F67EC005526A0 /* ProducerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducerInfoTableViewCell.swift; sourceTree = "<group>"; };
-		154C0889208F6FF9005526A0 /* ShoppingCartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewController.swift; sourceTree = "<group>"; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +62,8 @@
 				FB473844208F08E900DCE76A /* ViewController.swift */,
 				154C087A208F5983005526A0 /* ShoppingCartViewController.swift */,
 				154C0881208F67B3005526A0 /* InfoproducerTableViewController.swift */,
-				154C0889208F6FF9005526A0 /* ShoppingCartTableViewController.swift */,
+				1546D850209071C000C50922 /* SettingsViewController.swift */,
+				1546D852209074BF00C50922 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,10 +231,11 @@
 			files = (
 				1546D84A20906B2200C50922 /* ShoppingCartTableViewCell.swift in Sources */,
 				154C0880208F5E03005526A0 /* user.swift in Sources */,
-				154C088A208F6FF9005526A0 /* ShoppingCartTableViewController.swift in Sources */,
 				154C0884208F67EC005526A0 /* ProducerInfoTableViewCell.swift in Sources */,
 				154C0882208F67B3005526A0 /* InfoproducerTableViewController.swift in Sources */,
+				1546D851209071C000C50922 /* SettingsViewController.swift in Sources */,
 				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
+				1546D853209074BF00C50922 /* SettingsTableViewController.swift in Sources */,
 				154C087D208F5DE8005526A0 /* Producer.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
 				154C087B208F5983005526A0 /* ShoppingCartViewController.swift in Sources */,
