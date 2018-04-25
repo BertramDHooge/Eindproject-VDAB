@@ -13,8 +13,6 @@
 		1546D8592090817100C50922 /* InfoProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D8582090817100C50922 /* InfoProducerViewController.swift */; };
 		1546D85B2090845300C50922 /* Crops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D85A2090845300C50922 /* Crops.swift */; };
 		1546D85D209089D700C50922 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D85C209089D700C50922 /* Product.swift */; };
-		1546D85F2090A6D400C50922 /* FoodTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D85E2090A6D400C50922 /* FoodTypes.swift */; };
-		1546D8612090A7C800C50922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546D8602090A7C800C50922 /* ViewController.swift */; };
 		154C087B208F5983005526A0 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087A208F5983005526A0 /* ShoppingCartViewController.swift */; };
 		154C087D208F5DE8005526A0 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087C208F5DE8005526A0 /* Producer.swift */; };
 		154C0880208F5E03005526A0 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C087F208F5E03005526A0 /* user.swift */; };
@@ -24,10 +22,6 @@
 		FB473848208F08E900DCE76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB473846208F08E900DCE76A /* Main.storyboard */; };
 		FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB473849208F08EB00DCE76A /* Assets.xcassets */; };
 		FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */; };
-<<<<<<< HEAD
-		FB52C53220908203004728A7 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C52D20905E47004728A7 /* AnnotationPin.swift */; };
-=======
->>>>>>> 45d8237f5638962d6b120370213f35c1bc2d1bad
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +32,6 @@
 		1546D8582090817100C50922 /* InfoProducerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoProducerViewController.swift; sourceTree = "<group>"; };
 		1546D85A2090845300C50922 /* Crops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Crops.swift; path = CroCo/Model/Crops.swift; sourceTree = SOURCE_ROOT; };
 		1546D85C209089D700C50922 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		1546D85E2090A6D400C50922 /* FoodTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTypes.swift; sourceTree = "<group>"; };
-		1546D8602090A7C800C50922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		154C087A208F5983005526A0 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		154C087C208F5DE8005526A0 /* Producer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producer.swift; sourceTree = "<group>"; };
 		154C087F208F5E03005526A0 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
@@ -52,7 +44,6 @@
 		FB473849208F08EB00DCE76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB47384C208F08EB00DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB47384E208F08EB00DCE76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB52C52D20905E47004728A7 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +61,6 @@
 		1546D84B20906C3900C50922 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1546D8602090A7C800C50922 /* ViewController.swift */,
 				154C087A208F5983005526A0 /* ShoppingCartViewController.swift */,
 				1546D8582090817100C50922 /* InfoProducerViewController.swift */,
 				1546D852209074BF00C50922 /* SettingsTableViewController.swift */,
@@ -91,15 +81,10 @@
 		154C087E208F5DF1005526A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
-=======
 				1546D85C209089D700C50922 /* Product.swift */,
 				1546D85A2090845300C50922 /* Crops.swift */,
->>>>>>> 45d8237f5638962d6b120370213f35c1bc2d1bad
 				154C087C208F5DE8005526A0 /* Producer.swift */,
 				154C087F208F5E03005526A0 /* user.swift */,
-				1546D85E2090A6D400C50922 /* FoodTypes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,21 +236,9 @@
 				154C0880208F5E03005526A0 /* user.swift in Sources */,
 				1546D85720907FC700C50922 /* OrderHistoryTableViewController.swift in Sources */,
 				154C0884208F67EC005526A0 /* ProducerInfoTableViewCell.swift in Sources */,
-<<<<<<< HEAD
-				154C0882208F67B3005526A0 /* InfoproducerTableViewController.swift in Sources */,
-				FB52C53220908203004728A7 /* AnnotationPin.swift in Sources */,
-				1546D851209071C000C50922 /* SettingsViewController.swift in Sources */,
-				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
-=======
->>>>>>> 45d8237f5638962d6b120370213f35c1bc2d1bad
 				1546D853209074BF00C50922 /* SettingsTableViewController.swift in Sources */,
 				1546D85D209089D700C50922 /* Product.swift in Sources */,
 				154C087D208F5DE8005526A0 /* Producer.swift in Sources */,
-<<<<<<< HEAD
-=======
-				1546D85F2090A6D400C50922 /* FoodTypes.swift in Sources */,
-				1546D8612090A7C800C50922 /* ViewController.swift in Sources */,
->>>>>>> 45d8237f5638962d6b120370213f35c1bc2d1bad
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
 				1546D85B2090845300C50922 /* Crops.swift in Sources */,
 				1546D8592090817100C50922 /* InfoProducerViewController.swift in Sources */,

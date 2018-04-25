@@ -1,16 +1,22 @@
 //
-//  SettingViewController.swift
+//  ShoppingCartViewController.swift
 //  CroCo
 //
-//  Created by Louis Loeckx on 25/04/2018.
+//  Created by Louis Loeckx on 24/04/2018.
 //  Copyright © 2018 VDAB. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var shoppingListTableView: UITableView!
+    
+    @IBOutlet weak var CompanyImageView: UIImageView!
+    
+    @IBOutlet weak var totalCostLabel: UILabel!
+    
+    var arrayOfCrops: []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +24,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
     }
     
-    
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
@@ -30,7 +38,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Configure the cell...
         
         return cell    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

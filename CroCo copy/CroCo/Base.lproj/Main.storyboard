@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="15u-5o-wb5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dkt-Rj-oc0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -146,13 +146,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Va-9x-dVa"/>
                     </view>
-                    <connections>
-<<<<<<< HEAD
-                        <outlet property="mapView" destination="T7f-8v-Ogy" id="gns-px-MZZ"/>
-=======
-                        <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="gXM-ZJ-yJJ"/>
->>>>>>> 45d8237f5638962d6b120370213f35c1bc2d1bad
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>
@@ -764,7 +757,7 @@
         <image name="Shopping Cart" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
-        <segue reference="3RY-lX-Lr8"/>
+        <segue reference="mKg-XC-sIL"/>
+        <segue reference="2Ok-1T-6kk"/>
     </inferredMetricsTieBreakers>
 </document>
