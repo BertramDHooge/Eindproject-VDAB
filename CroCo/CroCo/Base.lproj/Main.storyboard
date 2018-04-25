@@ -13,7 +13,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="0lg-pF-Pni">
             <objects>
-                <viewController title="Home Screen View Controller" id="15u-5o-wb5" customClass="ViewController" customModule="cocro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home Screen View Controller" id="15u-5o-wb5" customClass="ViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rsu-a0-XZI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,13 +28,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-dc-h13">
-                                <rect key="frame" x="319" y="24" width="20" height="23"/>
-                                <state key="normal" image="Menu"/>
-                                <connections>
-                                    <segue destination="DTJ-Ej-HmC" kind="show" id="4KI-NJ-cCn"/>
-                                </connections>
-                            </button>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-VX-VDG">
                                 <rect key="frame" x="0.0" y="343" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -115,6 +108,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-dc-h13">
+                                <rect key="frame" x="319" y="24" width="20" height="23"/>
+                                <state key="normal" image="Menu"/>
+                                <connections>
+                                    <segue destination="DTJ-Ej-HmC" kind="show" id="4KI-NJ-cCn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

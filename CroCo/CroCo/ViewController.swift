@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var hello: String?
+    private var producers = [Array<Producer>]()
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
