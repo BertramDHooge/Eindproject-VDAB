@@ -63,6 +63,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		1502AC712090B2EF00EBF16C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB52C53520909FE2004728A7 /* MainProduce.swift */,
+				FB52C5372090A1FF004728A7 /* Producer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		453ABCBAE29A1430C1A68B4B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +110,7 @@
 		FB473841208F08E900DCE76A /* CroCo */ = {
 			isa = PBXGroup;
 			children = (
+				1502AC712090B2EF00EBF16C /* Model */,
 				1502AC6C2090B0EB00EBF16C /* ViewController */,
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
 				FB473846208F08E900DCE76A /* Main.storyboard */,
@@ -108,8 +118,6 @@
 				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
-				FB52C53520909FE2004728A7 /* MainProduce.swift */,
-				FB52C5372090A1FF004728A7 /* Producer.swift */,
 			);
 			path = CroCo;
 			sourceTree = "<group>";
