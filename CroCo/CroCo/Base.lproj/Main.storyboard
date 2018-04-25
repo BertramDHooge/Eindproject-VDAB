@@ -129,6 +129,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Va-9x-dVa"/>
                     </view>
+                    <connections>
+                        <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="gXM-ZJ-yJJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>

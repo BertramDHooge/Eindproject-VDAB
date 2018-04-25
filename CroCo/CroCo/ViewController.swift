@@ -16,6 +16,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let locationManager = CLLocationManager()
     var pin: AnnotationPin!
     
+    @IBOutlet weak var producersListHomePageTableView: UITableView!
+ 
     //    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
