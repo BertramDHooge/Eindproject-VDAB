@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
 //        pin = AnnotationPin(title: "Apple Farm", subTitle: "That's right", coordinate: coordinate)
-        mapView.addAnnotation(pin)
+//        mapView.addAnnotation(pin)
     }
     
     override func didReceiveMemoryWarning() {

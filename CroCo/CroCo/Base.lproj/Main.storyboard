@@ -20,7 +20,7 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="T7f-8v-Ogy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-pm-2xo">
                                 <rect key="frame" x="16" y="20" width="295" height="30"/>
@@ -30,7 +30,7 @@
                             </textField>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-VX-VDG">
                                 <rect key="frame" x="0.0" y="343" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="" image="Home" id="3GY-XG-R6S" userLabel="Home">
@@ -268,10 +268,10 @@
             </objects>
             <point key="canvasLocation" x="782" y="-106"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Order History Table View Controller-->
         <scene sceneID="pyt-3Y-8D5">
             <objects>
-                <tableViewController id="r1N-TH-Eqa" sceneMemberID="viewController">
+                <tableViewController id="r1N-TH-Eqa" customClass="OrderHistoryTableViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nsG-Gm-EuV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +281,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Settings" id="cZ1-gh-dvi">
-                                    <barButtonItem key="leftBarButtonItem" title="Back" id="rCP-ex-eZK"/>
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="rCP-ex-eZK">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="r1N-TH-Eqa" id="5lM-MH-0Ra"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
