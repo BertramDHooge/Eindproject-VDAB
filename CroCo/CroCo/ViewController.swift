@@ -10,9 +10,18 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class homeViewController: UIViewController {
-
+  
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
+    var pin: AnnotationPin!
+    
+    @IBOutlet weak var producersListHomePageTableView: UITableView!
+  
     private var producers = [Array<Producer>]()
+ 
+    //    var currentLocation: CLLocation!
     
    
     override func viewDidLoad() {

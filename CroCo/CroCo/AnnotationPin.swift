@@ -10,13 +10,22 @@ import Foundation
 import MapKit
 
 class AnnotationPin: NSObject, MKAnnotation {
-    var title: String?
-    var subtitle: String?
-    var coordinate: CLLocationCoordinate2D
+    let producer: Producer
     
-    init(title: String, subTitle: String, coordinate: CLLocationCoordinate2D) {
-        self.title = title
-        self.subtitle = title
-        self.coordinate = coordinate
+    init(with producer: Producer) {
+        self.producer = producer
+    }
+    
+    
+    var title: String? {
+        return producer.companyName
+    }
+    
+    var subtitle: String? {
+        return producer.producerName
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return producer.address
     }
 }
