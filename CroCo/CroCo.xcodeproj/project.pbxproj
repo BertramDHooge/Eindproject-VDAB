@@ -66,6 +66,7 @@
 		1502AC712090B2EF00EBF16C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				FB52C53520909FE2004728A7 /* MainProduce.swift */,
 				FB52C5372090A1FF004728A7 /* Producer.swift */,
 			);
@@ -115,7 +116,6 @@
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
 				FB473846208F08E900DCE76A /* Main.storyboard */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
-				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
 			);
