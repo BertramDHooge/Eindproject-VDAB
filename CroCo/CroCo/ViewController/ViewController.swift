@@ -24,10 +24,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     private var producers: [Producer] = [] {
         didSet {
-            producersListHomePageTableView.reloadData()
+        producersListHomePageTableView.reloadData()
+
         }
     }
  
+    var searchCityName: String? {
+        didSet {
+            producers.removeAll()
+            producersListHomePageTableView.reloadData()
+//            searchForProducers()
+            
+        }
+    }
     //    var currentLocation: CLLocation!
    
     override func viewDidLoad() {
@@ -87,14 +96,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
+
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         producers.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
     //  MARK: tableView Delegate
