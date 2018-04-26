@@ -25,10 +25,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     private var producers = [Array<Producer>]()
  
     //    var currentLocation: CLLocation!
-    t
    
     override func viewDidLoad() {
-        super.viewDidLoad
+        super.viewDidLoad()
         
         locationManager.delegate = self
         requestLocationAccess()
