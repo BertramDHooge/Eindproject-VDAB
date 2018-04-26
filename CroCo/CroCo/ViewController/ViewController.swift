@@ -10,28 +10,34 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+  
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var pin: AnnotationPin!
     
     @IBOutlet weak var producersListHomePageTableView: UITableView!
+  
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
+    private var producers = [Array<Producer>]()
  
     //    var currentLocation: CLLocation!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        requestLocationAccess()
         locationManager.startUpdatingLocation()
 //        show()
         
         mapView.delegate = self
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(title: "Apple Farm", subTitle: "That's right", coordinate: coordinate)
+        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, openHours: "Always"))
         mapView.addAnnotation(pin)
     }
     
@@ -41,10 +47,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "testPin")
-        annotationView.glyphText = "🍏"
-        annotationView.titleVisibility = .visible
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "Stuff")
+        annotationView.glyphText = pin.producer.mainProduce.rawValue
+//        annotationView.glyphText = "🍏"
+//        annotationView.titleVisibility = .visible
         return annotationView
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -55,10 +63,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
         print(location.coordinate.latitude)
         print(location.coordinate.longitude)
     }
+    
+    func requestLocationAccess() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return
+            
+        case .denied, .restricted:
+            print("location access denied")
+            
+        default:
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    //    MARK: tableView dataSource
+    
+    
     
 }
 
