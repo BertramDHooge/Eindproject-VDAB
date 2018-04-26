@@ -10,11 +10,15 @@ import Foundation
 
 struct FoodTypeAndName {
     // possibly change to a structure?
-    enum vegetables: String{
-        case carrots = "Wortel", peas = "Erwten", corn = "Mais", watermellon = "Watermeloen", strawberries = "Aardbeien", oranges = "Sinaasappel", apples = "Appels", pears = "Peren", tomatoes = "Tomaten", bellPeppers = "Paprika"
+    enum vegetables: String {
+        case carrots = "Wortel", peas = "Erwten", corn = "Mais", strawberries = "Aardbeien", tomatoes = "Tomaten", bellPeppers = "Paprika"
     }
     enum meat: String {
         case cow = "Koe", horse = "Paard", goat = "Geit", lamb = "Lamb", pig = "Varken", deer = "Hert", boar = "Everzwijn", rabbit = "Konijn"
+    }
+    
+    enum fruit: String {
+        case oranges = "Sinaasappel", pears = "Peren", apples = "Appels", watermellon = "Watermeloen",
     }
     
     

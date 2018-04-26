@@ -23,7 +23,7 @@ struct Quantity{
     }
 }
 
-struct Good {
+struct Crop {
     var cropName: FoodTypeAndName
     var quantity:Quantity
     var cost: Double

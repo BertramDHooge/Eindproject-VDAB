@@ -24,10 +24,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     private var producers = [Array<Producer>]()
  
     //    var currentLocation: CLLocation!
-    
+    t
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let products = Crop
+        
+        products(cropName: FoodTypeAndName.vegetables. , quantity: <#T##Quantity#>, cost: <#T##Double#>)
         
         locationManager.delegate = self
         requestLocationAccess()
