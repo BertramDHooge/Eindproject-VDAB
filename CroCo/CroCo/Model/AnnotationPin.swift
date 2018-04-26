@@ -21,11 +21,11 @@ class AnnotationPin: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return producer.producerName
+        return producer.contact
     }
     
     var coordinate: CLLocationCoordinate2D {
-        return producer.address
+        return producer.location
     }
     
     var glyphColor: UIColor {

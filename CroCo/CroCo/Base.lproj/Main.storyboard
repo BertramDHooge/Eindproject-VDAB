@@ -56,51 +56,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ocy-YY-rzR" id="1We-Re-TzX">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t2-JE-vSO">
-                                                    <rect key="frame" x="15" y="0.0" width="116" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-V4-8cf">
-                                                    <rect key="frame" x="15" y="22" width="39" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q7-RJ-QEa">
-                                                    <rect key="frame" x="292" y="14" width="28" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Delivery" translatesAutoresizingMaskIntoConstraints="NO" id="soO-e7-GAM">
-                                                    <rect key="frame" x="151" y="0.0" width="24" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="dO8-Wn-LKv"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="kFy-V4-8cf" firstAttribute="leading" secondItem="1We-Re-TzX" secondAttribute="leading" constant="15" id="65j-zc-Eyq"/>
-                                                <constraint firstItem="kFy-V4-8cf" firstAttribute="top" secondItem="0t2-JE-vSO" secondAttribute="bottom" constant="1" id="Af2-Fq-7TE"/>
-                                                <constraint firstItem="soO-e7-GAM" firstAttribute="leading" secondItem="1We-Re-TzX" secondAttribute="leading" constant="151" id="Knd-dU-GoU"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="bottom" secondItem="soO-e7-GAM" secondAttribute="bottom" id="dk5-k4-Tyw"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="top" secondItem="1We-Re-TzX" secondAttribute="top" id="l9E-At-63G"/>
-                                                <constraint firstAttribute="trailing" secondItem="0t2-JE-vSO" secondAttribute="trailing" constant="197" id="lj4-S7-3Cp"/>
-                                                <constraint firstAttribute="bottom" secondItem="kFy-V4-8cf" secondAttribute="bottom" constant="6.5" id="pDz-Qv-kEE"/>
-                                                <constraint firstItem="soO-e7-GAM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kFy-V4-8cf" secondAttribute="trailing" constant="8" symbolic="YES" id="qGS-Us-VGa"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kFy-V4-8cf" secondAttribute="leading" id="tAL-Dw-99e"/>
-                                                <constraint firstItem="8q7-RJ-QEa" firstAttribute="leading" secondItem="soO-e7-GAM" secondAttribute="trailing" constant="117" id="v9o-hZ-3yn"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="top" secondItem="soO-e7-GAM" secondAttribute="top" id="wSO-wd-wdh"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8q7-RJ-QEa" secondAttribute="trailing" id="4Qb-T3-m4b"/>
-                                            <constraint firstItem="8q7-RJ-QEa" firstAttribute="top" secondItem="ocy-YY-rzR" secondAttribute="top" constant="14" id="Ooq-a0-hTh"/>
-                                            <constraint firstAttribute="bottom" secondItem="8q7-RJ-QEa" secondAttribute="bottom" constant="15" id="gLP-4b-ZKd"/>
-                                        </constraints>
                                         <connections>
                                             <segue destination="Ca2-fC-bed" kind="show" trigger="accessoryAction" id="Bv9-8W-g2C"/>
                                             <segue destination="Dkt-Rj-oc0" kind="show" id="94E-hf-NEz"/>
@@ -692,7 +648,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Delivery" width="30" height="30"/>
         <image name="Filtered" width="50" height="50"/>
         <image name="Home" width="50" height="50"/>
         <image name="Menu" width="50" height="50"/>
@@ -700,6 +655,6 @@
         <image name="Shopping Cart" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G91-rJ-KL6"/>
+        <segue reference="Bv9-8W-g2C"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -52,9 +52,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         mapView.delegate = self
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, openHours: "Always"))
+        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, deliveryHours: "Always"))
         let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, openHours: "Never"))
+        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, deliveryHours: "Never"))
         mapView.addAnnotation(otherPin)
         mapView.addAnnotation(pin)
     }
