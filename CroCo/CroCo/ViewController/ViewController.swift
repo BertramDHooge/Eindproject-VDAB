@@ -14,6 +14,7 @@ import CoreLocation
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     var pin: AnnotationPin!
     var otherPin: AnnotationPin!
@@ -25,8 +26,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     private var producers = [Array<Producer>]()
     
     //    var currentLocation: CLLocation!
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         

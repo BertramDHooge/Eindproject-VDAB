@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="15u-5o-wb5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dkt-Rj-oc0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -511,7 +511,7 @@
                                 <rect key="frame" x="0.0" y="235" width="375" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hKy-dD-0ae">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="producersCrop" id="hKy-dD-0ae" customClass="CropTableViewCell" customModule="CroCo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKy-dD-0ae" id="hf9-d3-fKg">
@@ -575,8 +575,20 @@
                                             <constraint firstAttribute="trailing" secondItem="HLh-4B-iru" secondAttribute="trailing" constant="9" id="wTb-f1-th6"/>
                                             <constraint firstAttribute="bottom" secondItem="HLh-4B-iru" secondAttribute="bottom" constant="15" id="zTM-hh-grE"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="addPortionButton" destination="uhv-Sf-cVl" id="ykr-yz-YCg"/>
+                                            <outlet property="cropNameLabel" destination="mwJ-cG-Hfi" id="NlR-ER-UbT"/>
+                                            <outlet property="numberOfCropPoprtionsAvailableLabel" destination="jbn-FS-FDA" id="ZyW-cM-s35"/>
+                                            <outlet property="pricingAndWeightPerPortionLabel" destination="pAS-n4-n9w" id="Mn1-R4-T9A"/>
+                                            <outlet property="removePortionButton" destination="PsJ-aj-TuR" id="9KC-2e-bv2"/>
+                                            <outlet property="totalNumberOfPortionsSelectedLabel" destination="HLh-4B-iru" id="umW-KW-e9E"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dkt-Rj-oc0" id="JtZ-3m-qJk"/>
+                                    <outlet property="delegate" destination="Dkt-Rj-oc0" id="FUa-te-oNM"/>
+                                </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi2-X3-BvI">
                                 <rect key="frame" x="0.0" y="44" width="375" height="189"/>
@@ -670,6 +682,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ekS-9a-ko4"/>
                     </view>
+                    <connections>
+                        <outlet property="shoppingCartTableView" destination="g0N-Qj-wrW" id="Bsn-Oa-P0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -685,6 +700,6 @@
         <image name="Shopping Cart" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
+        <segue reference="G91-rJ-KL6"/>
     </inferredMetricsTieBreakers>
 </document>
