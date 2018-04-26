@@ -9,16 +9,18 @@
 import UIKit
 import MapKit
 import CoreLocation
-
   
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
-    
+
     
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     var pin: AnnotationPin!
+    var otherPin: AnnotationPin!
     
-    @IBOutlet weak var producersListHomePageTableView: UITableView!
+    @IBOutlet weak var producersListHomePageTableView: UITableView! 
+
     @IBOutlet weak var homeTabBar: UITabBar!
    
     
@@ -41,17 +43,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         locationManager.delegate = self
         requestLocationAccess()
         locationManager.startUpdatingLocation()
-//        show()
+        show(locationManager.location)
         
         mapView.delegate = self
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
         pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, openHours: "Always"))
+        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
+        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, openHours: "Never"))
+        mapView.addAnnotation(otherPin)
         mapView.addAnnotation(pin)
     }
     
@@ -61,24 +65,31 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "Stuff")
-        annotationView.glyphText = pin.producer.mainProduce.rawValue
-//        annotationView.glyphText = "🍏"
-//        annotationView.titleVisibility = .visible
-        return annotationView
-        
+        if annotation is MKUserLocation {
+            return nil
+        }else if annotation is AnnotationPin{
+            let pinAnnotation = annotation as! AnnotationPin
+            let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
+            annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
+            annotationView.markerTintColor = pinAnnotation.glyphColor
+            annotationView.titleVisibility = .visible
+            return annotationView
+        }else {
+            return nil
+        }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        show(locations.first!)
-    }
+    //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    //        show(locations.first!)
+    //    }
     
-    func show(_ location: CLLocation) {
-        
-        let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-        mapView.setRegion(region, animated: true)
-        print(location.coordinate.latitude)
-        print(location.coordinate.longitude)
+    func show(_ location: CLLocation?) {
+        if let location = location {
+            let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            mapView.setRegion(region, animated: true)
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+        }
     }
     
     func requestLocationAccess() {

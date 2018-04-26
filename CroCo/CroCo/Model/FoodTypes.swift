@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FoodTypeAndName {
+struct FoodTypes {
     // possibly change to a structure?
     enum vegetables: String {
         case carrots = "Wortel", peas = "Erwten", corn = "Mais", strawberries = "Aardbeien", tomatoes = "Tomaten", bellPeppers = "Paprika"
@@ -18,7 +18,7 @@ struct FoodTypeAndName {
     }
     
     enum fruit: String {
-        case oranges = "Sinaasappel", pears = "Peren", apples = "Appels", watermellon = "Watermeloen",
+        case oranges = "Sinaasappel", pears = "Peren", apples = "Appels", watermellon = "Watermeloen"
     }
     
     
