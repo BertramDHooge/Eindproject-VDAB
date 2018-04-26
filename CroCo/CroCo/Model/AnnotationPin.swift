@@ -21,7 +21,7 @@ class AnnotationPin: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return producer.contact
+        return producer.contact.name.firstName
     }
     
     var coordinate: CLLocationCoordinate2D {

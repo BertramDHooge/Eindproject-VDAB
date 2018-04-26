@@ -51,12 +51,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, deliveryHours: "Always"))
-        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, deliveryHours: "Never"))
-        mapView.addAnnotation(otherPin)
-        mapView.addAnnotation(pin)
+//        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
+//        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", contact: Contact(name: "Jos", address: , telephoneNumber: , emailAddress: ), companyImage: "Joske", description: "Ik ben een boer", location: coordinate, delivery: true, mainProduce: .vegetable, deliveryHours: "Always", pickUpHours: Date(), favorite: true))
+//        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
+//        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, deliveryHours: "Never"))
+//        mapView.addAnnotation(otherPin)
+//        mapView.addAnnotation(pin)
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,10 +111,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        producers.count
+        return producers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
+        let producer = producers[indexPath.row]
+        if let producerCell = producerCell as? ProducersTableViewCell {
+            producerCell.producer = producer
+        }
+        return producerCell
     }
     
     //  MARK: tableView Delegate

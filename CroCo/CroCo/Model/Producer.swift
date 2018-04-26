@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 struct Producer {
-    let companyName: String
+    let companyName: String?
     let contact: Contact
     let companyImage: String
     let description: String
