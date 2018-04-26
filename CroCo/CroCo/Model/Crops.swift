@@ -25,6 +25,6 @@ struct Quantity{
 
 struct Crop {
     var cropName: FoodTypeAndName
-    var quantity:Quantity
+    var quantity: Quantity
     var cost: Double
 }

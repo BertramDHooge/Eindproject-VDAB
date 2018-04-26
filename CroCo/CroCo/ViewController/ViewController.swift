@@ -14,6 +14,7 @@ import CoreLocation
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     var pin: AnnotationPin!
     
@@ -27,11 +28,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     t
    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let products = Crop
-        
-        products(cropName: FoodTypeAndName.vegetables. , quantity: <#T##Quantity#>, cost: <#T##Double#>)
+        super.viewDidLoad
         
         locationManager.delegate = self
         requestLocationAccess()
