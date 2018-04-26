@@ -11,27 +11,28 @@ import MapKit
 import CoreLocation
 
   
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var pin: AnnotationPin!
     
     @IBOutlet weak var producersListHomePageTableView: UITableView!
-  
     @IBOutlet weak var homeTabBar: UITabBar!
+   
     
-    private var producers = [Array<Producer>]()
+    private var producers: [Producer] = [] {
+        didSet {
+            producersListHomePageTableView.reloadData()
+        }
+    }
  
     //    var currentLocation: CLLocation!
-    t
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let products = Crop
-        
-        products(cropName: FoodTypeAndName.vegetables. , quantity: <#T##Quantity#>, cost: <#T##Double#>)
+
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -86,9 +87,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     //    MARK: tableView dataSource
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        producers.count
+    }
     
+    //  MARK: tableView Delegate
+    
+
     
 }
 
