@@ -27,10 +27,9 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producersCrop = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
         let crop = arrayOfProducersCrop[indexPath.row]
-        producersCrop.
         // Configure the cell...
         
-        return cell
+        return producersCrop
     }
  
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
