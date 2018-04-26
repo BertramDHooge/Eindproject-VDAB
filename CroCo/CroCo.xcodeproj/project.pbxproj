@@ -16,6 +16,7 @@
 		150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFC2091F1A2002BBA8F /* Quantities.swift */; };
 		150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
+		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
 		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
 		FB473845208F08E900DCE76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
 		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
+		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProducersTableViewCell.swift; path = View/ProducersTableViewCell.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB473844208F08E900DCE76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				150FC0002091F821002BBA8F /* View */,
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
 				FB473846208F08E900DCE76A /* Main.storyboard */,
+				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
@@ -248,6 +251,7 @@
 				FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */,
 				1502AC702090B13E00EBF16C /* ProducerInformationViewController.swift in Sources */,
 				1502AC6B2090AFDC00EBF16C /* SettingsTableViewController.swift in Sources */,
+				D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */,
 				FB52C5382090A1FF004728A7 /* Producer.swift in Sources */,
 				1502AC752090B57200EBF16C /* Crops.swift in Sources */,
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
