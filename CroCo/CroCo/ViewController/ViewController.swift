@@ -30,7 +30,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         super.viewDidLoad()
         
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        requestLocationAccess()
         locationManager.startUpdatingLocation()
 //        show()
         
@@ -63,9 +63,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
         print(location.coordinate.latitude)
         print(location.coordinate.longitude)
+    }
+    
+    func requestLocationAccess() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return
+            
+        case .denied, .restricted:
+            print("location access denied")
+            
+        default:
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
     
     //    MARK: tableView dataSource

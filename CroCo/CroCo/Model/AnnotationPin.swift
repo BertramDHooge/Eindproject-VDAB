@@ -16,7 +16,6 @@ class AnnotationPin: NSObject, MKAnnotation {
         self.producer = producer
     }
     
-    
     var title: String? {
         return producer.companyName
     }
@@ -28,4 +27,6 @@ class AnnotationPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D {
         return producer.address
     }
+    
+    
 }
