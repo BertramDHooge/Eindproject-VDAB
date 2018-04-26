@@ -9,9 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+  
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
-
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -19,14 +19,28 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     var pin: AnnotationPin!
     var otherPin: AnnotationPin!
     
-    @IBOutlet weak var producersListHomePageTableView: UITableView!
-    
+    @IBOutlet weak var producersListHomePageTableView: UITableView! 
+
     @IBOutlet weak var homeTabBar: UITabBar!
+   
     
-    private var producers = [Array<Producer>]()
-    
+    private var producers: [Producer] = [] {
+        didSet {
+        producersListHomePageTableView.reloadData()
+
+        }
+    }
+ 
+    var searchCityName: String? {
+        didSet {
+            producers.removeAll()
+            producersListHomePageTableView.reloadData()
+//            searchForProducers()
+            
+        }
+    }
     //    var currentLocation: CLLocation!
-  
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,9 +107,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
+
     //    MARK: tableView dataSource
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        producers.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     
+    //  MARK: tableView Delegate
+    
+
     
 }
 
