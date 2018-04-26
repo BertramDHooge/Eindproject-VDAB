@@ -20,6 +20,7 @@ enum Place: String {
     case betekom = "Betekom"
     case kesselLo = "Kessel-Lo"
     case herent = "Herent"
+    case wilsele = "Wilsele"
 }
 
 struct Address {
