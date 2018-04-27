@@ -17,18 +17,21 @@ class AnnotationPin: NSObject, MKAnnotation {
     }
     
     var title: String? {
-        return producer.companyName
+        return producer.companyName ?? producer.contact.name.firstName
     }
     
     var subtitle: String? {
-        return producer.contact
+        if title == producer.companyName {
+            return nil
+        }
+        return producer.contact.name.firstName
     }
     
     var coordinate: CLLocationCoordinate2D {
         return producer.location
     }
     
-    var glyphColor: UIColor {
+    var annotationColor: UIColor {
         switch producer.mainProduce {
         case .dairy:
             return .white

@@ -41,7 +41,7 @@
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
 		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
-		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProducersTableViewCell.swift; path = View/ProducersTableViewCell.swift; sourceTree = "<group>"; };
+		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB473844208F08E900DCE76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +73,8 @@
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
+				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
+				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -95,7 +97,6 @@
 		150FC0002091F821002BBA8F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 				150FC0002091F821002BBA8F /* View */,
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
 				FB473846208F08E900DCE76A /* Main.storyboard */,
-				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,

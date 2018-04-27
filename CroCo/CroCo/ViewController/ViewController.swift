@@ -52,9 +52,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         mapView.delegate = self
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, deliveryHours: "Always"))
+        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", contact: Contact(name: Name(firstName: "Jos", lastName: ""), address: Address(streetName: "Meh", streetNumber: "123", postalCode: "3001", place: .betekom), telephoneNumber: "321", emailAddress: ""), companyImage: "Joske", description: "Ik ben een boer", location: coordinate, delivery: true, mainProduce: .poultry, deliveryHours: Date(), pickUpHours: Date(), favorite: true))
         let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, deliveryHours: "Never"))
+        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", contact: Contact(name: Name(firstName: "mkj", lastName: "mkj"), address: Address(streetName: "Aspergerijstraat", streetNumber: "23", postalCode: "3118", place: .oudHeverlee), telephoneNumber: "12", emailAddress: "wardjanssen1968@gmail.com"), companyImage: "Jefke", description: "Ik ben ook een boer", location: otherCoordinate, delivery: false, mainProduce: .meat, deliveryHours: Date(), pickUpHours: Date(), favorite: false))
         mapView.addAnnotation(otherPin)
         mapView.addAnnotation(pin)
     }
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             let pinAnnotation = annotation as! AnnotationPin
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
-            annotationView.markerTintColor = pinAnnotation.glyphColor
+            annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             return annotationView
         }else {
@@ -111,10 +111,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        producers.count
+        return producers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
+        let producer = producers[indexPath.row]
+        if let producerCell = producerCell as? ProducersTableViewCell {
+            producerCell.producer = producer
+        }
+        return producerCell
     }
     
     //  MARK: tableView Delegate
