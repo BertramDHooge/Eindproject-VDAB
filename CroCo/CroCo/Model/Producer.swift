@@ -10,12 +10,14 @@ import Foundation
 import MapKit
 
 struct Producer {
-    let companyName: String
-    let producerName: String?
+    let companyName: String?
+    let contact: Contact
     let companyImage: String
     let description: String
-    let address: CLLocationCoordinate2D
+    let location: CLLocationCoordinate2D
     let delivery: Bool
     let mainProduce: MainProduce
-    let openHours: String
+    let deliveryHours: Date?
+    let pickUpHours: Date
+    var favorite: Bool = false
 }

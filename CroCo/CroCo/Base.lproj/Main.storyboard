@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="T7f-8v-Ogy">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7f-8v-Ogy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </mapView>
@@ -50,58 +50,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="ocy-YY-rzR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="producersCell" id="ocy-YY-rzR" customClass="ProducersTableViewCell" customModule="CroCo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ocy-YY-rzR" id="1We-Re-TzX">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t2-JE-vSO">
-                                                    <rect key="frame" x="15" y="0.0" width="116" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ub-t3-xNr" userLabel="favoriteStarButton">
+                                                    <rect key="frame" x="15" y="6" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="★"/>
+                                                    <connections>
+                                                        <action selector="favoriteStarButton:" destination="ocy-YY-rzR" eventType="touchUpInside" id="sp3-Qt-RE0"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🚲" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU6-Td-wSx" userLabel="delivery bike Label">
+                                                    <rect key="frame" x="46" y="6" width="34" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-V4-8cf">
-                                                    <rect key="frame" x="15" y="22" width="39" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-nf-7jJ" userLabel="ProducerCellInfoLabel">
+                                                    <rect key="frame" x="77" y="0.0" width="251" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q7-RJ-QEa">
-                                                    <rect key="frame" x="292" y="14" width="28" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Delivery" translatesAutoresizingMaskIntoConstraints="NO" id="soO-e7-GAM">
-                                                    <rect key="frame" x="151" y="0.0" width="24" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="dO8-Wn-LKv"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="kFy-V4-8cf" firstAttribute="leading" secondItem="1We-Re-TzX" secondAttribute="leading" constant="15" id="65j-zc-Eyq"/>
-                                                <constraint firstItem="kFy-V4-8cf" firstAttribute="top" secondItem="0t2-JE-vSO" secondAttribute="bottom" constant="1" id="Af2-Fq-7TE"/>
-                                                <constraint firstItem="soO-e7-GAM" firstAttribute="leading" secondItem="1We-Re-TzX" secondAttribute="leading" constant="151" id="Knd-dU-GoU"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="bottom" secondItem="soO-e7-GAM" secondAttribute="bottom" id="dk5-k4-Tyw"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="top" secondItem="1We-Re-TzX" secondAttribute="top" id="l9E-At-63G"/>
-                                                <constraint firstAttribute="trailing" secondItem="0t2-JE-vSO" secondAttribute="trailing" constant="197" id="lj4-S7-3Cp"/>
-                                                <constraint firstAttribute="bottom" secondItem="kFy-V4-8cf" secondAttribute="bottom" constant="6.5" id="pDz-Qv-kEE"/>
-                                                <constraint firstItem="soO-e7-GAM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kFy-V4-8cf" secondAttribute="trailing" constant="8" symbolic="YES" id="qGS-Us-VGa"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kFy-V4-8cf" secondAttribute="leading" id="tAL-Dw-99e"/>
-                                                <constraint firstItem="8q7-RJ-QEa" firstAttribute="leading" secondItem="soO-e7-GAM" secondAttribute="trailing" constant="117" id="v9o-hZ-3yn"/>
-                                                <constraint firstItem="0t2-JE-vSO" firstAttribute="top" secondItem="soO-e7-GAM" secondAttribute="top" id="wSO-wd-wdh"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8q7-RJ-QEa" secondAttribute="trailing" id="4Qb-T3-m4b"/>
-                                            <constraint firstItem="8q7-RJ-QEa" firstAttribute="top" secondItem="ocy-YY-rzR" secondAttribute="top" constant="14" id="Ooq-a0-hTh"/>
-                                            <constraint firstAttribute="bottom" secondItem="8q7-RJ-QEa" secondAttribute="bottom" constant="15" id="gLP-4b-ZKd"/>
-                                        </constraints>
                                         <connections>
+                                            <outlet property="bikeDeliveryLabel" destination="HU6-Td-wSx" id="q1Y-Vm-inB"/>
+                                            <outlet property="producerHomeCellInfoLabel" destination="jaf-nf-7jJ" id="QVV-Og-LN2"/>
                                             <segue destination="Ca2-fC-bed" kind="show" trigger="accessoryAction" id="Bv9-8W-g2C"/>
                                             <segue destination="Dkt-Rj-oc0" kind="show" id="94E-hf-NEz"/>
                                         </connections>
@@ -511,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="235" width="375" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hKy-dD-0ae">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="producersCrop" id="hKy-dD-0ae" customClass="CropTableViewCell" customModule="CroCo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKy-dD-0ae" id="hf9-d3-fKg">
@@ -575,8 +557,20 @@
                                             <constraint firstAttribute="trailing" secondItem="HLh-4B-iru" secondAttribute="trailing" constant="9" id="wTb-f1-th6"/>
                                             <constraint firstAttribute="bottom" secondItem="HLh-4B-iru" secondAttribute="bottom" constant="15" id="zTM-hh-grE"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="addPortionButton" destination="uhv-Sf-cVl" id="ykr-yz-YCg"/>
+                                            <outlet property="cropNameLabel" destination="mwJ-cG-Hfi" id="NlR-ER-UbT"/>
+                                            <outlet property="numberOfCropPoprtionsAvailableLabel" destination="jbn-FS-FDA" id="ZyW-cM-s35"/>
+                                            <outlet property="pricingAndWeightPerPortionLabel" destination="pAS-n4-n9w" id="Mn1-R4-T9A"/>
+                                            <outlet property="removePortionButton" destination="PsJ-aj-TuR" id="9KC-2e-bv2"/>
+                                            <outlet property="totalNumberOfPortionsSelectedLabel" destination="HLh-4B-iru" id="umW-KW-e9E"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dkt-Rj-oc0" id="JtZ-3m-qJk"/>
+                                    <outlet property="delegate" destination="Dkt-Rj-oc0" id="FUa-te-oNM"/>
+                                </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi2-X3-BvI">
                                 <rect key="frame" x="0.0" y="44" width="375" height="189"/>
@@ -670,6 +664,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ekS-9a-ko4"/>
                     </view>
+                    <connections>
+                        <outlet property="shoppingCartTableView" destination="g0N-Qj-wrW" id="Bsn-Oa-P0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -677,14 +674,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Delivery" width="30" height="30"/>
         <image name="Filtered" width="50" height="50"/>
         <image name="Home" width="50" height="50"/>
         <image name="Menu" width="50" height="50"/>
         <image name="OK" width="50" height="50"/>
         <image name="Shopping Cart" width="50" height="50"/>
+        <image name="★" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
+        <segue reference="G91-rJ-KL6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,7 +6,7 @@
 //  Copyright © 2018 VDAB. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import MapKit
 
 class AnnotationPin: NSObject, MKAnnotation {
@@ -16,16 +16,37 @@ class AnnotationPin: NSObject, MKAnnotation {
         self.producer = producer
     }
     
-    
     var title: String? {
-        return producer.companyName
+        return producer.companyName ?? producer.contact.name.firstName
     }
     
     var subtitle: String? {
-        return producer.producerName
+        if title == producer.companyName {
+            return nil
+        }
+        return producer.contact.name.firstName
     }
     
     var coordinate: CLLocationCoordinate2D {
-        return producer.address
+        return producer.location
     }
+    
+    var annotationColor: UIColor {
+        switch producer.mainProduce {
+        case .dairy:
+            return .white
+        case .eggs:
+            return .yellow
+        case .fruit:
+            return .red
+        case .meat:
+            return .brown
+        case .poultry:
+            return .brown
+        case .vegetable:
+            return .green
+        }
+    }
+    
+    
 }
