@@ -20,4 +20,5 @@ struct Producer {
     let deliveryHours: Date?
     let pickUpHours: Date
     var favorite: Bool = false
+    let crops: [Crop]
 }
