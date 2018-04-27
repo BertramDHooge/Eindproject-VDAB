@@ -97,6 +97,7 @@
 		150FC0002091F821002BBA8F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB473846208F08E900DCE76A /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 				1502AC6C2090B0EB00EBF16C /* ViewController */,
 				150FC0002091F821002BBA8F /* View */,
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
-				FB473846208F08E900DCE76A /* Main.storyboard */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,

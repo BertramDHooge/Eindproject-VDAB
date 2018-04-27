@@ -14,10 +14,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
 
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationSearchField: UITextField!
     
     let locationManager = CLLocationManager()
-    var pin: AnnotationPin!
-    var otherPin: AnnotationPin!
+    let activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var producersListHomePageTableView: UITableView! 
 
@@ -51,12 +51,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", contact: Contact(name: Name(firstName: "Jos", lastName: ""), address: Address(streetName: "Meh", streetNumber: "123", postalCode: "3001", place: .betekom), telephoneNumber: "321", emailAddress: ""), companyImage: "Joske", description: "Ik ben een boer", location: coordinate, delivery: true, mainProduce: .poultry, deliveryHours: Date(), pickUpHours: Date(), favorite: true))
-        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", contact: Contact(name: Name(firstName: "mkj", lastName: "mkj"), address: Address(streetName: "Aspergerijstraat", streetNumber: "23", postalCode: "3118", place: .oudHeverlee), telephoneNumber: "12", emailAddress: "wardjanssen1968@gmail.com"), companyImage: "Jefke", description: "Ik ben ook een boer", location: otherCoordinate, delivery: false, mainProduce: .meat, deliveryHours: Date(), pickUpHours: Date(), favorite: false))
-        mapView.addAnnotation(otherPin)
-        mapView.addAnnotation(pin)
+        for producer in producers {
+            let pin = AnnotationPin(with: producer)
+            mapView.addAnnotation(pin)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,17 +112,66 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         return producers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
         let producer = producers[indexPath.row]
-        if let producerCell = producerCell as? ProducersTableViewCell {
-            producerCell.producer = producer
-        }
+        producerCell.producer = producer
         return producerCell
+    }
+    
+    func showActivityIndicator(in view: UIView){
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+    }
+    
+    func removeActivityIndicator() {
+        
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
+    func searchMapLocation(for location: String) {
+        
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = location
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            if response == nil {
+                //popup
+                print("error")
+            } else{
+                let annotations = self.mapView.annotations
+                self.mapView.removeAnnotations(annotations)
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpanMake(0.1, 0.1)
+                let region = MKCoordinateRegionMake(coordinate, span)
+                self.mapView.setRegion(region, animated: true)
+            }
+        }
     }
     
     //  MARK: tableView Delegate
     
-
+    // MARK: IBAction
+    
+    @IBAction func searchLocation(_ sender: UIButton) {
+        showActivityIndicator(in: mapView)
+        if let search = locationSearchField.text {
+            searchMapLocation(for: search)
+        }
+        removeActivityIndicator()
+    }
     
 }
 
