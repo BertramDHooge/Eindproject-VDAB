@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var homeTabBar: UITabBar!
    
     
-    private var producers: [Producer] = [] {
+    private var producers: [Producer] = [Producer(] {
         didSet {
         producersListHomePageTableView.reloadData()
 
