@@ -25,12 +25,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var homeTabBar: UITabBar!
    
     
-    private var producers: [Producer] = [Producer(] {
-        didSet {
-        producersListHomePageTableView.reloadData()
-
-        }
-    }
+    private var producers: [Producer] = [Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)]
  
     var searchCityName: String? {
         didSet {
@@ -44,7 +39,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager.delegate = self
         requestLocationAccess()
         locationManager.startUpdatingLocation()
@@ -53,9 +47,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         mapView.delegate = self
         
         let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", contact: Contact(name: Name(firstName: "Jos", lastName: ""), address: Address(streetName: "Meh", streetNumber: "123", postalCode: "3001", place: .betekom), telephoneNumber: "321", emailAddress: ""), companyImage: "Joske", description: "Ik ben een boer", location: coordinate, delivery: true, mainProduce: .poultry, deliveryHours: Date(), pickUpHours: Date(), favorite: true))
-        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", contact: Contact(name: Name(firstName: "mkj", lastName: "mkj"), address: Address(streetName: "Aspergerijstraat", streetNumber: "23", postalCode: "3118", place: .oudHeverlee), telephoneNumber: "12", emailAddress: "wardjanssen1968@gmail.com"), companyImage: "Jefke", description: "Ik ben ook een boer", location: otherCoordinate, delivery: false, mainProduce: .meat, deliveryHours: Date(), pickUpHours: Date(), favorite: false))
+//        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", contact: Contact(name: Name(firstName: "Jos", lastName: ""), address: Address(streetName: "Meh", streetNumber: "123", postalCode: "3001", place: .betekom), telephoneNumber: "321", emailAddress: ""), companyImage: "Joske", description: "Ik ben een boer", location: coordinate, delivery: true, mainProduce: .poultry, deliveryHours: Date(), pickUpHours: Date(), favorite: true))
+//        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
+//        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", contact: Contact(name: Name(firstName: "mkj", lastName: "mkj"), address: Address(streetName: "Aspergerijstraat", streetNumber: "23", postalCode: "3118", place: .oudHeverlee), telephoneNumber: "12", emailAddress: "wardjanssen1968@gmail.com"), companyImage: "Jefke", description: "Ik ben ook een boer", location: otherCoordinate, delivery: false, mainProduce: .meat, deliveryHours: Date(), pickUpHours: Date(), favorite: false))
         mapView.addAnnotation(otherPin)
         mapView.addAnnotation(pin)
     }

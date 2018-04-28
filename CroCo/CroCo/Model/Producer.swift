@@ -9,18 +9,25 @@
 import Foundation
 import MapKit
 
-private class Producer {
+class Producer {
         let companyName: String?
         let contact: Contact
-        let companyImage: String? = nil
-        let location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 5, longitude: 50)
-        let delivery: Bool
+        var companyImage: String? = nil
+        var location: CLLocationCoordinate2D
+        var delivery: Bool
         let mainProduce: MainProduce
         let deliveryHours: Date?
         let pickUpHours: Date?
         var validation: Int?
-        var description: String   
-        init (companyName: String?, contact: Contact, companyImage: String?, location: CLLocationCoordinate2D, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?) {
+        var description: String   {
+        if let companyName = companyName {
+            return "\(companyName):\n\(contact.description)\nProducten: \(mainProduce.rawValue)"
+        } else {
+           return "(contact.description)\nProducten: \(mainProduce.rawValue)"
+        }
+    }
+    
+    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocationCoordinate2D, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?) {
             self.companyName = companyName
             self.contact = contact
             self.companyImage = companyImage
@@ -32,7 +39,7 @@ private class Producer {
             self.validation = validation
         }
         convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce) {
-            self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: false, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
+            self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
         }
-    
-}
+    }
+

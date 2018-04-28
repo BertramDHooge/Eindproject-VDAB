@@ -53,8 +53,6 @@ class Address: CustomStringConvertible {
 }
 
 class Contact: CustomStringConvertible {
-    var description: String
-    
     let name: Name
     let address: Address
     let telephoneNumber: String?
@@ -67,5 +65,8 @@ class Contact: CustomStringConvertible {
     }
     var fullContactData: String {
         return "\(name.description)\n\(address.description)\ntelefoonnummer:\(String(describing: telephoneNumber))\nemail:\(String(describing: emailAddress)) "
+    }
+    var description: String {
+        return fullContactData
     }
 }
