@@ -10,9 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
-  
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -21,24 +21,29 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     var otherPin: AnnotationPin!
     
     @IBOutlet weak var producersListHomePageTableView: UITableView! 
-
-    @IBOutlet weak var homeTabBar: UITabBar!
-   
     
-    private var producers: [Producer] = [Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)]
- 
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
+    private let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+    
+    private var producers: [Producer] = []
+    
+    
     var searchCityName: String? {
         didSet {
             producers.removeAll()
             producersListHomePageTableView.reloadData()
-//            searchForProducers()
+            //            searchForProducers()
             
         }
     }
     //    var currentLocation: CLLocation!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        producers += [ward]
+        
         locationManager.delegate = self
         requestLocationAccess()
         locationManager.startUpdatingLocation()
@@ -46,12 +51,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-//        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", contact: Contact(name: Name(firstName: "Jos", lastName: ""), address: Address(streetName: "Meh", streetNumber: "123", postalCode: "3001", place: .betekom), telephoneNumber: "321", emailAddress: ""), companyImage: "Joske", description: "Ik ben een boer", location: coordinate, delivery: true, mainProduce: .poultry, deliveryHours: Date(), pickUpHours: Date(), favorite: true))
-//        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-//        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", contact: Contact(name: Name(firstName: "mkj", lastName: "mkj"), address: Address(streetName: "Aspergerijstraat", streetNumber: "23", postalCode: "3118", place: .oudHeverlee), telephoneNumber: "12", emailAddress: "wardjanssen1968@gmail.com"), companyImage: "Jefke", description: "Ik ben ook een boer", location: otherCoordinate, delivery: false, mainProduce: .meat, deliveryHours: Date(), pickUpHours: Date(), favorite: false))
-        mapView.addAnnotation(otherPin)
-        mapView.addAnnotation(pin)
+        
+        pin = AnnotationPin(with: ward)
+            
+            
+            mapView.addAnnotation(pin)
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,7 +106,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-
+    
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,7 +123,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     //  MARK: tableView Delegate
     
-
+    
     
 }
 

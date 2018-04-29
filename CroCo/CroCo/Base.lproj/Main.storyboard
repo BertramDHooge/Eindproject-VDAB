@@ -83,13 +83,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="producerCellInfo" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-nf-7jJ" userLabel="ProducerCellInfoLabel">
-                                                            <rect key="frame" x="100" y="0.0" width="138" height="50"/>
+                                                            <rect key="frame" x="100" y="0.0" width="72" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-tP-nSy">
-                                                            <rect key="frame" x="238" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="172" y="0.0" width="116" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="o9T-Ip-yqy"/>
                                                             </constraints>
@@ -446,11 +446,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Settings" id="cZ1-gh-dvi">
-                                    <barButtonItem key="leftBarButtonItem" title="Back" id="rCP-ex-eZK">
-                                        <connections>
-                                            <action selector="backButtonPressed:" destination="r1N-TH-Eqa" id="5lM-MH-0Ra"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="rCP-ex-eZK"/>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -864,6 +860,6 @@
         <image name="⭐️" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
+        <segue reference="G91-rJ-KL6"/>
     </inferredMetricsTieBreakers>
 </document>
