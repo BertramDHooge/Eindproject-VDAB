@@ -9,15 +9,37 @@
 import Foundation
 import MapKit
 
-struct Producer {
-    let companyName: String?
-    let contact: Contact
-    let companyImage: String
-    let description: String
-    let location: CLLocationCoordinate2D
-    let delivery: Bool
-    let mainProduce: MainProduce
-    let deliveryHours: Date?
-    let pickUpHours: Date
-    var favorite: Bool = false
-}
+class Producer {
+        let companyName: String?
+        let contact: Contact
+        var companyImage: String? = nil
+        var location: CLLocationCoordinate2D
+        var delivery: Bool
+        let mainProduce: MainProduce
+        let deliveryHours: Date?
+        let pickUpHours: Date?
+        var validation: Int?
+        var description: String   {
+        if let companyName = companyName {
+            return "\(companyName):\n\(contact.description)\nProducten: \(mainProduce.rawValue)"
+        } else {
+           return "(contact.description)\nProducten: \(mainProduce.rawValue)"
+        }
+    }
+    
+    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocationCoordinate2D, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?) {
+            self.companyName = companyName
+            self.contact = contact
+            self.companyImage = companyImage
+            self.location = location
+            self.delivery = delivery
+            self.mainProduce = mainProduce
+            self.deliveryHours = deliveryHours
+            self.pickUpHours = pickUpHours
+            self.validation = validation
+        }
+        convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce) {
+            self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
+        }
+    }
+
