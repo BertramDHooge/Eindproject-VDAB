@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum FoodTypes {
-    case vegetable, meat, fruit
+enum FoodTypes: String {
+    case vegetable = "vegetable", meat = "meat", fruit = "fruit"
    
 }
 enum FoodName: String {

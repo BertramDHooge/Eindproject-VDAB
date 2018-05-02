@@ -15,5 +15,5 @@ struct Crop {
     var quantityTypes: QuantityTypes
     var quantity: Quantity
     var cost: Double
-    var amountOfCropPortionsAvailable: Int
+    var amountOfCropPortionsAvailable: String
 }

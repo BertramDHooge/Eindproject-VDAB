@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum QuantityTypes {
-    case Kg, grams, bussel, piece
+enum QuantityTypes: String {
+    case Kg = "Kg", grams = "Grams", bussel = "Bussel", piece = "Piece(s)"
 }
 
 enum Quantity: Int {

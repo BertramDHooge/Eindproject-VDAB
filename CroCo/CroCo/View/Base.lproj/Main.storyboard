@@ -210,6 +210,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DNw-OF-dkx" kind="show" id="UKZ-y1-NLY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="yMa-Na-xra" style="IBUITableViewCellStyleDefault" id="7iG-QC-v7v" userLabel="Location">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
@@ -314,16 +317,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-zt-Du9">
-                                <rect key="frame" x="92.5" y="240" width="191.5" height="226"/>
+                                <rect key="frame" x="92" y="230.5" width="191.5" height="226"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="JY9-k8-YaB">
                                         <rect key="frame" x="0.0" y="0.0" width="191.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="191.5" id="ho5-r3-Sgf"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="x9l-C6-hRp">
                                         <rect key="frame" x="18" y="40" width="155.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155.5" id="sBA-Yg-wXG"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -331,6 +340,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPE-yt-o7i">
                                         <rect key="frame" x="44" y="80" width="104" height="60"/>
                                         <color key="backgroundColor" red="0.2460175902" green="0.55062329769999996" blue="0.63017773629999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="4DN-JU-WtV"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -341,6 +353,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js9-PJ-pvS">
                                         <rect key="frame" x="63" y="150" width="66" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="GVy-tQ-3ww"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Sign up"/>
                                         <connections>
@@ -349,9 +364,24 @@
                                     </button>
                                     <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJw-ii-rMJ">
                                         <rect key="frame" x="38.5" y="196" width="115" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="atg-kB-Lfm"/>
+                                        </constraints>
                                         <state key="normal" title="Forgot password"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="fJw-ii-rMJ" firstAttribute="centerX" secondItem="js9-PJ-pvS" secondAttribute="centerX" id="1dg-F2-YyJ"/>
+                                    <constraint firstItem="JY9-k8-YaB" firstAttribute="centerX" secondItem="3Rf-zt-Du9" secondAttribute="centerX" id="6hd-xS-aKu"/>
+                                    <constraint firstItem="js9-PJ-pvS" firstAttribute="centerX" secondItem="fPE-yt-o7i" secondAttribute="centerX" id="AQN-oS-9LW"/>
+                                    <constraint firstItem="x9l-C6-hRp" firstAttribute="top" secondItem="JY9-k8-YaB" secondAttribute="bottom" constant="10" id="Jg2-Qm-pZs"/>
+                                    <constraint firstItem="fPE-yt-o7i" firstAttribute="top" secondItem="x9l-C6-hRp" secondAttribute="bottom" constant="10" id="TZI-Bh-OwF"/>
+                                    <constraint firstAttribute="bottom" secondItem="fJw-ii-rMJ" secondAttribute="bottom" id="ayy-au-Mn8"/>
+                                    <constraint firstItem="fJw-ii-rMJ" firstAttribute="top" secondItem="js9-PJ-pvS" secondAttribute="bottom" constant="10" id="kts-Tw-jMF"/>
+                                    <constraint firstItem="x9l-C6-hRp" firstAttribute="centerX" secondItem="JY9-k8-YaB" secondAttribute="centerX" id="us0-bk-gbj"/>
+                                    <constraint firstItem="JY9-k8-YaB" firstAttribute="top" secondItem="3Rf-zt-Du9" secondAttribute="top" id="wwf-Mr-4JA"/>
+                                    <constraint firstItem="js9-PJ-pvS" firstAttribute="top" secondItem="fPE-yt-o7i" secondAttribute="bottom" constant="10" id="xJe-EQ-quP"/>
+                                </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vJy-ol-4rx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -374,10 +404,11 @@
                         <constraints>
                             <constraint firstItem="vJy-ol-4rx" firstAttribute="top" secondItem="Ptr-Oi-qAQ" secondAttribute="top" id="4x1-PY-aux"/>
                             <constraint firstItem="vJy-ol-4rx" firstAttribute="bottom" secondItem="1lA-lX-mce" secondAttribute="bottom" id="9Uz-mq-SoV"/>
-                            <constraint firstItem="3Rf-zt-Du9" firstAttribute="top" secondItem="1lA-lX-mce" secondAttribute="top" constant="220" id="R1M-r8-FUs"/>
                             <constraint firstItem="3Rf-zt-Du9" firstAttribute="centerX" secondItem="vJy-ol-4rx" secondAttribute="centerX" id="RQg-dp-vza"/>
                             <constraint firstItem="3Rf-zt-Du9" firstAttribute="centerX" secondItem="Ptr-Oi-qAQ" secondAttribute="centerX" id="XYV-fD-DFs"/>
+                            <constraint firstItem="3Rf-zt-Du9" firstAttribute="centerY" secondItem="1lA-lX-mce" secondAttribute="centerY" id="a6l-rh-Nce"/>
                             <constraint firstItem="vJy-ol-4rx" firstAttribute="leading" secondItem="Ptr-Oi-qAQ" secondAttribute="leading" id="htD-zv-a3B"/>
+                            <constraint firstItem="3Rf-zt-Du9" firstAttribute="centerX" secondItem="1lA-lX-mce" secondAttribute="centerX" id="vTV-0d-3f5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1lA-lX-mce"/>
                     </view>
@@ -793,7 +824,7 @@
                                         <connections>
                                             <outlet property="addPortionButton" destination="uhv-Sf-cVl" id="ykr-yz-YCg"/>
                                             <outlet property="cropNameLabel" destination="mwJ-cG-Hfi" id="NlR-ER-UbT"/>
-                                            <outlet property="numberOfCropPoprtionsAvailableLabel" destination="jbn-FS-FDA" id="ZyW-cM-s35"/>
+                                            <outlet property="numberOfCropPortionsAvailableLabel" destination="jbn-FS-FDA" id="ZyW-cM-s35"/>
                                             <outlet property="pricingAndWeightPerPortionLabel" destination="pAS-n4-n9w" id="Mn1-R4-T9A"/>
                                             <outlet property="removePortionButton" destination="PsJ-aj-TuR" id="9KC-2e-bv2"/>
                                             <outlet property="totalNumberOfPortionsSelectedLabel" destination="HLh-4B-iru" id="umW-KW-e9E"/>
@@ -906,7 +937,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-938" y="664"/>
+            <point key="canvasLocation" x="-913" y="663"/>
         </scene>
     </scenes>
     <resources>
@@ -917,7 +948,8 @@
         <image name="OK" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tLU-qy-vCB"/>
-        <segue reference="YJD-cW-5RD"/>
+        <segue reference="G91-rJ-KL6"/>
+        <segue reference="ccl-gD-TXR"/>
+        <segue reference="f9D-fZ-Yi3"/>
     </inferredMetricsTieBreakers>
 </document>
