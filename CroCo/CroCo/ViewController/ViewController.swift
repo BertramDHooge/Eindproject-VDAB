@@ -65,12 +65,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
-        }else if annotation is AnnotationPin{
-            let pinAnnotation = annotation as! AnnotationPin
+        }else if pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
+            annotationView
             return annotationView
         }else {
             return nil
