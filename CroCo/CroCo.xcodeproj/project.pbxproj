@@ -95,9 +95,9 @@
 				1502AC722090B55B00EBF16C /* FoodTypes.swift */,
 				FB52C53520909FE2004728A7 /* MainProduce.swift */,
 				FB52C5372090A1FF004728A7 /* Producer.swift */,
-				1502AC742090B57200EBF16C /* Crops.swift */,
-				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
 				1502AC762090B5B700EBF16C /* user.swift */,
+				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
+				1502AC742090B57200EBF16C /* Crops.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

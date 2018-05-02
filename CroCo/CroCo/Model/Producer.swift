@@ -19,6 +19,7 @@ class Producer {
     let deliveryHours: Date?
     let pickUpHours: Date?
     var validation: Int?
+    var crop: [Crop]
     var description: String   {
         if let companyName = companyName {
             return "\(companyName):\n\(contact.description)\nProducten: \(mainProduce.rawValue)"
@@ -27,7 +28,7 @@ class Producer {
         }
     }
     
-    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocationCoordinate2D, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?) {
+    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocationCoordinate2D, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, crop: [Crop]) {
         self.companyName = companyName
         self.contact = contact
         self.companyImage = companyImage
@@ -37,9 +38,12 @@ class Producer {
         self.deliveryHours = deliveryHours
         self.pickUpHours = pickUpHours
         self.validation = validation
+        self.crop = crop
     }
-    convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce) {
-        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
+    convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce, crop: [Crop]) {
+        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crop: crop)
+        
+//        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
     }
 }
 

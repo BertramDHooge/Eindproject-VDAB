@@ -23,6 +23,9 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         emailAddressTextField.becomeFirstResponder()
     }
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
