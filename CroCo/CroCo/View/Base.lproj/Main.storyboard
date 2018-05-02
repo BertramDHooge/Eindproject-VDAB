@@ -22,9 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-pm-2xo">
-                                <rect key="frame" x="286" y="20" width="25" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-pm-2xo">
+                                <rect key="frame" x="16" y="20" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -117,27 +116,45 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-dc-h13">
-                                <rect key="frame" x="289" y="-3" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-dc-h13">
+                                <rect key="frame" x="331" y="24" width="21" height="23"/>
                                 <state key="normal" image="Menu"/>
                                 <connections>
                                     <segue destination="L5C-Ky-ws4" kind="show" id="YJD-cW-5RD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5d-0w-M0G">
+                                <rect key="frame" x="281" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="🔍"/>
+                                <connections>
+                                    <action selector="searchLocation:" destination="15u-5o-wb5" eventType="touchUpInside" id="DIO-zW-Bfa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Va-9x-dVa" firstAttribute="bottom" secondItem="jkj-dc-h13" secondAttribute="bottom" constant="620" id="4nq-As-bJy"/>
+                            <constraint firstItem="1Va-9x-dVa" firstAttribute="trailing" secondItem="jkj-dc-h13" secondAttribute="trailing" constant="23" id="6oJ-1f-LUe"/>
+                            <constraint firstItem="ANe-pm-2xo" firstAttribute="top" secondItem="1Va-9x-dVa" secondAttribute="top" id="8Ze-hL-MdQ"/>
+                            <constraint firstItem="1Va-9x-dVa" firstAttribute="bottom" secondItem="ANe-pm-2xo" secondAttribute="bottom" constant="617" id="INz-XB-q1L"/>
+                            <constraint firstItem="jkj-dc-h13" firstAttribute="top" secondItem="1Va-9x-dVa" secondAttribute="top" constant="4" id="NkD-3U-fMz"/>
+                            <constraint firstItem="jkj-dc-h13" firstAttribute="leading" secondItem="1Va-9x-dVa" secondAttribute="leading" constant="331" id="XWj-jY-76m"/>
+                            <constraint firstItem="ANe-pm-2xo" firstAttribute="leading" secondItem="1Va-9x-dVa" secondAttribute="leading" constant="16" id="hws-Fo-pmP"/>
+                            <constraint firstItem="1Va-9x-dVa" firstAttribute="trailing" secondItem="ANe-pm-2xo" secondAttribute="trailing" constant="64" id="oZW-fH-KrJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Va-9x-dVa"/>
                     </view>
                     <connections>
                         <outlet property="homeTabBar" destination="J5a-VX-VDG" id="B8K-9P-6SM"/>
+                        <outlet property="locationSearchField" destination="ANe-pm-2xo" id="R67-xg-Hwg"/>
                         <outlet property="mapView" destination="T7f-8v-Ogy" id="93O-34-ZYH"/>
                         <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="Uek-Hs-LvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="-105.69715142428787"/>
+            <point key="canvasLocation" x="-55.5" y="-106.5"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="eoR-81-vsw">
@@ -513,6 +530,9 @@
                                                 <rect key="frame" x="302" y="7" width="57" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Settings"/>
+                                                <connections>
+                                                    <segue destination="L5C-Ky-ws4" kind="show" id="TUq-i5-GWQ"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -805,6 +825,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Settings"/>
                                             </button>
+                                            <connections>
+                                                <segue destination="L5C-Ky-ws4" kind="show" id="f9D-fZ-Yi3"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -860,6 +883,7 @@
         <image name="⭐️" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G91-rJ-KL6"/>
+        <segue reference="Bv9-8W-g2C"/>
+        <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>

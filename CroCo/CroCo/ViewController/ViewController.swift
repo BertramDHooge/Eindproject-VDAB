@@ -15,10 +15,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationSearchField: UITextField!
     
     let locationManager = CLLocationManager()
-    var pin: AnnotationPin!
-    var otherPin: AnnotationPin!
+    let activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var producersListHomePageTableView: UITableView! 
     
@@ -51,11 +51,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        
-        pin = AnnotationPin(with: ward)
-            
-            
+        for producer in producers {
+            let pin = AnnotationPin(with: producer)
             mapView.addAnnotation(pin)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,20 +109,69 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1/*producers.count*/
+        return producers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
         let producer = producers[indexPath.row]
-        if let producerCell = producerCell as? ProducersTableViewCell {
-            producerCell.producer = producer
-        }
+        producerCell.producer = producer
         return producerCell
+    }
+    
+    func showActivityIndicator(in view: UIView){
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+    }
+    
+    func removeActivityIndicator() {
+        
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
+    func searchMapLocation(for location: String) {
+        
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = location
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            if response == nil {
+                //popup
+                print("error")
+            } else{
+                let annotations = self.mapView.annotations
+                self.mapView.removeAnnotations(annotations)
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpanMake(0.1, 0.1)
+                let region = MKCoordinateRegionMake(coordinate, span)
+                self.mapView.setRegion(region, animated: true)
+            }
+        }
     }
     
     //  MARK: tableView Delegate
     
+    // MARK: IBAction
     
+    @IBAction func searchLocation(_ sender: UIButton) {
+        showActivityIndicator(in: mapView)
+        if let search = locationSearchField.text {
+            searchMapLocation(for: search)
+        }
+        removeActivityIndicator()
+    }
     
 }
 
