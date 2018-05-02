@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 import CoreLocation
-  
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
@@ -20,29 +21,28 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     let activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var producersListHomePageTableView: UITableView! 
-
-    @IBOutlet weak var homeTabBar: UITabBar!
-   
     
-    private var producers: [Producer] = [] {
-        didSet {
-        producersListHomePageTableView.reloadData()
-
-        }
-    }
- 
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
+    private let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+    
+    private var producers: [Producer] = []
+    
+    
     var searchCityName: String? {
         didSet {
             producers.removeAll()
             producersListHomePageTableView.reloadData()
-//            searchForProducers()
+            //            searchForProducers()
             
         }
     }
     //    var currentLocation: CLLocation!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        producers += [ward]
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -105,11 +105,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-
+    
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return producers.count
+        return 1/*producers.count*/
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
