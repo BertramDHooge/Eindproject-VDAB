@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1502AC6B2090AFDC00EBF16C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */; };
+		1502AC6E2090B12300EBF16C /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */; };
+		1502AC702090B13E00EBF16C /* ProducerInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */; };
+		1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC722090B55B00EBF16C /* FoodTypes.swift */; };
+		1502AC752090B57200EBF16C /* Crops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC742090B57200EBF16C /* Crops.swift */; };
+		1502AC772090B5B800EBF16C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC762090B5B700EBF16C /* user.swift */; };
+		150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFC2091F1A2002BBA8F /* Quantities.swift */; };
+		150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */; };
+		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
+		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
+		D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52E92093496300DA9537 /* loginViewController.swift */; };
+		D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52EB2093530000DA9537 /* CreateViewController.swift */; };
+		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
+		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
+		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
+		FB473845208F08E900DCE76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* ViewController.swift */; };
+		FB473848208F08E900DCE76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB473846208F08E900DCE76A /* Main.storyboard */; };
+		FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB473849208F08EB00DCE76A /* Assets.xcassets */; };
+		FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */; };
+		FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C52D20905E47004728A7 /* AnnotationPin.swift */; };
+		FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C53520909FE2004728A7 /* MainProduce.swift */; };
+		FB52C5382090A1FF004728A7 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52C5372090A1FF004728A7 /* Producer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.release.xcconfig"; sourceTree = "<group>"; };
+		1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducerInformationViewController.swift; sourceTree = "<group>"; };
+		1502AC722090B55B00EBF16C /* FoodTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTypes.swift; sourceTree = "<group>"; };
+		1502AC742090B57200EBF16C /* Crops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crops.swift; sourceTree = "<group>"; };
+		1502AC762090B5B700EBF16C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		150FBFFC2091F1A2002BBA8F /* Quantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantities.swift; sourceTree = "<group>"; };
+		150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
+		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
+		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
+		D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D37E52E92093496300DA9537 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginViewController.swift; path = ../loginViewController.swift; sourceTree = "<group>"; };
+		D37E52EB2093530000DA9537 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
+		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB473844208F08E900DCE76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB473847208F08E900DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB473849208F08EB00DCE76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB47384C208F08EB00DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB47384E208F08EB00DCE76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB52C52D20905E47004728A7 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
+		FB52C53520909FE2004728A7 /* MainProduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProduce.swift; sourceTree = "<group>"; };
+		FB52C5372090A1FF004728A7 /* Producer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB47383C208F08E900DCE76A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1502AC6C2090B0EB00EBF16C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FB473844208F08E900DCE76A /* ViewController.swift */,
+				D37E52E92093496300DA9537 /* loginViewController.swift */,
+				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
+				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
+				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
+				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
+				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
+				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1502AC712090B2EF00EBF16C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D325D55D2090BC1E00840DCD /* ContactInformation.swift */,
+				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
+				1502AC722090B55B00EBF16C /* FoodTypes.swift */,
+				FB52C53520909FE2004728A7 /* MainProduce.swift */,
+				FB52C5372090A1FF004728A7 /* Producer.swift */,
+				1502AC742090B57200EBF16C /* Crops.swift */,
+				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
+				1502AC762090B5B700EBF16C /* user.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		150FC0002091F821002BBA8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB473846208F08E900DCE76A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		453ABCBAE29A1430C1A68B4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */,
+				07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D92882088FB55D4A50C56E38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB473836208F08E900DCE76A = {
+			isa = PBXGroup;
+			children = (
+				FB473841208F08E900DCE76A /* CroCo */,
+				FB473840208F08E900DCE76A /* Products */,
+				453ABCBAE29A1430C1A68B4B /* Pods */,
+				D92882088FB55D4A50C56E38 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB473840208F08E900DCE76A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB47383F208F08E900DCE76A /* CroCo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB473841208F08E900DCE76A /* CroCo */ = {
+			isa = PBXGroup;
+			children = (
+				D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */,
+				1502AC712090B2EF00EBF16C /* Model */,
+				1502AC6C2090B0EB00EBF16C /* ViewController */,
+				150FC0002091F821002BBA8F /* View */,
+				FB473842208F08E900DCE76A /* AppDelegate.swift */,
+				FB473849208F08EB00DCE76A /* Assets.xcassets */,
+				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
+				FB47384E208F08EB00DCE76A /* Info.plist */,
+			);
+			path = CroCo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB47383E208F08E900DCE76A /* CroCo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB473851208F08EB00DCE76A /* Build configuration list for PBXNativeTarget "CroCo" */;
+			buildPhases = (
+				E495E64B868B73772B020011 /* [CP] Check Pods Manifest.lock */,
+				FB47383B208F08E900DCE76A /* Sources */,
+				FB47383C208F08E900DCE76A /* Frameworks */,
+				FB47383D208F08E900DCE76A /* Resources */,
+				E52ED31618A627848F590CDA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CroCo;
+			productName = CroCo;
+			productReference = FB47383F208F08E900DCE76A /* CroCo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB473837208F08E900DCE76A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = VDAB;
+				TargetAttributes = {
+					FB47383E208F08E900DCE76A = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = FB47383A208F08E900DCE76A /* Build configuration list for PBXProject "CroCo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB473836208F08E900DCE76A;
+			productRefGroup = FB473840208F08E900DCE76A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB47383E208F08E900DCE76A /* CroCo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB47383D208F08E900DCE76A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */,
+				FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */,
+				FB473848208F08E900DCE76A /* Main.storyboard in Resources */,
+				D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E495E64B868B73772B020011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CroCo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E52ED31618A627848F590CDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CroCo/Pods-CroCo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CroCo/Pods-CroCo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB47383B208F08E900DCE76A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
+				150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */,
+				1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */,
+				D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */,
+				1502AC6E2090B12300EBF16C /* ShoppingCartViewController.swift in Sources */,
+				FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */,
+				1502AC702090B13E00EBF16C /* ProducerInformationViewController.swift in Sources */,
+				1502AC6B2090AFDC00EBF16C /* SettingsTableViewController.swift in Sources */,
+				D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */,
+				FB52C5382090A1FF004728A7 /* Producer.swift in Sources */,
+				1502AC752090B57200EBF16C /* Crops.swift in Sources */,
+				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
+				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
+				D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */,
+				D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */,
+				1502AC772090B5B800EBF16C /* user.swift in Sources */,
+				FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB473846208F08E900DCE76A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB473847208F08E900DCE76A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB47384C208F08EB00DCE76A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB47384F208F08EB00DCE76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB473850208F08EB00DCE76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB473852208F08EB00DCE76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CroCo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.vdab.bertramDHooge.CroCo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FB473853208F08EB00DCE76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07A59CD52C246F3BE7095344 /* Pods-CroCo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CroCo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.vdab.bertramDHooge.CroCo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB47383A208F08E900DCE76A /* Build configuration list for PBXProject "CroCo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB47384F208F08EB00DCE76A /* Debug */,
+				FB473850208F08EB00DCE76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB473851208F08EB00DCE76A /* Build configuration list for PBXNativeTarget "CroCo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB473852208F08EB00DCE76A /* Debug */,
+				FB473853208F08EB00DCE76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB473837208F08E900DCE76A /* Project object */;
+}
