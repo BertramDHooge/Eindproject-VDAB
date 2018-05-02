@@ -22,9 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-pm-2xo">
-                                <rect key="frame" x="286" y="20" width="25" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-pm-2xo">
+                                <rect key="frame" x="16" y="20" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -155,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="-105.69715142428787"/>
+            <point key="canvasLocation" x="-55.5" y="-106.5"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="eoR-81-vsw">
@@ -531,6 +530,9 @@
                                                 <rect key="frame" x="302" y="7" width="57" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Settings"/>
+                                                <connections>
+                                                    <segue destination="L5C-Ky-ws4" kind="show" id="TUq-i5-GWQ"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -823,6 +825,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Settings"/>
                                             </button>
+                                            <connections>
+                                                <segue destination="L5C-Ky-ws4" kind="show" id="f9D-fZ-Yi3"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -879,5 +884,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Bv9-8W-g2C"/>
+        <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -64,7 +64,7 @@ class Contact: CustomStringConvertible {
         self.emailAddress = emailAddress
     }
     var fullContactData: String {
-        return "\(name.description)\n\(address.description)\ntelefoonnummer:\(String(describing: telephoneNumber))\nemail:\(String(describing: emailAddress)) "
+        return "\(name)\n\(address)\ntelefoonnummer:\(String(describing: telephoneNumber))\nemail:\(String(describing: emailAddress)) "
     }
     var description: String {
         return fullContactData
