@@ -30,19 +30,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-VX-VDG">
+                            <tabBar contentMode="scaleToFill" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-VX-VDG">
                                 <rect key="frame" x="0.0" y="343" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="" image="Home" id="3GY-XG-R6S" userLabel="Home">
-                                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-4"/>
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-11"/>
+                                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                                     </tabBarItem>
                                     <tabBarItem tag="1" title="voeg producer toe" badgeValue="👩‍🌾👨🏼‍🌾" id="OaG-LG-HYk" userLabel="backEnAddProducer">
                                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-4"/>
                                     </tabBarItem>
                                     <tabBarItem title="" image="Filtered" id="Ycm-qp-XHq" userLabel="Filter">
-                                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-4"/>
+                                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                                     </tabBarItem>
                                 </items>
                             </tabBar>
@@ -159,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="-105.69715142428787"/>
+            <point key="canvasLocation" x="-55" y="-151"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="eoR-81-vsw">
@@ -363,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY8-nx-teD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="-508"/>
+            <point key="canvasLocation" x="1497" y="-151"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0gs-A0-1CB">
@@ -453,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kF-YU-jjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="-509"/>
+            <point key="canvasLocation" x="2234" y="-151"/>
         </scene>
         <!--Order History Table View Controller-->
         <scene sceneID="pyt-3Y-8D5">
@@ -506,7 +505,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKf-yd-n13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="-135"/>
+            <point key="canvasLocation" x="742" y="663"/>
         </scene>
         <!--Producer Information View Controller Scene-->
         <scene sceneID="7wx-tX-lSD">
@@ -680,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHN-XC-rP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="665"/>
+            <point key="canvasLocation" x="-55" y="663"/>
         </scene>
         <!--Shopping Cart View Controller Scene-->
         <scene sceneID="3Qd-N6-ALk">
@@ -871,7 +870,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="665"/>
+            <point key="canvasLocation" x="-894" y="663"/>
         </scene>
     </scenes>
     <resources>
