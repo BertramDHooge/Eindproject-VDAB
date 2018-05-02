@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 import CoreLocation
-  
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -20,29 +21,28 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     var otherPin: AnnotationPin!
     
     @IBOutlet weak var producersListHomePageTableView: UITableView! 
-
-    @IBOutlet weak var homeTabBar: UITabBar!
-   
     
-    private var producers: [Producer] = [] {
-        didSet {
-        producersListHomePageTableView.reloadData()
-
-        }
-    }
- 
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
+    private let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+    
+    private var producers: [Producer] = []
+    
+    
     var searchCityName: String? {
         didSet {
             producers.removeAll()
             producersListHomePageTableView.reloadData()
-//            searchForProducers()
+            //            searchForProducers()
             
         }
     }
     //    var currentLocation: CLLocation!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        producers += [ward]
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -51,12 +51,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, openHours: "Always"))
-        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, openHours: "Never"))
-        mapView.addAnnotation(otherPin)
-        mapView.addAnnotation(pin)
+        
+        pin = AnnotationPin(with: ward)
+            
+            
+            mapView.addAnnotation(pin)
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +70,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             let pinAnnotation = annotation as! AnnotationPin
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
-            annotationView.markerTintColor = pinAnnotation.glyphColor
+            annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             return annotationView
         }else {
@@ -107,19 +106,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-
+    
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        producers.count
+        return 1/*producers.count*/
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
+        let producer = producers[indexPath.row]
+        if let producerCell = producerCell as? ProducersTableViewCell {
+            producerCell.producer = producer
+        }
+        return producerCell
     }
     
     //  MARK: tableView Delegate
     
-
+    
     
 }
 
