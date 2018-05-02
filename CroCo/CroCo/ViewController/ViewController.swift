@@ -9,40 +9,40 @@
 import UIKit
 import MapKit
 import CoreLocation
-  
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationSearchField: UITextField!
     
     let locationManager = CLLocationManager()
-    var pin: AnnotationPin!
-    var otherPin: AnnotationPin!
+    let activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var producersListHomePageTableView: UITableView! 
-
-    @IBOutlet weak var homeTabBar: UITabBar!
-   
     
-    private var producers: [Producer] = [] {
-        didSet {
-        producersListHomePageTableView.reloadData()
-
-        }
-    }
- 
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
+    private let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+    
+    private var producers: [Producer] = []
+    
+    
     var searchCityName: String? {
         didSet {
             producers.removeAll()
             producersListHomePageTableView.reloadData()
-//            searchForProducers()
+            //            searchForProducers()
             
         }
     }
     //    var currentLocation: CLLocation!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        producers += [ward]
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -51,12 +51,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        let coordinate = CLLocationCoordinate2D(latitude: 37.32469731, longitude: -122.02020869)
-        pin = AnnotationPin(with: Producer(companyName: "Boer Jos", producerName: "Jos", companyImage: "Joske", description: "Ik ben een boer", address: coordinate, delivery: true, mainProduce: .vegetable, openHours: "Always"))
-        let otherCoordinate = CLLocationCoordinate2D(latitude: 37, longitude: -122)
-        otherPin = AnnotationPin(with: Producer(companyName: "Boer Jef", producerName: "Jef", companyImage: "Jefke", description: "Ik ben ook een boer", address: otherCoordinate, delivery: false, mainProduce: .dairy, openHours: "Never"))
-        mapView.addAnnotation(otherPin)
-        mapView.addAnnotation(pin)
+        for producer in producers {
+            let pin = AnnotationPin(with: producer)
+            mapView.addAnnotation(pin)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +69,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             let pinAnnotation = annotation as! AnnotationPin
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
-            annotationView.markerTintColor = pinAnnotation.glyphColor
+            annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             return annotationView
         }else {
@@ -107,19 +105,73 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-
+    
     //    MARK: tableView dataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        producers.count
+        return producers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
+        let producer = producers[indexPath.row]
+        producerCell.producer = producer
+        return producerCell
+    }
+    
+    func showActivityIndicator(in view: UIView){
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+    }
+    
+    func removeActivityIndicator() {
+        
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
+    func searchMapLocation(for location: String) {
+        
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = location
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            if response == nil {
+                //popup
+                print("error")
+            } else{
+                let annotations = self.mapView.annotations
+                self.mapView.removeAnnotations(annotations)
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                
+                let coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpanMake(0.1, 0.1)
+                let region = MKCoordinateRegionMake(coordinate, span)
+                self.mapView.setRegion(region, animated: true)
+            }
+        }
     }
     
     //  MARK: tableView Delegate
     
-
+    // MARK: IBAction
+    
+    @IBAction func searchLocation(_ sender: UIButton) {
+        showActivityIndicator(in: mapView)
+        if let search = locationSearchField.text {
+            searchMapLocation(for: search)
+        }
+        removeActivityIndicator()
+    }
     
 }
 

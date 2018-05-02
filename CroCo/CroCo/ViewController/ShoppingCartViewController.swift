@@ -27,7 +27,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producersCrop = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
         let crop = arrayOfProducersCrop[indexPath.row]
-        // Configure the cell...
+        // Configure the ...
         
         return producersCrop
     }
