@@ -10,11 +10,15 @@ import UIKit
 
 class ProducersTableViewCell: UITableViewCell {
     var producer: Producer? {
-        didSet {    updateUI() } }
+        didSet {    updateUI()
+            
+        }
+    }
     
 
     @IBOutlet weak var bikeDeliveryLabel: UILabel!
     @IBOutlet weak var producerHomeCellInfoLabel: UILabel!
+    @IBOutlet weak var adressLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -28,8 +32,11 @@ class ProducersTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func favoriteStarButton(_ sender: UIButton) {
+        
     }
+    
     private func updateUI() {
         guard let producer = producer else {return}
         if producer.delivery == false {
@@ -38,5 +45,6 @@ class ProducersTableViewCell: UITableViewCell {
             return
         }
         producerHomeCellInfoLabel.text = producer.companyName ?? producer.contact.name.firstName
+        adressLabel.text = producer.contact.address.fullAdress
     }
 }

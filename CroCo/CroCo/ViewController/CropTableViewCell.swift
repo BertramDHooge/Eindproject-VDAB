@@ -22,7 +22,7 @@ class CropTableViewCell: UITableViewCell {
     @IBOutlet weak var removePortionButton: UIButton!
     @IBOutlet weak var numberOfPortions: UILabel!
     
-    var crop: Crop? { didSet { updateUI() }}
+    var crop: Crop? { didSet { updateCrops() }}
     
     var portions = 0
 
@@ -44,7 +44,7 @@ class CropTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateUI(){
+    private func updateCrops(){
         guard let crop = crop else {return}
         numberOfCropPortionsAvailableLabel.text = crop.amountOfCropPortionsAvailable
         pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. \(crop.cost) per portie."

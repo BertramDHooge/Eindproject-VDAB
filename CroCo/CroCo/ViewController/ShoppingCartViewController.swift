@@ -30,8 +30,6 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         return arrayOfProducerCrops!.crops.count
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producersCropCell = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
         let crop = arrayOfProducerCrops!.crops[indexPath.row]

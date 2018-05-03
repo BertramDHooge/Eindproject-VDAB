@@ -65,9 +65,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.749713, longitude: 4.347011), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
         
+        add(mammothProducer)
+        add(bertramProducer)
         
-        
-        producers += [mammothProducer, bertramProducer]
+//        producers += [mammothProducer, bertramProducer]
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -81,8 +82,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             mapView.addAnnotation(pin)
         }
         
-        
     }
+    
+    // MARK: Made by Louis for shopping cart table view, please do not delete just put in "//"
+    
+    var myIndex = 0
+    // index of which cell pressed index 1 = producer 1
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "producerCropsListSegue", sender: ProducersTableViewCell.self)
+    }
+    // adding to producers
+    
+    func add(_ producer: Producer){
+        producers += [producer]
+    }
+    
+    // MARK: end content made by louis
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -92,14 +109,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
-        }else if annotation is AnnotationPin{
+        } else if annotation is AnnotationPin{
             let pinAnnotation = annotation as! AnnotationPin
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             return annotationView
-        }else {
+        } else {
             return nil
         }
     }
@@ -134,10 +151,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     
     //    MARK: tableView dataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return producers.count
+        return 2
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
         let producer = producers[indexPath.row]
@@ -188,7 +209,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    //  MARK: tableView Delegate
+    // MARK: tableView Delegate
     
     // MARK: IBAction
     
