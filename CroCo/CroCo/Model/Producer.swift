@@ -41,7 +41,7 @@ class Producer {
         self.crops = crops
     }
     convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce, crop: [Crop]) {
-        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crop: crop)
+        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: crop)
         
 //        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
     }

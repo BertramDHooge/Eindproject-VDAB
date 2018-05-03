@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="15u-5o-wb5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dkt-Rj-oc0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -777,21 +777,34 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kilo/ price per portion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAS-n4-n9w">
-                                                    <rect key="frame" x="45" y="23" width="150" height="20"/>
+                                                    <rect key="frame" x="45" y="23" width="149.5" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-Sf-cVl">
-                                                    <rect key="frame" x="240" y="11" width="30" height="22"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-Sf-cVl">
+                                                    <rect key="frame" x="224" y="11" width="30" height="22"/>
                                                     <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addPortionButtonPressed:" destination="hKy-dD-0ae" eventType="touchUpInside" id="Pv7-oB-kNb"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-aj-TuR">
-                                                    <rect key="frame" x="278" y="11" width="30" height="22"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-aj-TuR">
+                                                    <rect key="frame" x="262" y="11" width="30" height="22"/>
                                                     <state key="normal" title="-"/>
+                                                    <connections>
+                                                        <action selector="removePortionButtonPressed:" destination="hKy-dD-0ae" eventType="touchUpInside" id="Ob2-5R-GTv"/>
+                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-4B-iru">
-                                                    <rect key="frame" x="328" y="15" width="38" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90Y-ha-gWc">
+                                                    <rect key="frame" x="300" y="14" width="20" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Porties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-4B-iru">
+                                                    <rect key="frame" x="328" y="14" width="38" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -825,6 +838,7 @@
                                             <outlet property="addPortionButton" destination="uhv-Sf-cVl" id="ykr-yz-YCg"/>
                                             <outlet property="cropNameLabel" destination="mwJ-cG-Hfi" id="NlR-ER-UbT"/>
                                             <outlet property="numberOfCropPortionsAvailableLabel" destination="jbn-FS-FDA" id="ZyW-cM-s35"/>
+                                            <outlet property="numberOfPortions" destination="90Y-ha-gWc" id="G3V-PJ-dX2"/>
                                             <outlet property="pricingAndWeightPerPortionLabel" destination="pAS-n4-n9w" id="Mn1-R4-T9A"/>
                                             <outlet property="removePortionButton" destination="PsJ-aj-TuR" id="9KC-2e-bv2"/>
                                             <outlet property="totalNumberOfPortionsSelectedLabel" destination="HLh-4B-iru" id="umW-KW-e9E"/>
@@ -891,7 +905,7 @@
                                                 <state key="normal" title="Settings"/>
                                             </button>
                                             <connections>
-                                                <segue destination="L5C-Ky-ws4" kind="show" id="f9D-fZ-Yi3"/>
+                                                <segue destination="L5C-Ky-ws4" kind="show" id="5z5-ZW-2HL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -937,7 +951,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-913" y="663"/>
+            <point key="canvasLocation" x="-914.39999999999998" y="662.51874062968523"/>
         </scene>
     </scenes>
     <resources>
@@ -950,6 +964,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="G91-rJ-KL6"/>
         <segue reference="ccl-gD-TXR"/>
-        <segue reference="f9D-fZ-Yi3"/>
+        <segue reference="TUq-i5-GWQ"/>
     </inferredMetricsTieBreakers>
 </document>
