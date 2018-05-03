@@ -13,7 +13,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     
-    let arrayOfProducersCrops: [Crop] = []
+    let arrayOfProducersCrops: Producer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +25,18 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfProducersCrops.count
+        return arrayOfProducersCrops!.crops.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let producersCrop = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
-        let crop = arrayOfProducersCrops[indexPath.row]
+        let producersCropCell = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
+        let crop = arrayOfProducersCrops!.crops[indexPath.row]
+        if let producersCropCell = producersCropCell as? CropTableViewCell {
+            producersCropCell.crop = crop
+        }
         // Configure the ...
         
-        return producersCrop
+        return producersCropCell
     }
  
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {

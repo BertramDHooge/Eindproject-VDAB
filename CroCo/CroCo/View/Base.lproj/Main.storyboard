@@ -229,7 +229,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BW3-Rn-ykn">
-                                                    <rect key="frame" x="310" y="5" width="49" height="31"/>
+                                                    <rect key="frame" x="309" y="5" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 </switch>
                                             </subviews>
@@ -856,9 +856,8 @@
                                     <constraint firstAttribute="height" constant="189" id="HCH-jk-vKU"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KA-Ko-3CL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KA-Ko-3CL">
                                 <rect key="frame" x="329" y="50" width="30" height="30"/>
-                                <state key="normal" title="ℹ️"/>
                                 <connections>
                                     <segue destination="Ca2-fC-bed" kind="show" id="G91-rJ-KL6"/>
                                 </connections>
@@ -964,6 +963,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="G91-rJ-KL6"/>
         <segue reference="ccl-gD-TXR"/>
-        <segue reference="TUq-i5-GWQ"/>
+        <segue reference="5z5-ZW-2HL"/>
     </inferredMetricsTieBreakers>
 </document>
