@@ -199,5 +199,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         removeActivityIndicator()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "producerCropsListSegue"{
+            if let destinationVC = segue.destination as? ShoppingCartViewController{
+                if let producer = sender as? Producer{
+                    destinationVC.arrayOfProducerCrops = producer
+                }
+            }
+        }
+    }
+    
 }
 
