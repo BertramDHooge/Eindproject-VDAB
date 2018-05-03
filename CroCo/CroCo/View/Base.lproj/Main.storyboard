@@ -286,7 +286,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-Pk-RFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="-150"/>
+            <point key="canvasLocation" x="774" y="-107"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="GAd-Ay-qkT">
@@ -501,7 +501,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKf-yd-n13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="-135"/>
+            <point key="canvasLocation" x="2954" y="-107"/>
         </scene>
         <!--Producer Information View Controller Scene-->
         <scene sceneID="7wx-tX-lSD">
@@ -543,9 +543,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="producerInfo" rowHeight="170" id="0cj-5b-1kZ" customClass="ProducerInfoTableViewCell" customModule="CroCo" customModuleProvider="target">
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="20" reuseIdentifier="producerInfo" rowHeight="170" id="0cj-5b-1kZ" customClass="ProducerInfoTableViewCell" customModule="CroCo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0cj-5b-1kZ" id="Ou4-ob-rp8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -646,7 +646,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHN-XC-rP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="664"/>
+            <point key="canvasLocation" x="774" y="664"/>
         </scene>
         <!--Shopping Cart View Controller Scene-->
         <scene sceneID="3Qd-N6-ALk">
@@ -852,6 +852,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Bv9-8W-g2C"/>
-        <segue reference="YJD-cW-5RD"/>
+        <segue reference="TUq-i5-GWQ"/>
     </inferredMetricsTieBreakers>
 </document>

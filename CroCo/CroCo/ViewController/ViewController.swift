@@ -121,6 +121,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return producers.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
         let producer = producers[indexPath.row]
@@ -184,7 +185,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "initiateInfoVC"{
             if let destinationVC = segue.destination as? ProducerInformationViewController{
-                
+                if let producer = sender as? Producer{
+                    destinationVC.producer = producer
+                }
             }
         }
     }
