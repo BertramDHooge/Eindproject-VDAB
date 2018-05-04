@@ -199,6 +199,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         return producerCell
     }
     
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "initiateInfoVC", sender: producers[indexPath.row])
+    }
+    
     func showActivityIndicator(in view: UIView){
         
         UIApplication.shared.beginIgnoringInteractionEvents()
@@ -255,9 +260,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "shoppingCartSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
-                if let producer = sender as? Producer {
-                    destinationVC.arrayOfProducerCrops = producer
+                if let producer = sender as? ProducersTableViewCell {
                     
+                    destinationVC.arrayOfProducerCrops = producer.producer
                 }
             }
         } else if segue.identifier == "initiateInfoVC"{

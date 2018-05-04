@@ -108,11 +108,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="accessoryView" destination="Ca2-2i-Mhl" id="vhx-2u-MKy"/>
                                             <outlet property="adressLabel" destination="jQz-tP-nSy" id="teh-yx-0Xl"/>
                                             <outlet property="bikeDeliveryLabel" destination="HU6-Td-wSx" id="q1Y-Vm-inB"/>
-                                            <outlet property="producerHomeCellInfoLabel" destination="jaf-nf-7jJ" id="QVV-Og-LN2"/>
-                                            <segue destination="Ca2-fC-bed" kind="show" identifier="initiateInfoVC" trigger="accessoryAction" id="Bv9-8W-g2C"/>
+                                            <outlet property="companyNameLabel" destination="jaf-nf-7jJ" id="Aq4-89-0p5"/>
                                             <segue destination="Dkt-Rj-oc0" kind="show" identifier="producerCropsListSegue" id="94E-hf-NEz"/>
                                         </connections>
                                     </tableViewCell>
@@ -168,8 +166,8 @@
                         <outlet property="homeTabBar" destination="J5a-VX-VDG" id="B8K-9P-6SM"/>
                         <outlet property="locationSearchField" destination="ANe-pm-2xo" id="R67-xg-Hwg"/>
                         <outlet property="mapView" destination="T7f-8v-Ogy" id="93O-34-ZYH"/>
-                        <outlet property="producerTableView" destination="Ca2-2i-Mhl" id="OrR-Oj-Hyh"/>
                         <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="Uek-Hs-LvO"/>
+                        <segue destination="Ca2-fC-bed" kind="show" identifier="initiateInfoVC" id="1q4-YX-sa8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
@@ -1044,8 +1042,8 @@
         <image name="OK" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G91-rJ-KL6"/>
+        <segue reference="1q4-YX-sa8"/>
         <segue reference="ccl-gD-TXR"/>
-        <segue reference="5z5-ZW-2HL"/>
+        <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>
