@@ -79,8 +79,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         locationManager.delegate = self
         requestLocationAccess()
-        locationManager.startUpdatingLocation()
-        show(locationManager.location)
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            
+            locationManager.startUpdatingLocation()
+            show(locationManager.location)
+        case .denied, .restricted:
+            
+            print("location access denied")
+        default:
+            
+            requestLocationAccess()
+        }
         
         mapView.delegate = self
         
@@ -93,13 +105,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         myIndex = indexPath.row
         performSegue(withIdentifier: "producerCropsListSegue", sender: ProducersTableViewCell.self)
     }
     // adding to producers
     
     func add(_ producer: Producer){
-        producers += [producer]
+        
+        producers.append(producer)
     }
     
     // MARK: end content made by louis
@@ -233,15 +247,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             if let destinationVC = segue.destination as? ShoppingCartViewController{
                 if let producer = sender as? Producer{
                     destinationVC.arrayOfProducerCrops = producer
-                    if segue.identifier == "initiateInfoVC"{
-                        if let destinationVC = segue.destination as? ProducerInformationViewController{
-                            if let producer = sender as? Producer{
-                                destinationVC.producer = producer
-                            }
-                        }
-                    }
+                    
                 }
-                
+            }
+        } else if segue.identifier == "initiateInfoVC"{
+            if let destinationVC = segue.destination as? ProducerInformationViewController{
+                if let producer = sender as? Producer{
+                    destinationVC.producer = producer
+                }
             }
         }
     }

@@ -30,43 +30,43 @@ class ProducerInformationViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let producer = producer {
             switch indexPath.row {
             case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "producerInfo", for: indexPath) as! ProducerInfoTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionInfo", for: indexPath) as! ProducerInfoTableViewCell
                 
                 cell.infoTitleLabel.text = "Description"
                 cell.producerInfoTextField.text = producer.description
                 
                 return cell
             case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "producerInfo", for: indexPath) as! ProducerInfoTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionInfo", for: indexPath) as! ProducerInfoTableViewCell
                 
                 cell.infoTitleLabel.text = "Address"
                 cell.producerInfoTextField.text = producer.contact.address.description
                 
                 return cell
             case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "producerInfo", for: indexPath) as! ProducerInfoTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionInfo", for: indexPath) as! ProducerInfoTableViewCell
                 
                 cell.infoTitleLabel.text = "Focus"
                 cell.producerInfoTextField.text = producer.mainProduce.rawValue.map({ (character) -> String in return String(character) + " "}).reduce("", +)
                 
                 return cell
-//            case 4:
-//                let cell = DeliveryInfoTableViewCell()
-//                cell.deliveryInfoImageView.image = producer.delivery ? UIImage(named: "OK") : UIImage(named: "X")
-//                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "deliveryInfo", for: indexPath) as! DeliveryInfoTableViewCell
+                cell.deliveryInfoImageView.image = producer.delivery ? UIImage(named: "OK") : UIImage(named: "X")
+                return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "producerInfo", for: indexPath)
                 return cell
             }
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "producerInfo", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionInfo", for: indexPath)
         return cell
     }
     
