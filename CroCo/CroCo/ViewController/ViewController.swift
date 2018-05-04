@@ -87,8 +87,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         locationManager.delegate = self
         requestLocationAccess()
-        locationManager.startUpdatingLocation()
-        show(locationManager.location)
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            
+            locationManager.startUpdatingLocation()
+            show(locationManager.location)
+        case .denied, .restricted:
+            
+            print("location access denied")
+        default:
+            
+            requestLocationAccess()
+        }
         
         mapView.delegate = self
         
@@ -108,14 +120,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         myIndex = indexPath.row
         performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
     // adding to producers
     
-//    func add(_ producer: Producer){
-//        producers += [producer]
-//    }
+    func add(_ producer: Producer){
+        
+        producers.append(producer)
+    }
     
     // MARK: end content made by louis
     
@@ -190,6 +204,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         producerCell.adressLabel.text = producer.contact.address.fullAdress
         producerCell.companyNameLabel.text = producer.companyName
         return producerCell
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "initiateInfoVC", sender: producers[indexPath.row])
     }
     
     func showActivityIndicator(in view: UIView){
