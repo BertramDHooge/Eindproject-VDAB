@@ -100,9 +100,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         // MARK: Made by Louis for shopping cart table view, please do not delete just put in "//"
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+//        let producers = Producer()
+//        if let destinationViewController = segue.destination as? ShoppingCartViewController {
+//            destinationViewController.producers = producers
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        performSegue(withIdentifier: "shoppingCartSegue", sender: ProducersTableViewCell.self)
+        performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
     // adding to producers
     
@@ -239,20 +246,26 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "shoppingCartSegue" {
+//            if let destinationVC = segue.destination as? ShoppingCartViewController {
+//                if let producer = sender as? ProducersTableViewCell {
+//                    destinationVC.producers = producers[myIndex]
+//                }
+//            }
         if segue.identifier == "shoppingCartSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
-                if let producer = sender as? Producer {
-                    destinationVC.arrayOfProducerCrops = producer
-                    if segue.identifier == "initiateInfoVC"{
-                        if let destinationVC = segue.destination as? ProducerInformationViewController {
-                            if let producer = sender as? Producer {
-                                destinationVC.producer = producer
-                            }
-                        }
-                    }
+                if let producer = sender as? ProducersTableViewCell {
+                    destinationVC.producers = producer.producer
+                }
+            }
+        } else if segue.identifier == "initiateInfoVC"{
+            if let destinationVC = segue.destination as? ProducerInformationViewController{
+                if let producer = sender as? Producer{
+                    destinationVC.producer = producer
                 }
             }
         }
     }
 }
+
 

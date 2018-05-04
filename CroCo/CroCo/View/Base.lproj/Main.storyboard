@@ -61,7 +61,16 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="favoriteStarIcon" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ub-t3-xNr" userLabel="favoriteStarButton">
                                                     <rect key="frame" x="8.5" y="-3" width="64" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="001-chicken-hand-drawn-outline"/>
+                                                    <state key="normal">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="☆">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="30" name="AppleSDGothicNeo-Regular"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </state>
                                                     <connections>
                                                         <action selector="favoriteStarButton:" destination="ocy-YY-rzR" eventType="touchUpInside" id="sp3-Qt-RE0"/>
                                                     </connections>
@@ -940,7 +949,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="001-chicken-hand-drawn-outline" width="64" height="64"/>
         <image name="Filtered" width="50" height="50"/>
         <image name="Home" width="50" height="50"/>
         <image name="Menu" width="50" height="50"/>
