@@ -42,7 +42,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        producers += [ward]
+//        producers.append(Producer(companyName: "Hey", contact: Contact(name: Name(firstName: "IZ", lastName: "ME"), address: Address(streetName: "somestreet", streetNumber: "30", postalCode: "3001", place: Place.oudHeverlee), telephoneNumber: "Not gonna give you that", emailAddress: "nor this"), companyImage: "lol", location: (locationManager.location?.coordinate)!, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: Date(), pickUpHours: Date(), validation: 5))
+        
+//        ward.location = (locationManager.location?.coordinate)!
+        
+        producers.append(ward)
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -65,16 +69,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
-        }else if annotation is AnnotationPin{
-            let pinAnnotation = annotation as! AnnotationPin
+        }else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
+            annotationView.canShowCallout = true
+            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             return annotationView
         }else {
             return nil
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let pin = view.annotation as? AnnotationPin
+        performSegue(withIdentifier: "initiateInfoVC", sender: pin?.producer)
     }
     
     //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -111,6 +121,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return producers.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
         let producer = producers[indexPath.row]
@@ -144,8 +155,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 //popup
                 print("error")
             } else{
-                let annotations = self.mapView.annotations
-                self.mapView.removeAnnotations(annotations)
                 
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
@@ -171,6 +180,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             searchMapLocation(for: search)
         }
         removeActivityIndicator()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "initiateInfoVC"{
+            if let destinationVC = segue.destination as? ProducerInformationViewController{
+                if let producer = sender as? Producer{
+                    destinationVC.producer = producer
+                }
+            }
+        }
     }
     
 }
