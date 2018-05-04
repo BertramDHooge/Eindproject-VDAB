@@ -58,16 +58,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let bertramCrops = [Crop(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 100, amountOfCropPortionsAvailable: "1")]
         
+        
+        let wardName = Name(firstName: "Ward", lastName: "Janssen")
+        let adressWard = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter)
+        let infoWard = Contact(name: wardName, address: adressWard, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
+        let wardCrops = [Crop(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 22, amountOfCropPortionsAvailable: "100")]
         // Mark: Producers
         
-        //        let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+        let ward: Producer = Producer(companyName: "VeltWinkel", contact: infoWard, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, crops: wardCrops)
         
         let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.748273, longitude: 4.346720), delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: mammothCrops)
         
         let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.749713, longitude: 4.347011), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
         
-        add(mammothProducer)
-        add(bertramProducer)
+//        add(mammothProducer)
+//        add(bertramProducer)
         
         //        producers += [mammothProducer, bertramProducer]
         
@@ -75,7 +80,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         //        ward.location = (locationManager.location?.coordinate)!
         
+        producers.append(mammothProducer)
+        producers.append(bertramProducer)
         producers.append(ward)
+
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -98,9 +106,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     // adding to producers
     
-    func add(_ producer: Producer){
-        producers += [producer]
-    }
+//    func add(_ producer: Producer){
+//        producers += [producer]
+//    }
     
     // MARK: end content made by louis
     
@@ -229,19 +237,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "producerCropsListSegue"{
-            if let destinationVC = segue.destination as? ShoppingCartViewController{
-                if let producer = sender as? Producer{
+        if segue.identifier == "producerCropsListSegue" {
+            if let destinationVC = segue.destination as? ShoppingCartViewController {
+                if let producer = sender as? Producer {
                     destinationVC.arrayOfProducerCrops = producer
                     if segue.identifier == "initiateInfoVC"{
-                        if let destinationVC = segue.destination as? ProducerInformationViewController{
-                            if let producer = sender as? Producer{
+                        if let destinationVC = segue.destination as? ProducerInformationViewController {
+                            if let producer = sender as? Producer {
                                 destinationVC.producer = producer
                             }
                         }
                     }
                 }
-                
             }
         }
     }

@@ -10,14 +10,12 @@ import UIKit
 
 class ProducersTableViewCell: UITableViewCell {
     var producer: Producer? {
-        didSet {    updateUI()
-            
-        }
+        didSet { updateUI() }
     }
     
 
     @IBOutlet weak var bikeDeliveryLabel: UILabel!
-    @IBOutlet weak var producerHomeCellInfoLabel: UILabel!
+    @IBOutlet weak var CompanyName: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
     
     
@@ -44,7 +42,7 @@ class ProducersTableViewCell: UITableViewCell {
         } else {
             return
         }
-        producerHomeCellInfoLabel.text = producer.companyName ?? producer.contact.name.firstName
+        CompanyName.text = producer.companyName ?? producer.contact.name.firstName
         adressLabel.text = producer.contact.address.fullAdress
     }
 }
