@@ -24,8 +24,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     @IBOutlet weak var homeTabBar: UITabBar!
     
-    
-    
+    var myIndex = 0
+    // index of which cell pressed index 1 = producer 1
     
     private var producers: [Producer] = []
     
@@ -45,6 +45,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Mark: Info Producers
         
         let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
@@ -59,7 +60,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         // Mark: Producers
         
-//        let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+        //        let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
         
         let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.748273, longitude: 4.346720), delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: mammothCrops)
         
@@ -68,7 +69,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         add(mammothProducer)
         add(bertramProducer)
         
-//        producers += [mammothProducer, bertramProducer]
+        //        producers += [mammothProducer, bertramProducer]
+        
+        //        producers.append(Producer(companyName: "Hey", contact: Contact(name: Name(firstName: "IZ", lastName: "ME"), address: Address(streetName: "somestreet", streetNumber: "30", postalCode: "3001", place: Place.oudHeverlee), telephoneNumber: "Not gonna give you that", emailAddress: "nor this"), companyImage: "lol", location: (locationManager.location?.coordinate)!, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: Date(), pickUpHours: Date(), validation: 5))
+        
+        //        ward.location = (locationManager.location?.coordinate)!
+        
+        producers.append(ward)
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -82,12 +89,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             mapView.addAnnotation(pin)
         }
         
+        // MARK: Made by Louis for shopping cart table view, please do not delete just put in "//"
     }
-    
-    // MARK: Made by Louis for shopping cart table view, please do not delete just put in "//"
-    
-    var myIndex = 0
-    // index of which cell pressed index 1 = producer 1
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
@@ -109,16 +112,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
-        } else if annotation is AnnotationPin{
-            let pinAnnotation = annotation as! AnnotationPin
+        } else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
+            annotationView.canShowCallout = true
+            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             return annotationView
         } else {
             return nil
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let pin = view.annotation as? AnnotationPin
+        performSegue(withIdentifier: "initiateInfoVC", sender: pin?.producer)
     }
     
     //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -151,9 +160,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     
     //    MARK: tableView dataSource
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+    //    func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 1
+    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return producers.count
@@ -192,8 +201,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 //popup
                 print("error")
             } else{
-                let annotations = self.mapView.annotations
-                self.mapView.removeAnnotations(annotations)
                 
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
@@ -226,10 +233,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             if let destinationVC = segue.destination as? ShoppingCartViewController{
                 if let producer = sender as? Producer{
                     destinationVC.arrayOfProducerCrops = producer
+                    if segue.identifier == "initiateInfoVC"{
+                        if let destinationVC = segue.destination as? ProducerInformationViewController{
+                            if let producer = sender as? Producer{
+                                destinationVC.producer = producer
+                            }
+                        }
+                    }
                 }
+                
             }
         }
     }
-    
 }
 
