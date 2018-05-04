@@ -1,10 +1,5 @@
-//
-//  Producer.swift
-//  CroCo
-//
-//  Created by Louis Loeckx on 24/04/2018.
-//  Copyright © 2018 VDAB. All rights reserved.
-//
+// created by Ward
+
 
 import Foundation
 import MapKit

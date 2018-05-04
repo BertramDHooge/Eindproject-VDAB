@@ -418,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY8-nx-teD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="1276"/>
+            <point key="canvasLocation" x="-6" y="1146"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0gs-A0-1CB">
@@ -508,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kF-YU-jjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="1276"/>
+            <point key="canvasLocation" x="722" y="1146"/>
         </scene>
         <!--Order History Table View Controller-->
         <scene sceneID="pyt-3Y-8D5">
@@ -1016,7 +1016,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="871.21439280359823"/>
+            <point key="canvasLocation" x="-844" y="1146"/>
         </scene>
     </scenes>
     <resources>
@@ -1026,8 +1026,8 @@
         <image name="OK" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tLU-qy-vCB"/>
-        <segue reference="ccl-gD-TXR"/>
-        <segue reference="TUq-i5-GWQ"/>
+        <segue reference="G91-rJ-KL6"/>
+        <segue reference="Jy8-Qc-7jV"/>
+        <segue reference="5z5-ZW-2HL"/>
     </inferredMetricsTieBreakers>
 </document>

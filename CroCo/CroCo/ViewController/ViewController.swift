@@ -13,23 +13,20 @@ import CoreLocation
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
+    //    MARK: Outlets
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
+    @IBOutlet weak var producersListHomePageTableView: UITableView!
+    @IBOutlet weak var homeTabBar: UITabBar!
+    
+    //    Global Variables
     
     let locationManager = CLLocationManager()
     let activityIndicator = UIActivityIndicatorView()
-    
-    @IBOutlet weak var producersListHomePageTableView: UITableView! 
-    
-    @IBOutlet weak var homeTabBar: UITabBar!
-    
+    // index of which cell pressed index 1 = producer 1 ??? index 0 = producer 1 (comment ward)
     var myIndex = 0
-    // index of which cell pressed index 1 = producer 1
-    
     private var producers: [Producer] = []
-    
-    
     var searchCityName: String? {
         didSet {
             producers.removeAll()
@@ -40,16 +37,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     //    var currentLocation: CLLocation!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Mark: Info Producers
         
-        let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
+        let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
         let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
         let mammothCrops = [Crop(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.Kg, quantity: Quantity._20, cost: 22, amountOfCropPortionsAvailable: 2000)]
         
@@ -63,6 +57,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let adressWard = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter)
         let infoWard = Contact(name: wardName, address: adressWard, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let wardCrops = [Crop(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 22, amountOfCropPortionsAvailable: 100)]
+        
         // Mark: Producers
         
         let ward: Producer = Producer(companyName: "VeltWinkel", contact: infoWard, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, crops: wardCrops)
@@ -71,19 +66,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.749713, longitude: 4.347011), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
         
-//        add(mammothProducer)
-//        add(bertramProducer)
-        
-        //        producers += [mammothProducer, bertramProducer]
-        
-        //        producers.append(Producer(companyName: "Hey", contact: Contact(name: Name(firstName: "IZ", lastName: "ME"), address: Address(streetName: "somestreet", streetNumber: "30", postalCode: "3001", place: Place.oudHeverlee), telephoneNumber: "Not gonna give you that", emailAddress: "nor this"), companyImage: "lol", location: (locationManager.location?.coordinate)!, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: Date(), pickUpHours: Date(), validation: 5))
-        
-        //        ward.location = (locationManager.location?.coordinate)!
-        
         producers.append(mammothProducer)
         producers.append(bertramProducer)
         producers.append(ward)
 
+        // MARK: location and map
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -118,20 +105,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
 //            destinationViewController.producers = producers
 //        }
 //    }
+    //    MARK: in order to pass the selected producer
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         myIndex = indexPath.row
         performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
+    
     // adding to producers
     
     func add(_ producer: Producer){
-        
         producers.append(producer)
     }
-    
-    // MARK: end content made by louis
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -207,7 +192,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        
         performSegue(withIdentifier: "initiateInfoVC", sender: producers[indexPath.row])
     }
     
@@ -265,12 +249,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "shoppingCartSegue" {
-//            if let destinationVC = segue.destination as? ShoppingCartViewController {
-//                if let producer = sender as? ProducersTableViewCell {
-//                    destinationVC.producers = producers[myIndex]
-//                }
-//            }
         if segue.identifier == "shoppingCartSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? ProducersTableViewCell {
