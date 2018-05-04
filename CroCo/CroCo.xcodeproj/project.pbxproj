@@ -15,6 +15,7 @@
 		1502AC772090B5B800EBF16C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC762090B5B700EBF16C /* user.swift */; };
 		150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFC2091F1A2002BBA8F /* Quantities.swift */; };
 		150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */; };
+		157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
 		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
 		D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52E92093496300DA9537 /* loginViewController.swift */; };
@@ -43,6 +44,7 @@
 		1502AC762090B5B700EBF16C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		150FBFFC2091F1A2002BBA8F /* Quantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantities.swift; sourceTree = "<group>"; };
 		150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
+		157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
 		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
@@ -83,6 +85,7 @@
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
 				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
+				157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */,
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
 				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
@@ -101,9 +104,9 @@
 				1502AC722090B55B00EBF16C /* FoodTypes.swift */,
 				FB52C53520909FE2004728A7 /* MainProduce.swift */,
 				FB52C5372090A1FF004728A7 /* Producer.swift */,
-				1502AC742090B57200EBF16C /* Crops.swift */,
-				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
 				1502AC762090B5B700EBF16C /* user.swift */,
+				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
+				1502AC742090B57200EBF16C /* Crops.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
 				150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */,
 				1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */,
+				157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */,
 				D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */,
 				1502AC6E2090B12300EBF16C /* ShoppingCartViewController.swift in Sources */,
 				FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */,
@@ -449,7 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3V77329U3X;
 				INFOPLIST_FILE = CroCo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,7 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3V77329U3X;
 				INFOPLIST_FILE = CroCo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

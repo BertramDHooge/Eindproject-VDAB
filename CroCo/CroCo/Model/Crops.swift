@@ -10,7 +10,10 @@ import Foundation
 
 
 struct Crop {
-    var cropName: FoodTypes
+    var cropType: FoodTypes
+    var cropName: FoodName
+    var quantityTypes: QuantityTypes
     var quantity: Quantity
     var cost: Double
+    var amountOfCropPortionsAvailable: String
 }

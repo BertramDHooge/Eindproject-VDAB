@@ -7,29 +7,38 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     
-    let arrayOfProducersCrop: [Crop] = []
+//    var arrayOfProducers: [Producer] = []
+    
+    var arrayOfProducerCrops: Producer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+
+
 
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfProducersCrop.count
+        return arrayOfProducerCrops!.crops.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let producersCrop = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
-        let crop = arrayOfProducersCrop[indexPath.row]
+        let producersCropCell = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
+        let crop = arrayOfProducerCrops!.crops[indexPath.row]
+        if let producersCropCell = producersCropCell as? CropTableViewCell {
+            producersCropCell.crop = crop
+        }
         // Configure the ...
         
-        return producersCrop
+        return producersCropCell
     }
  
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
@@ -41,7 +50,6 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

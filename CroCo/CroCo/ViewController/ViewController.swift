@@ -24,7 +24,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     @IBOutlet weak var homeTabBar: UITabBar!
     
-    private let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: "23", postalCode: "3118", place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+    var myIndex = 0
+    // index of which cell pressed index 1 = producer 1
     
     private var producers: [Producer] = []
     
@@ -39,12 +40,40 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     //    var currentLocation: CLLocation!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        producers.append(Producer(companyName: "Hey", contact: Contact(name: Name(firstName: "IZ", lastName: "ME"), address: Address(streetName: "somestreet", streetNumber: "30", postalCode: "3001", place: Place.oudHeverlee), telephoneNumber: "Not gonna give you that", emailAddress: "nor this"), companyImage: "lol", location: (locationManager.location?.coordinate)!, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: Date(), pickUpHours: Date(), validation: 5))
         
-//        ward.location = (locationManager.location?.coordinate)!
+        // Mark: Info Producers
+        
+        let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
+        let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
+        let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
+        let mammothCrops = [Crop(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.Kg, quantity: Quantity._20, cost: 22, amountOfCropPortionsAvailable: "2000")]
+        
+        let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
+        let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: Place.leuven)
+        let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
+        let bertramCrops = [Crop(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 100, amountOfCropPortionsAvailable: "1")]
+        
+        // Mark: Producers
+        
+        //        let ward: Producer = Producer(companyName: "VeltWinkel", contact: Contact(name: Name(firstName: "Ward", lastName: "Janssen"), address: Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter), telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com"), companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5)
+        
+        let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.748273, longitude: 4.346720), delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: mammothCrops)
+        
+        let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.749713, longitude: 4.347011), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
+        
+        add(mammothProducer)
+        add(bertramProducer)
+        
+        //        producers += [mammothProducer, bertramProducer]
+        
+        //        producers.append(Producer(companyName: "Hey", contact: Contact(name: Name(firstName: "IZ", lastName: "ME"), address: Address(streetName: "somestreet", streetNumber: "30", postalCode: "3001", place: Place.oudHeverlee), telephoneNumber: "Not gonna give you that", emailAddress: "nor this"), companyImage: "lol", location: (locationManager.location?.coordinate)!, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: Date(), pickUpHours: Date(), validation: 5))
+        
+        //        ward.location = (locationManager.location?.coordinate)!
         
         producers.append(ward)
         
@@ -59,7 +88,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             let pin = AnnotationPin(with: producer)
             mapView.addAnnotation(pin)
         }
+        
+        // MARK: Made by Louis for shopping cart table view, please do not delete just put in "//"
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "producerCropsListSegue", sender: ProducersTableViewCell.self)
+    }
+    // adding to producers
+    
+    func add(_ producer: Producer){
+        producers += [producer]
+    }
+    
+    // MARK: end content made by louis
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,7 +112,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
-        }else if let pinAnnotation = annotation as? AnnotationPin{
+        } else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
@@ -77,7 +120,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             annotationView.canShowCallout = true
             annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             return annotationView
-        }else {
+        } else {
             return nil
         }
     }
@@ -117,6 +160,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     
     //    MARK: tableView dataSource
+    //    func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 1
+    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return producers.count
@@ -170,7 +216,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    //  MARK: tableView Delegate
+    // MARK: tableView Delegate
     
     // MARK: IBAction
     
@@ -183,14 +229,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "initiateInfoVC"{
-            if let destinationVC = segue.destination as? ProducerInformationViewController{
+        if segue.identifier == "producerCropsListSegue"{
+            if let destinationVC = segue.destination as? ShoppingCartViewController{
                 if let producer = sender as? Producer{
-                    destinationVC.producer = producer
+                    destinationVC.arrayOfProducerCrops = producer
+                    if segue.identifier == "initiateInfoVC"{
+                        if let destinationVC = segue.destination as? ProducerInformationViewController{
+                            if let producer = sender as? Producer{
+                                destinationVC.producer = producer
+                            }
+                        }
+                    }
                 }
+                
             }
         }
     }
-    
 }
 
