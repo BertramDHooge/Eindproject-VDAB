@@ -84,6 +84,10 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="producerCellInfo" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-nf-7jJ" userLabel="ProducerCellInfoLabel">
                                                             <rect key="frame" x="100" y="0.0" width="72" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="72" id="hDF-hf-uPU"/>
+                                                                <constraint firstAttribute="height" constant="50" id="rGz-XE-Okb"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -108,10 +112,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="accessoryView" destination="Ca2-2i-Mhl" id="vhx-2u-MKy"/>
                                             <outlet property="adressLabel" destination="jQz-tP-nSy" id="teh-yx-0Xl"/>
                                             <outlet property="bikeDeliveryLabel" destination="HU6-Td-wSx" id="q1Y-Vm-inB"/>
-                                            <outlet property="producerHomeCellInfoLabel" destination="jaf-nf-7jJ" id="QVV-Og-LN2"/>
+                                            <outlet property="companyNameLabel" destination="jaf-nf-7jJ" id="16J-xS-Dgc"/>
                                             <segue destination="Ca2-fC-bed" kind="show" identifier="initiateInfoVC" trigger="accessoryAction" id="Bv9-8W-g2C"/>
                                             <segue destination="Dkt-Rj-oc0" kind="show" identifier="producerCropsListSegue" id="94E-hf-NEz"/>
                                         </connections>
@@ -168,13 +171,12 @@
                         <outlet property="homeTabBar" destination="J5a-VX-VDG" id="B8K-9P-6SM"/>
                         <outlet property="locationSearchField" destination="ANe-pm-2xo" id="R67-xg-Hwg"/>
                         <outlet property="mapView" destination="T7f-8v-Ogy" id="93O-34-ZYH"/>
-                        <outlet property="producerTableView" destination="Ca2-2i-Mhl" id="OrR-Oj-Hyh"/>
                         <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="Uek-Hs-LvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzb-KK-iqw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56.799999999999997" y="-106.59670164917542"/>
+            <point key="canvasLocation" x="-466" y="-311"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="eoR-81-vsw">
@@ -258,7 +260,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="r1N-TH-Eqa" kind="show" id="ctc-eK-UDf"/>
+                                            <segue destination="r1N-TH-Eqa" kind="show" identifier="order history" id="ctc-eK-UDf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="OcC-83-XEI" style="IBUITableViewCellStyleDefault" id="kwm-Ou-qS8" userLabel="Language">
@@ -312,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-Pk-RFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="-107"/>
+            <point key="canvasLocation" x="438" y="-312"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="GAd-Ay-qkT">
@@ -425,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY8-nx-teD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="-107"/>
+            <point key="canvasLocation" x="1071" y="457"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0gs-A0-1CB">
@@ -515,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kF-YU-jjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2338" y="-107"/>
+            <point key="canvasLocation" x="2522" y="938"/>
         </scene>
         <!--Order History Table View Controller-->
         <scene sceneID="pyt-3Y-8D5">
@@ -539,7 +541,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="uff-Or-2fX" detailTextLabel="GuO-iC-hsB" style="IBUITableViewCellStyleSubtitle" id="50t-nB-NkC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Producer History Cell" textLabel="uff-Or-2fX" detailTextLabel="GuO-iC-hsB" style="IBUITableViewCellStyleSubtitle" id="50t-nB-NkC">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="50t-nB-NkC" id="3XE-Vi-X6H">
@@ -572,7 +574,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKf-yd-n13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="663"/>
+            <point key="canvasLocation" x="284" y="457"/>
         </scene>
         <!--Producer Information View Controller Scene-->
         <scene sceneID="7wx-tX-lSD">
@@ -622,13 +624,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNP-hG-YIs">
-                                                    <rect key="frame" x="15" y="11" width="88" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VC8-uh-1wr">
-                                                    <rect key="frame" x="15" y="40" width="345" height="119"/>
+                                                    <rect key="frame" x="20" y="40" width="345" height="119"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="VC8-uh-1wr" secondAttribute="height" multiplier="345:119" id="BXZ-bP-e9x"/>
@@ -639,7 +641,8 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XNP-hG-YIs" firstAttribute="leading" secondItem="Ou4-ob-rp8" secondAttribute="leading" constant="15" id="3eU-K3-fuF"/>
+                                                <constraint firstItem="XNP-hG-YIs" firstAttribute="leading" secondItem="Ou4-ob-rp8" secondAttribute="leading" constant="20" symbolic="YES" id="3eU-K3-fuF"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XNP-hG-YIs" secondAttribute="trailing" constant="20" symbolic="YES" id="LKJ-d3-Pb7"/>
                                                 <constraint firstItem="VC8-uh-1wr" firstAttribute="top" secondItem="XNP-hG-YIs" secondAttribute="bottom" constant="8" id="Xh4-lK-0Fd"/>
                                                 <constraint firstItem="XNP-hG-YIs" firstAttribute="width" secondItem="Ou4-ob-rp8" secondAttribute="height" multiplier="88:169" id="lhG-g8-brT"/>
                                                 <constraint firstItem="VC8-uh-1wr" firstAttribute="leading" secondItem="XNP-hG-YIs" secondAttribute="leading" id="q3o-Hx-CAO"/>
@@ -826,7 +829,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHN-XC-rP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="663"/>
+            <point key="canvasLocation" x="-497" y="462"/>
         </scene>
         <!--Shopping Cart View Controller Scene-->
         <scene sceneID="3Qd-N6-ALk">
@@ -949,7 +952,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="gpa-C9-mWT">
-                                        <barButtonItem key="leftBarButtonItem" title="Buy" id="axj-NO-cUs"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Buy" id="axj-NO-cUs">
+                                            <connections>
+                                                <segue destination="DNw-OF-dkx" kind="show" id="Jy8-Qc-7jV"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1033,7 +1040,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-914.39999999999998" y="662.51874062968523"/>
+            <point key="canvasLocation" x="-1319" y="462"/>
         </scene>
     </scenes>
     <resources>
@@ -1045,7 +1052,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="G91-rJ-KL6"/>
-        <segue reference="ccl-gD-TXR"/>
+        <segue reference="Jy8-Qc-7jV"/>
         <segue reference="5z5-ZW-2HL"/>
     </inferredMetricsTieBreakers>
 </document>
