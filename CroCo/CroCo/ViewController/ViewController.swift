@@ -102,7 +102,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        performSegue(withIdentifier: "producerCropsListSegue", sender: ProducersTableViewCell.self)
+        performSegue(withIdentifier: "shoppingCartSegue", sender: ProducersTableViewCell.self)
     }
     // adding to producers
     
@@ -180,6 +180,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
         let producer = producers[indexPath.row]
         producerCell.producer = producer
+        producerCell.adressLabel.text = producer.contact.address.fullAdress
+        producerCell.companyNameLabel.text = producer.companyName
         return producerCell
     }
     
@@ -237,7 +239,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "producerCropsListSegue" {
+        if segue.identifier == "shoppingCartSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? Producer {
                     destinationVC.arrayOfProducerCrops = producer

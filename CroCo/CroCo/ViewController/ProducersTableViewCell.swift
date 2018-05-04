@@ -15,7 +15,7 @@ class ProducersTableViewCell: UITableViewCell {
     
 
     @IBOutlet weak var bikeDeliveryLabel: UILabel!
-    @IBOutlet weak var CompanyName: UILabel!
+    @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
     
     
@@ -42,7 +42,7 @@ class ProducersTableViewCell: UITableViewCell {
         } else {
             return
         }
-        CompanyName.text = producer.companyName ?? producer.contact.name.firstName
+        companyNameLabel.text = producer.companyName ?? producer.contact.name.firstName
         adressLabel.text = producer.contact.address.fullAdress
     }
 }
