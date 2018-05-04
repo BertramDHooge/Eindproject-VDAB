@@ -759,76 +759,61 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbn-FS-FDA">
-                                                    <rect key="frame" x="15" y="11" width="11" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbn-FS-FDA">
+                                                    <rect key="frame" x="15" y="11" width="10.5" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwJ-cG-Hfi">
-                                                    <rect key="frame" x="45" y="3" width="171" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Crop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwJ-cG-Hfi">
+                                                    <rect key="frame" x="34" y="0.0" width="207" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kilo/ price per portion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAS-n4-n9w">
-                                                    <rect key="frame" x="45" y="23" width="133.5" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-Sf-cVl">
-                                                    <rect key="frame" x="224" y="11" width="30" height="22"/>
-                                                    <state key="normal" title="+"/>
-                                                    <connections>
-                                                        <action selector="addPortionButtonPressed:" destination="hKy-dD-0ae" eventType="touchUpInside" id="Pv7-oB-kNb"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-aj-TuR">
-                                                    <rect key="frame" x="262" y="11" width="30" height="22"/>
-                                                    <state key="normal" title="-"/>
-                                                    <connections>
-                                                        <action selector="removePortionButtonPressed:" destination="hKy-dD-0ae" eventType="touchUpInside" id="Ob2-5R-GTv"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90Y-ha-gWc">
-                                                    <rect key="frame" x="300" y="14" width="20" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="kilo/ price per portion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAS-n4-n9w">
+                                                    <rect key="frame" x="34" y="23" width="207" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-4B-iru">
-                                                    <rect key="frame" x="328" y="14" width="38" height="14"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-Sf-cVl">
+                                                    <rect key="frame" x="249" y="0.0" width="30" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addPortionButtonPressed:" destination="hKy-dD-0ae" eventType="touchUpInside" id="Pv7-oB-kNb"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90Y-ha-gWc">
+                                                    <rect key="frame" x="312.5" y="15" width="7.5" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Porties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-4B-iru">
+                                                    <rect key="frame" x="328" y="15" width="38" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-aj-TuR">
+                                                    <rect key="frame" x="274" y="0.0" width="30" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <state key="normal" title="-"/>
+                                                    <connections>
+                                                        <action selector="removePortionButtonPressed:" destination="hKy-dD-0ae" eventType="touchUpInside" id="Ob2-5R-GTv"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="mwJ-cG-Hfi" firstAttribute="leading" secondItem="jbn-FS-FDA" secondAttribute="trailing" constant="19" id="7fO-VD-jhi"/>
-                                                <constraint firstItem="pAS-n4-n9w" firstAttribute="top" secondItem="mwJ-cG-Hfi" secondAttribute="bottom" constant="3" id="EfX-Bn-Oqx"/>
-                                                <constraint firstItem="PsJ-aj-TuR" firstAttribute="leading" secondItem="uhv-Sf-cVl" secondAttribute="trailing" constant="8" id="S5N-NK-1mA"/>
-                                                <constraint firstItem="uhv-Sf-cVl" firstAttribute="leading" secondItem="pAS-n4-n9w" secondAttribute="trailing" constant="45.5" id="atO-Vy-gHD"/>
-                                                <constraint firstItem="pAS-n4-n9w" firstAttribute="leading" secondItem="jbn-FS-FDA" secondAttribute="trailing" constant="19" id="dmZ-Xk-gpq"/>
-                                                <constraint firstItem="HLh-4B-iru" firstAttribute="leading" secondItem="PsJ-aj-TuR" secondAttribute="trailing" constant="36" id="g2u-co-w70"/>
-                                                <constraint firstItem="uhv-Sf-cVl" firstAttribute="leading" secondItem="mwJ-cG-Hfi" secondAttribute="trailing" constant="8" id="yUD-y1-18O"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="jbn-FS-FDA" firstAttribute="top" secondItem="hKy-dD-0ae" secondAttribute="top" constant="11" id="75A-ic-GpH"/>
-                                            <constraint firstAttribute="bottom" secondItem="pAS-n4-n9w" secondAttribute="bottom" constant="1" id="7vj-7X-aah"/>
-                                            <constraint firstItem="jbn-FS-FDA" firstAttribute="leading" secondItem="hKy-dD-0ae" secondAttribute="leading" constant="15" id="Fuj-Cd-iUF"/>
-                                            <constraint firstAttribute="bottom" secondItem="uhv-Sf-cVl" secondAttribute="bottom" constant="11" id="Gtd-Lc-2n4"/>
-                                            <constraint firstItem="HLh-4B-iru" firstAttribute="top" secondItem="hKy-dD-0ae" secondAttribute="top" constant="14" id="Mi5-z5-tGk"/>
-                                            <constraint firstAttribute="bottom" secondItem="PsJ-aj-TuR" secondAttribute="bottom" constant="11" id="Nye-f6-iXQ"/>
-                                            <constraint firstItem="PsJ-aj-TuR" firstAttribute="top" secondItem="hKy-dD-0ae" secondAttribute="top" constant="11" id="bBW-9d-e7s"/>
-                                            <constraint firstItem="mwJ-cG-Hfi" firstAttribute="top" secondItem="hKy-dD-0ae" secondAttribute="top" constant="3" id="gMY-gS-bVj"/>
-                                            <constraint firstItem="uhv-Sf-cVl" firstAttribute="top" secondItem="hKy-dD-0ae" secondAttribute="top" constant="11" id="lVL-aQ-a58"/>
-                                            <constraint firstAttribute="bottom" secondItem="jbn-FS-FDA" secondAttribute="bottom" constant="12" id="nyr-sS-cPX"/>
-                                            <constraint firstAttribute="trailing" secondItem="HLh-4B-iru" secondAttribute="trailing" constant="9" id="wTb-f1-th6"/>
-                                            <constraint firstAttribute="bottom" secondItem="HLh-4B-iru" secondAttribute="bottom" constant="16" id="zTM-hh-grE"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="addPortionButton" destination="uhv-Sf-cVl" id="ykr-yz-YCg"/>
                                             <outlet property="cropNameLabel" destination="mwJ-cG-Hfi" id="NlR-ER-UbT"/>
@@ -945,7 +930,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2e-ia-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="872"/>
+            <point key="canvasLocation" x="-900" y="871.21439280359823"/>
         </scene>
     </scenes>
     <resources>
@@ -955,8 +940,8 @@
         <image name="OK" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
+        <segue reference="G91-rJ-KL6"/>
         <segue reference="ccl-gD-TXR"/>
-        <segue reference="YJD-cW-5RD"/>
+        <segue reference="5z5-ZW-2HL"/>
     </inferredMetricsTieBreakers>
 </document>

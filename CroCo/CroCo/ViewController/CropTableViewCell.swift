@@ -30,23 +30,30 @@ class CropTableViewCell: UITableViewCell {
         if portions == 0 {
             removePortionButton.isEnabled = true
             portions += 1
+            updateCrops()
         } else {
             portions += 1
+            crop!.amountOfCropPortionsAvailable -= 1
+            updateCrops()
+
+
         }
     }
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
+        updateCrops()
         if portions == 0 {
             removePortionButton.isEnabled = false
             portions = 0
             //alert
         } else {
             portions -= 1
+            crop!.amountOfCropPortionsAvailable += 1
         }
     }
     
     private func updateCrops(){
         guard let crop = crop else {return}
-        numberOfCropPortionsAvailableLabel.text = crop.amountOfCropPortionsAvailable
+        numberOfCropPortionsAvailableLabel.text = String(crop.amountOfCropPortionsAvailable)
         pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. \(crop.cost) per portie."
         cropNameLabel.text = crop.cropName.rawValue
         numberOfPortions.text = "\(portions)"
