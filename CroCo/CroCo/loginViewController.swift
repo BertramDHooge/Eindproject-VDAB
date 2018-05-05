@@ -23,16 +23,18 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         emailAddressTextField.becomeFirstResponder()
     }
-    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - IBActions
+    
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func login(_ sender: UIButton) {
         // Checking the input
@@ -46,7 +48,6 @@ class LoginViewController: UIViewController {
                 
                 return
         }
-        
         // Login at Firebase
         
         Auth.auth().signIn(withEmail: emailAddress, password: password) { (user, error) in
@@ -58,7 +59,6 @@ class LoginViewController: UIViewController {
                 
                 return
             }
-            
             // Verify email address
             guard let currentUser = user, currentUser.isEmailVerified else {
                 let alertController = UIAlertController(title: "Email niet bevestigd", message: "We stuurden u een bevestigingslink. Indien je opnieuw een link wil ontvangen klik op", preferredStyle: .alert)
@@ -73,29 +73,21 @@ class LoginViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            
             // Dismiss keyboard
             self.view.endEditing(true)
             
             // Perform segue
-           
         }
         let alertController = UIAlertController(title: "Bedankt voor uw bestelling", message: "Uw bestelling kan worden afgehaald of gebracht op het afgesproken tijdstip", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+            self.present(nextViewController, animated: true, completion: nil)
+        })
         alertController.addAction(okAction)
-        
-        
+        self.present(alertController, animated: true)
+    
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
