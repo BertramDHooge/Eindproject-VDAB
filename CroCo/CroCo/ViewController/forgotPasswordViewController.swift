@@ -13,14 +13,39 @@ class forgotPasswordViewController: UIViewController {
 
     //    MARK: my outlets
     
-    @IBOutlet weak var passwordTextFielkd: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
         //  MARK: my actions
     
     @IBAction func resetPasswordButton(_ sender: UIButton) {
-        Auth.auth().sendPasswordReset(withEmail: "email@email") { error in
-            // Your code here
+        if let email = passwordTextField.text, passwordTextField.text != "" {
+            Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+                    if error != nil {
+                        
+                        // Error - Unidentified Email
+                    
+                        
+                        let alertController = UIAlertController(title: "Emailadress onbekend", message: "Gelieve uw Email adres in te geven waarmee je met SLA hebt aangemeld", preferredStyle: .alert)
+                        
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        
+                    } else {
+                        
+                        // Success - Sends recovery email
+                        
+                        let alertController = UIAlertController(title: "Email verzonden", message: "Kijk naar uw inbox Email om paswoord te vernieuwen", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            
+                            self.dismiss(animated: true, completion: nil)
+                        }))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    
+                })
+            
+            
         }
+
     }
     
     
