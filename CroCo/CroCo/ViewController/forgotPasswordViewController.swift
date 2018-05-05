@@ -17,23 +17,26 @@ class forgotPasswordViewController: UIViewController {
     
         //  MARK: my actions
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "back to login", sender: UIBarButtonItem.self)
+    }
     @IBAction func passwordResetButton(_ sender: UIButton) {
         if let email = passwordTextField.text, passwordTextField.text != "" {
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-                if error != nil {
-                    let alertController = UIAlertController(title: "Email verzonden", message: "Kijk naar uw inbox Email om paswoord te vernieuwen", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                        self.present(alertController, animated: true, completion: nil)
-                        
-                    }))
+                if let error = error {
+                    let alertController = UIAlertController(title: "Email verzonden", message: error.localizedDescription, preferredStyle: .alert)
+                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okayAction)
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                    self.present(nextViewController, animated: true, completion: nil)
+                    
                 } else {
                     let alertController = UIAlertController(title: "Emailadress onbekend", message: "Gelieve uw Email adres in te geven waarmee je met SLA hebt aangemeld", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                    
+                    return
+//                    self.present(alertController, animated: true, completion: nil)
                 }
-                
             })
         }
     }

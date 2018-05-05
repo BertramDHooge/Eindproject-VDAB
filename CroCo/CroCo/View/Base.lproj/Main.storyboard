@@ -1036,7 +1036,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Reset password" id="ChX-Ap-BwP">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="K8X-aQ-6WM"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="K8X-aQ-6WM">
+                                            <connections>
+                                                <action selector="cancel:" destination="ZnB-RO-S5p" id="JZ4-vw-j1V"/>
+                                                <segue destination="DNw-OF-dkx" kind="show" identifier="back to login" id="V5l-RH-wab"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1059,6 +1064,9 @@
                                         <state key="normal" title="Reset password">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="passwordResetButton:" destination="ZnB-RO-S5p" eventType="touchUpInside" id="Dy3-gL-LUE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1084,7 +1092,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Bv9-8W-g2C"/>
-        <segue reference="Jy8-Qc-7jV"/>
+        <segue reference="V5l-RH-wab"/>
         <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>
