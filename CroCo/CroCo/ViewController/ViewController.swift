@@ -11,14 +11,14 @@ import MapKit
 import CoreLocation
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDataSourcePrefetching {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     //    MARK: prefetching data
     
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        <#code#>
-    }
-    weak open var prefetchDataSource: UITableViewDataSourcePrefetching?
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//        <#code#>
+//    }
+//    weak open var prefetchDataSource: UITableViewDataSourcePrefetching?
     
     
     //    MARK: Outlets
@@ -119,7 +119,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        tableView.prefetchDataSource = self
+//        tableView.prefetchDataSource = self
         performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
     
