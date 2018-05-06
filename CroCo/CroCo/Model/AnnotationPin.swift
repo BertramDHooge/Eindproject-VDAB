@@ -28,7 +28,8 @@ class AnnotationPin: NSObject, MKAnnotation {
     }
     
     var coordinate: CLLocationCoordinate2D {
-        return producer.location
+        return CLLocationCoordinate2D(latitude: producer.location.coordinate.latitude, longitude: producer.location.coordinate.longitude)
+        
     }
     
     var annotationColor: UIColor {

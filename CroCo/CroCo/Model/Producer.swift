@@ -25,7 +25,7 @@ class Producer {
         }
     }
     
-    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocationCoordinate2D, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, crops: [Crop]) {
+    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocation, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, crops: [Crop]) {
         self.companyName = companyName
         self.contact = contact
         self.companyImage = companyImage
@@ -37,12 +37,9 @@ class Producer {
         self.validation = validation
         self.crops = crops
     }
-    convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce, crop: [Crop]) {
+    convenience init(contact: Contact, location: CLLocation, mainProduce: MainProduce, crop: [Crop]) {
         self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: crop)
         
-    func distanceToStartInMeters(_startLocation: CLLocation)->Double {
-            
-        }
         
 //        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
     }

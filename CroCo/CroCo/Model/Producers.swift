@@ -13,17 +13,9 @@ class Producers {
     private var producers: [Producer]?
     var deliveryLocation: CLLocation?
     
-    private func sortProducersByDistanceToStartLocation(destinationProducerCrop: CLLocation)->[Producer] {
-//        var producersSortedByCropDestinationCrop = self.producers!.sorted {(producer1,producer2) in producer1.location.distance(from: destinationProducerCrop) < producer2.location.distance(from: destinationProducerCrop))
-//            
-//        
-////        (by: { $0.location.distance(from: destinationProducerCrop) < $1.location.distance(from: destinationProducerCrop) })
-//        return producersSortedByCropDestinationCrop
-//}
-        if let producers = producers {
-            return producers.sorted(by: { (producer1, producer2) -> Bool in (producer1.location.distance(from: self.deliveryLocation!)) <= (producer2.location.distance(from: self.deliveryLocation!))
-            })
-            
-        }
-}
+//    private func sortProducersByDistanceToStartLocation(destinationProducerCrop: CLLocation)->[Producer] {
+//        guard let producers = producers else {return []}
+//        return producers.sorted(by: {(producer1, producer2) -> Bool in (producer1).location.distance(from: self.deliveryLocation!) <                                        (producer2).location.distance(from: self.deliveryLocation!))
+//        }
+//    }
 }
