@@ -12,6 +12,15 @@ import CoreLocation
 
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    //   protocol nog invoegen: UITableViewDataSourcePrefetching
+    
+    //    MARK: prefetching data
+    
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//        <#code#>
+//    }
+//    weak open var prefetchDataSource: UITableViewDataSourcePrefetching?
+    
     
     //    MARK: Outlets
     
@@ -40,35 +49,40 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
+        
         // Mark: Info Producers
         
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
+        let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
         let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
         let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
         let mammothCrops = [Crop(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.Kg, quantity: Quantity._20, cost: 22, amountOfCropPortionsAvailable: 2000)]
         
         let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
+        let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
         let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: Place.leuven)
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let bertramCrops = [Crop(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 100, amountOfCropPortionsAvailable: 8)]
         
         
-        let wardName = Name(firstName: "Ward", lastName: "Janssen")
-        let adressWard = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter)
-        let infoWard = Contact(name: wardName, address: adressWard, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let wardCrops = [Crop(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 22, amountOfCropPortionsAvailable: 100)]
+        let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
+        let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
+        let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter)
+        let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
+        let veltWinkelCrops = [Crop(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 22, amountOfCropPortionsAvailable: 100)]
         
         // Mark: Producers
         
-        let ward: Producer = Producer(companyName: "VeltWinkel", contact: infoWard, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.98, longitude: 4.75), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, crops: wardCrops)
+        let VeltWinkelProducer: Producer = Producer(companyName: "VeltWinkel", contact: veltWinkelInfo, companyImage: nil, location:locationVeltWinkel, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, crops: veltWinkelCrops)
         
-        let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.748273, longitude: 4.346720), delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: mammothCrops)
+        let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: mammothCrops)
         
-        let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: CLLocationCoordinate2D(latitude: 50.749713, longitude: 4.347011), delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
+        let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
         
         producers.append(mammothProducer)
         producers.append(bertramProducer)
-        producers.append(ward)
+        producers.append(VeltWinkelProducer)
 
         // MARK: location and map
         
@@ -109,8 +123,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
+//        tableView.prefetchDataSource = self
         performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
+    
     
     // adding to producers
     
@@ -183,11 +199,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) as! ProducersTableViewCell
+        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) 
         let producer = producers[indexPath.row]
-        producerCell.producer = producer
-        producerCell.adressLabel.text = producer.contact.address.fullAdress
-        producerCell.companyNameLabel.text = producer.companyName
+        if let producerCell = producerCell as? ProducersTableViewCell {
+            producerCell.producer = producer
+            producerCell.adressLabel.text = producer.contact.address.fullAdress
+            producerCell.companyNameLabel.text = producer.companyName
+        }
+        producerCell.backgroundColor = .clear
         return producerCell
     }
     
@@ -237,6 +256,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     // MARK: tableView Delegate
+    
+    
     
     // MARK: IBAction
     
