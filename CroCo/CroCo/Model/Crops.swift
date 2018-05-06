@@ -8,6 +8,7 @@
 
 import Foundation
 
+// ik denk dat we best een file crops maken waarin een array van crop in zit - Ward
 
 struct Crop {
     var cropType: FoodTypes

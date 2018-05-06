@@ -8,7 +8,9 @@ class Producer {
     let companyName: String?
     let contact: Contact
     var companyImage: String? = nil
-    var location: CLLocationCoordinate2D
+//    var location: CLLocationCoordinate2D
+//    type CLLocation heeft methode distance
+    var location: CLLocation
     var delivery: Bool
     let mainProduce: MainProduce
     let deliveryHours: Date?
@@ -37,6 +39,10 @@ class Producer {
     }
     convenience init(contact: Contact, location: CLLocationCoordinate2D, mainProduce: MainProduce, crop: [Crop]) {
         self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: crop)
+        
+    func distanceToStartInMeters(_startLocation: CLLocation)->Double {
+            
+        }
         
 //        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
     }
