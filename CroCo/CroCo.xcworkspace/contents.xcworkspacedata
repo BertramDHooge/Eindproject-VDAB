@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/wardjanssen/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Eindproject-VDAB/CroCo/CroCo/ViewController/addProducerViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:CroCo.xcodeproj">
    </FileRef>
    <FileRef
