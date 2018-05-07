@@ -16,7 +16,6 @@
 		150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFC2091F1A2002BBA8F /* Quantities.swift */; };
 		150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */; };
 		157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */; };
-		157B15C620A04F1500C94E21 /* addProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C520A04F1500C94E21 /* addProducerViewController.swift */; };
 		36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */; };
 		36007666209EDCA6007EEDD2 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007665209EDCA6007EEDD2 /* Producers.swift */; };
 		3600766C209F6EC3007EEDD2 /* AddProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */; };
@@ -26,7 +25,6 @@
 		D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52EB2093530000DA9537 /* CreateViewController.swift */; };
 		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
-		FB44120F20A0576100EFECD4 /* addProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44120E20A0576100EFECD4 /* addProducerViewController.swift */; };
 		FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44121020A05C4700EFECD4 /* Extensions.swift */; };
 		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
 		FB473845208F08E900DCE76A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* HomeViewController.swift */; };
@@ -51,7 +49,7 @@
 		150FBFFC2091F1A2002BBA8F /* Quantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantities.swift; sourceTree = "<group>"; };
 		150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
 		157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
-		157B15C520A04F1500C94E21 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = ../../../../../../.Trash/addProducerViewController.swift; sourceTree = "<group>"; };
+		157B15C520A04F1500C94E21 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = /.Trash/addProducerViewController.swift; sourceTree = "<absolute>"; };
 		36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
 		36007665209EDCA6007EEDD2 /* Producers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producers.swift; sourceTree = "<group>"; };
 		3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProducerViewController.swift; path = "/Users/ward/Documents/GitHub/Eindproject-VDAB/CroCo/CroCo/ViewController/AddProducerViewController.swift"; sourceTree = "<absolute>"; };
@@ -62,7 +60,6 @@
 		D37E52E92093496300DA9537 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginViewController.swift; path = ../loginViewController.swift; sourceTree = "<group>"; };
 		D37E52EB2093530000DA9537 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
-		FB44120E20A0576100EFECD4 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = ../../../../../.Trash/addProducerViewController.swift; sourceTree = "<group>"; };
 		FB44121020A05C4700EFECD4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +140,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D3E9DA0820A0981F003EE907 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				157B15C520A04F1500C94E21 /* addProducerViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		D92882088FB55D4A50C56E38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +163,7 @@
 				FB473840208F08E900DCE76A /* Products */,
 				453ABCBAE29A1430C1A68B4B /* Pods */,
 				D92882088FB55D4A50C56E38 /* Frameworks */,
+				D3E9DA0820A0981F003EE907 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,7 +324,6 @@
 				1502AC752090B57200EBF16C /* Crops.swift in Sources */,
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
-				157B15C620A04F1500C94E21 /* addProducerViewController.swift in Sources */,
 				36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */,
 				FB893F802099F58D00B35505 /* ProducerInfoTableViewCell.swift in Sources */,
 				FB893F822099F9FD00B35505 /* DeliveryInfoTableViewCell.swift in Sources */,
