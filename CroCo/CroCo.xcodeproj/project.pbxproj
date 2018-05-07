@@ -100,6 +100,9 @@
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
 				36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
+				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
+				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
+				FB893F7F2099F58D00B35505 /* ProducerInfoTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -126,17 +129,6 @@
 				FB473846208F08E900DCE76A /* Main.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		157A488220A0405600DFFBE5 /* ViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
-				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
-				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
-				FB893F7F2099F58D00B35505 /* ProducerInfoTableViewCell.swift */,
-			);
-			path = ViewCell;
 			sourceTree = "<group>";
 		};
 		453ABCBAE29A1430C1A68B4B /* Pods */ = {
@@ -178,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */,
-				157A488220A0405600DFFBE5 /* ViewCell */,
 				1502AC712090B2EF00EBF16C /* Model */,
 				1502AC6C2090B0EB00EBF16C /* ViewController */,
 				150FC0002091F821002BBA8F /* View */,

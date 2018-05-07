@@ -79,7 +79,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
         let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter)
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let veltWinkelCrops = [Crop(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 22, amountOfCropPortionsAvailable: 100), Crop(cropType: FoodTypes.vegetable, cropName: FoodName.peas, quantityTypes: QuantityTypes.grams, quantity: Quantity._100, cost: 5, amountOfCropPortionsAvailable: 50), Crop(cropType: FoodTypes.meat, cropName: FoodName.deer, quantityTypes: QuantityTypes.Kg, quantity: Quantity._2, cost: 30, amountOfCropPortionsAvailable: 20)]
+        let veltWinkelCrops = [Crop(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.Kg, quantity: Quantity._10, cost: 22, amountOfCropPortionsAvailable: 100)]
         
         // Mark: Producers
         
@@ -87,7 +87,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: mammothCrops)
         
-        let bertramProducer = Producer(companyName: "Truly Useless", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
+        let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: bertramCrops)
         
         producers.append(mammothProducer)
         producers.append(bertramProducer)
@@ -133,7 +133,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
 //        tableView.prefetchDataSource = self
-        performSegue(withIdentifier: "producerCropsListSegue", sender: self)
+        performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
     
     
@@ -279,7 +279,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "producerCropsListSegue" {
+        if segue.identifier == "shoppingCartSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? ProducersTableViewCell {
                     destinationVC.producers = producer.producer
