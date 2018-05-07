@@ -91,8 +91,11 @@
 			children = (
 				FB473844208F08E900DCE76A /* ViewController.swift */,
 				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
+<<<<<<< HEAD
 				D361A77F20A034F000E66B40 /* addProducerViewController.swift */,
 				3600766B209F6EC3007EEDD2 /* CroCo */,
+=======
+>>>>>>> parent of 53c2b6a... organizational changes
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
 				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,

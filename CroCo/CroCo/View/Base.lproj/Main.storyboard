@@ -15,7 +15,11 @@
         <!--Item-->
         <scene sceneID="UmB-Vx-ovq">
             <objects>
+<<<<<<< HEAD
                 <viewController id="3IX-iG-ebQ" customClass="addProducerViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
+=======
+                <viewController storyboardIdentifier="creatingProducerViewController" id="3IX-iG-ebQ" userLabel="creating Producer View Controller" customClass="AddProducerViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
+>>>>>>> parent of 53c2b6a... organizational changes
                     <view key="view" contentMode="scaleToFill" id="RA7-s5-rdK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
