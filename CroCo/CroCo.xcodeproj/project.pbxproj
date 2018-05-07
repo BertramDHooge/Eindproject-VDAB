@@ -11,12 +11,14 @@
 		1502AC6E2090B12300EBF16C /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */; };
 		1502AC702090B13E00EBF16C /* ProducerInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */; };
 		1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC722090B55B00EBF16C /* FoodTypes.swift */; };
-		1502AC752090B57200EBF16C /* Crops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC742090B57200EBF16C /* Crops.swift */; };
+		1502AC752090B57200EBF16C /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC742090B57200EBF16C /* Stock.swift */; };
 		1502AC772090B5B800EBF16C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC762090B5B700EBF16C /* user.swift */; };
 		150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFC2091F1A2002BBA8F /* Quantities.swift */; };
 		150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */; };
 		157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */; };
 		157B15C620A04F1500C94E21 /* addProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C520A04F1500C94E21 /* addProducerViewController.swift */; };
+		157B15C820A0805000C94E21 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C720A0805000C94E21 /* ShoppingCart.swift */; };
+		157B15CA20A086C300C94E21 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C920A086C300C94E21 /* Order.swift */; };
 		36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */; };
 		36007666209EDCA6007EEDD2 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007665209EDCA6007EEDD2 /* Producers.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
@@ -43,12 +45,14 @@
 		1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducerInformationViewController.swift; sourceTree = "<group>"; };
 		1502AC722090B55B00EBF16C /* FoodTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTypes.swift; sourceTree = "<group>"; };
-		1502AC742090B57200EBF16C /* Crops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crops.swift; sourceTree = "<group>"; };
+		1502AC742090B57200EBF16C /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		1502AC762090B5B700EBF16C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		150FBFFC2091F1A2002BBA8F /* Quantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantities.swift; sourceTree = "<group>"; };
 		150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
 		157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
 		157B15C520A04F1500C94E21 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = ../../../../../../.Trash/addProducerViewController.swift; sourceTree = "<group>"; };
+		157B15C720A0805000C94E21 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		157B15C920A086C300C94E21 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
 		36007665209EDCA6007EEDD2 /* Producers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producers.swift; sourceTree = "<group>"; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,10 +99,10 @@
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
 				157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */,
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
+				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
 				36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
 				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
-				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
 				FB893F7F2099F58D00B35505 /* ProducerInfoTableViewCell.swift */,
 			);
 			path = ViewController;
@@ -109,13 +113,15 @@
 			children = (
 				D325D55D2090BC1E00840DCD /* ContactInformation.swift */,
 				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
+				157B15C720A0805000C94E21 /* ShoppingCart.swift */,
+				1502AC762090B5B700EBF16C /* user.swift */,
+				36007665209EDCA6007EEDD2 /* Producers.swift */,
+				FB52C5372090A1FF004728A7 /* Producer.swift */,
 				1502AC722090B55B00EBF16C /* FoodTypes.swift */,
 				FB52C53520909FE2004728A7 /* MainProduce.swift */,
-				FB52C5372090A1FF004728A7 /* Producer.swift */,
-				36007665209EDCA6007EEDD2 /* Producers.swift */,
-				1502AC762090B5B700EBF16C /* user.swift */,
+				1502AC742090B57200EBF16C /* Stock.swift */,
+				157B15C920A086C300C94E21 /* Order.swift */,
 				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
-				1502AC742090B57200EBF16C /* Crops.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,11 +310,13 @@
 				D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */,
 				1502AC6E2090B12300EBF16C /* ShoppingCartViewController.swift in Sources */,
 				FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */,
+				157B15C820A0805000C94E21 /* ShoppingCart.swift in Sources */,
 				1502AC702090B13E00EBF16C /* ProducerInformationViewController.swift in Sources */,
 				1502AC6B2090AFDC00EBF16C /* SettingsTableViewController.swift in Sources */,
 				D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */,
 				FB52C5382090A1FF004728A7 /* Producer.swift in Sources */,
-				1502AC752090B57200EBF16C /* Crops.swift in Sources */,
+				157B15CA20A086C300C94E21 /* Order.swift in Sources */,
+				1502AC752090B57200EBF16C /* Stock.swift in Sources */,
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
 				157B15C620A04F1500C94E21 /* addProducerViewController.swift in Sources */,

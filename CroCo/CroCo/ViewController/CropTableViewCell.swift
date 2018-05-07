@@ -22,27 +22,31 @@ class CropTableViewCell: UITableViewCell {
     @IBOutlet weak var removePortionButton: UIButton!
     @IBOutlet weak var numberOfPortions: UILabel!
     
-    var crop: Crop? { didSet { updateCrops() }}
+    var crop: Stock? { didSet { updateCrops() }}
     
-    var portions = 0
+    var portions: Double = 0
 
     @IBAction func addPortionButtonPressed(_ sender: UIButton) {
         if portions == 0 {
             crop!.amountOfCropPortionsAvailable -= 1
             portions += 1
+            crop?.amountOfCropsSelected += 1
         } else {
             portions += 1
             crop!.amountOfCropPortionsAvailable -= 1
+            crop?.amountOfCropsSelected += 1
         }
         updateCrops()
     }
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
         if portions == 0 {
             portions = 0
+            crop?.amountOfCropsSelected -= 1
             //alert
         } else {
             portions -= 1
             crop!.amountOfCropPortionsAvailable += 1
+            crop?.amountOfCropsSelected -= 1
         }
         updateCrops()
     }
@@ -60,14 +64,17 @@ class CropTableViewCell: UITableViewCell {
         } else if portions == 0 {
             removePortionButton.isEnabled = false
         }
-        
+        shoppingCart!.TotalCost = portions * crop.sellingPrice
+        print(crop.totalCostOfCropsSelected)
         numberOfCropPortionsAvailableLabel.text = String(crop.amountOfCropPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. €\(crop.cost) per portie."
+        pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. €\(crop.sellingPrice) per portie."
         cropNameLabel.text = crop.cropName.rawValue
         numberOfPortions.text = "\(portions)"
     }
     
     private var producers: [Producer] = []
+    
+    private var shoppingCart: ShoppingCart?
     
     
     override func awakeFromNib() {
