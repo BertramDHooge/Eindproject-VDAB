@@ -232,7 +232,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         myIndex = indexPath.row
         //        tableView.prefetchDataSource = self
-        performSegue(withIdentifier: "shoppingCartSegue", sender: self)
+        performSegue(withIdentifier: "producerCropsListSegue", sender: self)
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -255,7 +255,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "shoppingCartSegue" {
+        if segue.identifier == "producerCropsListSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? ProducersTableViewCell {
                     destinationVC.producers = producer.producer
