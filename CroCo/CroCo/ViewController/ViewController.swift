@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import Firebase
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
     //   protocol nog invoegen: UITableViewDataSourcePrefetching
@@ -27,9 +27,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
     @IBOutlet weak var producersListHomePageTableView: UITableView!
+    
+    
     @IBOutlet weak var homeTabBar: UITabBar!
     
     //    Global Variables
+    private var rootReference: DatabaseReference?
+    
     
     let locationManager = CLLocationManager()
     let activityIndicator = UIActivityIndicatorView()
@@ -49,7 +53,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        //   MARK:  setting the root reference
+        
+        rootReference = Database.database().reference()
+        let producerReference = rootReference?.child("producer")
+        producerReference?.setValue(["companyName":"Veltwinkel"])
+        
         
         // Mark: Info Producers
         
