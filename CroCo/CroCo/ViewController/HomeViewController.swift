@@ -251,7 +251,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         myIndex = indexPath.row
         //        tableView.prefetchDataSource = self
-        performSegue(withIdentifier: "shoppingCartSegue", sender: self)
+        performSegue(withIdentifier: "producerCropsListSegue", sender: self)
     }
     
     /// Function that is called whenever the user presses the accessory item in a tableViewCell, segues to ProducerInformationViewController while providing the necessary values
@@ -288,7 +288,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     ///   - sender: The object that activated the segue (currently used for datatransferring)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "shoppingCartSegue" {
+        if segue.identifier == "producerCropsListSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? ProducersTableViewCell {
                     destinationVC.producers = producer.producer
