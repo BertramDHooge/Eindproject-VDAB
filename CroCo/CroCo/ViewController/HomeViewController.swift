@@ -38,9 +38,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     let locationManager = CLLocationManager()
     
     private let activityIndicator = UIActivityIndicatorView()
-    // index of which cell pressed index 1 = producer 1 ??? index 0 = producer 1 (comment ward)
+    
+    /// Index of the most recently pressed cell (defaults to 0 if no cells have been pressed)
     var myIndex = 0
+    /// An array of producers
     private var producers: [Producer] = []
+    /// @TODO
     var searchCityName: String? {
         didSet {
             producers.removeAll()
@@ -49,10 +52,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             
         }
     }
-    //    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        activityIndicator.activityIndicatorViewStyle = .gray
         
         rootReference = Database.database().reference()
         let producerReference = rootReference?.child("producer")
@@ -111,9 +116,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             let pin = AnnotationPin(with: producer)
             mapView.addAnnotation(pin)
         }
-        
-        // MARK: Made by Louis for shopping cart table view, please do not delete just put in "//"
     }
+    
     
     // MARK: -Managing MapView
     
@@ -152,6 +156,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         performSegue(withIdentifier: "initiateInfoVC", sender: pin?.producer)
     }
     
+    /// Converts an inserted string to a location (when possible) and shows this location on the map
+    ///
+    /// - Parameter location: The String you want to have converted to a location
     func searchMapLocation(for location: String) {
         
         let searchRequest = MKLocalSearchRequest()
@@ -172,6 +179,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
+    /// Shows a location on the map
+    ///
+    /// - Parameter location: The location that will be shown
     func show(_ location: CLLocation?) {
         
         if let location = location {
@@ -180,6 +190,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
+    /// Requests whether or not the users current location can be used
     func requestLocationAccess() {
         
         let status = CLLocationManager.authorizationStatus()
@@ -196,18 +207,26 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    //    MARK: tableView dataSource
-    //    func numberOfSections(in tableView: UITableView) -> Int {
-    //        return 1
-    //    }
     
     // MARK: -Managing the TableView
     
+    /// Determines the amount of cells per section (section by section)
+    ///
+    /// - Parameters:
+    ///   - tableView: The tableView in which the sections are located
+    ///   - section: The current section
+    /// - Returns: The amount of cell that is desired in the current section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return producers.count
     }
     
+    /// Determines the way the cells in the tableView are shown (cell by cell)
+    ///
+    /// - Parameters:
+    ///   - tableView: The tableView in which the cells are located
+    ///   - indexPath: The indexPath for the current cell
+    /// - Returns: The shown cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) 
@@ -235,13 +254,22 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         performSegue(withIdentifier: "shoppingCartSegue", sender: self)
     }
     
+    /// Function that is called whenever the user presses the accessory item in a tableViewCell, segues to ProducerInformationViewController while providing the necessary values
+    ///
+    /// - Parameters:
+    ///   - tableView: The tableView in which the cell with the accessoryItem is located
+    ///   - indexPath: The indexPath for the cell in which the accessoryItem is located
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
         performSegue(withIdentifier: "initiateInfoVC", sender: producers[indexPath.row])
     }
     
+    
     // MARK: -IBActions
     
+    /// Function that is called whenever the user taps the search (🔍) button
+    ///
+    /// - Parameter sender: The tapped button (currently unused in the function)
     @IBAction func searchLocation(_ sender: UIButton) {
         
         mapView.showActivity(activityIndicator) {
@@ -253,6 +281,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     // MARK: -Navigation Control
     
+    /// Function that is called whenever the application segues away from the current ViewController
+    ///
+    /// - Parameters:
+    ///   - segue: The segue that will be performed
+    ///   - sender: The object that activated the segue (currently used for datatransferring)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "shoppingCartSegue" {
@@ -269,26 +302,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             }
         }
     }
-}
-
-extension UIView{
-    
-    func showActivity(_ activity: UIActivityIndicatorView, completion: (() -> Void)? ){
-        
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        activity.activityIndicatorViewStyle = .gray
-        activity.center = self.center
-        activity.hidesWhenStopped = true
-        activity.startAnimating()
-        
-        if let completion = completion {
-            completion()
-        }
-        
-        activity.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
-    }
-    
 }
 
 

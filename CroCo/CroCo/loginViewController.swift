@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     
+    /// <#Description#>
+    ///
+    /// - Parameter sender: <#sender description#>
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
