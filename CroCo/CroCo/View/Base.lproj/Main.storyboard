@@ -15,7 +15,7 @@
         <!--Item-->
         <scene sceneID="UmB-Vx-ovq">
             <objects>
-                <viewController id="3IX-iG-ebQ" customClass="AddProducerViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3IX-iG-ebQ" customClass="addProducerViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RA7-s5-rdK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,10 @@
                                             <constraint firstAttribute="height" constant="29" id="yiq-l3-KLC"/>
                                         </constraints>
                                         <items>
-                                            <navigationItem title="Title" id="0kJ-0O-Oqz"/>
+                                            <navigationItem title="Title" id="0kJ-0O-Oqz">
+                                                <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="nLt-MI-9es"/>
+                                                <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="VNI-2M-ZXH"/>
+                                            </navigationItem>
                                         </items>
                                     </navigationBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G6h-No-ILw">
@@ -40,6 +43,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="companyName:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="2rj-NJ-NTJ"/>
+                                                    <action selector="companyName:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="sIc-md-kBs"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier de voornaam van de contactpersoon in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMO-4S-z8H">
                                                 <rect key="frame" x="0.0" y="38" width="355" height="30"/>
@@ -49,6 +56,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="firstName:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="DsJ-q1-xVy"/>
+                                                    <action selector="firstName:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="dES-Ow-ODI"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier de achternaam van de contactpersoon in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-Nq-J8x">
                                                 <rect key="frame" x="0.0" y="76" width="355" height="30"/>
@@ -58,6 +69,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="lastName:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="5BQ-Bd-rag"/>
+                                                    <action selector="lastName:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="iWo-fg-ygU"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je telefoonnummer in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcl-H9-80Z">
                                                 <rect key="frame" x="0.0" y="114" width="355" height="30"/>
@@ -67,6 +82,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="phoneNumber:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="3Tq-mE-8Jv"/>
+                                                    <action selector="phoneNumber:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="sPg-eH-L1P"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je Emailadres in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-KJ-5RA">
                                                 <rect key="frame" x="0.0" y="152" width="355" height="30"/>
@@ -76,6 +95,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="emailAddress:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="C2A-p9-cxB"/>
+                                                    <action selector="emailAddress:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="tlw-c4-CcR"/>
+                                                </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xXd-LC-GLi">
                                                 <rect key="frame" x="0.0" y="190" width="355" height="106"/>
@@ -94,6 +117,10 @@
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieo-Tp-uqH">
                                                                         <rect key="frame" x="149.5" y="0.0" width="51" height="30"/>
+                                                                        <connections>
+                                                                            <action selector="delivery:" destination="3IX-iG-ebQ" eventType="valueChanged" id="AR6-A5-fdE"/>
+                                                                            <action selector="delivery:" destination="wzS-6D-jbf" eventType="valueChanged" id="fa0-8N-amJ"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -102,12 +129,20 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="streetName:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="lM3-4K-6wz"/>
+                                                                    <action selector="streetName:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="v3C-vS-d7T"/>
+                                                                </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je plaatsnaam van afhaling" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5B-ly-OYD">
                                                                 <rect key="frame" x="0.0" y="76" width="198.5" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="place:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="KYl-JL-fyP"/>
+                                                                    <action selector="place:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="ybc-rn-mov"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
@@ -132,12 +167,20 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="houseNumber:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="2bE-h9-EGy"/>
+                                                                    <action selector="houseNumber:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="CIB-je-5I0"/>
+                                                                </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je postcode van afhaling in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jZz-2E-ijw">
                                                                 <rect key="frame" x="0.0" y="76" width="148.5" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="zipCode:" destination="3IX-iG-ebQ" eventType="editingDidEnd" id="gLP-UK-acS"/>
+                                                                    <action selector="zipCode:" destination="wzS-6D-jbf" eventType="editingDidEnd" id="zuU-TI-bmQ"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
@@ -155,6 +198,10 @@
                                                 <state key="normal" title="upload foto">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="uploadPicture:" destination="3IX-iG-ebQ" eventType="touchUpInside" id="Hyr-cC-WQn"/>
+                                                    <action selector="uploadPicture:" destination="wzS-6D-jbf" eventType="touchUpInside" id="aQw-mw-xhN"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Komende levering?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-nb-x0k">
                                                 <rect key="frame" x="0.0" y="342" width="355" height="21"/>
@@ -176,7 +223,8 @@
                                                     <!--2018-05-06 18:29:48 +0000-->
                                                 </date>
                                                 <connections>
-                                                    <action selector="deliveryHour:" destination="3IX-iG-ebQ" eventType="valueChanged" id="Rv5-Hx-w1X"/>
+                                                    <action selector="deliveryMoment:" destination="3IX-iG-ebQ" eventType="valueChanged" id="CI6-4z-gm7"/>
+                                                    <action selector="deliveryMoment:" destination="wzS-6D-jbf" eventType="valueChanged" id="nKW-vl-PUK"/>
                                                 </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Komende afhaling?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1x-lC-RyZ">
@@ -196,6 +244,10 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="547324188.43400204">
                                                     <!--2018-05-06 18:29:48 +0000-->
                                                 </date>
+                                                <connections>
+                                                    <action selector="pickUpMoment:" destination="wzS-6D-jbf" eventType="valueChanged" id="G8D-9a-FuV"/>
+                                                    <action selector="pickUpMoment:" destination="3IX-iG-ebQ" eventType="valueChanged" id="ygp-iT-2a6"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                         <constraints>
@@ -216,22 +268,11 @@
                         <viewLayoutGuide key="safeArea" id="Mta-Cj-Qe5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="mhc-yt-f0v"/>
-                    <connections>
-                        <outlet property="companyName" destination="63f-UI-2KI" id="iaY-cx-qH2"/>
-                        <outlet property="contactDotNameDotLastname" destination="ehp-Nq-J8x" id="hKQ-dG-zLj"/>
-                        <outlet property="contactDotNameDotSurname" destination="BMO-4S-z8H" id="uSZ-wU-ak8"/>
-                        <outlet property="delivery" destination="ieo-Tp-uqH" id="8mu-Qs-ByP"/>
-                        <outlet property="emailAddress" destination="lxD-KJ-5RA" id="Q5s-mP-i8B"/>
-                        <outlet property="place" destination="v5B-ly-OYD" id="hp1-Wd-a21"/>
-                        <outlet property="postalCode" destination="jZz-2E-ijw" id="JBv-zY-eqy"/>
-                        <outlet property="streetName" destination="eMw-vc-bPu" id="K7P-gG-izM"/>
-                        <outlet property="streetNumber" destination="V8k-lh-dab" id="ZTF-zV-PsD"/>
-                        <outlet property="telephoneNumber" destination="rcl-H9-80Z" id="03q-lD-3iH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFD-0W-tcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wzS-6D-jbf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-1005.2473763118442"/>
+            <point key="canvasLocation" x="343" y="-1009"/>
         </scene>
         <!--Home Screen View Controller-->
         <scene sceneID="0lg-pF-Pni">
@@ -1314,8 +1355,8 @@
         <image name="OK" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
-        <segue reference="V5l-RH-wab"/>
+        <segue reference="tLU-qy-vCB"/>
+        <segue reference="UKZ-y1-NLY"/>
         <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>
