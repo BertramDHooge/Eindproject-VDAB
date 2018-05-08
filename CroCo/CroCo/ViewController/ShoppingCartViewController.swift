@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShoppingCartRequisite {
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     
@@ -17,13 +17,23 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     
     //    var arrayOfProducers: [Producer] = []
     
-    var shoppingCart: ShoppingCart!
+    var producer: Producer!
+    
+    var shoppingCart: ShoppingCart! {
+        didSet {
+            totalCostLabel.text = String(shoppingCart.TotalCost)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        shoppingCart = ShoppingCart(producer: producer!, TotalCost: 0)
         // Do any additional setup after loading the view.
+    }
+    
+    func changeTotalAmount(by amountOfMoney: Double) {
+        shoppingCart.TotalCost += amountOfMoney
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +45,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
 //        producersStockItemCell?.shoppingCart
         let stock = shoppingCart.producer.stocks[indexPath.row]
         producersStockItemCell!.stock = stock
+        
+        producersStockItemCell?.shoppingCartDelegate = self
 
         // Configure the ...
         totalCostLabel.text = String(shoppingCart.TotalCost)

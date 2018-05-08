@@ -300,7 +300,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         if segue.identifier == "producerCropsListSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? ProducersTableViewCell {
-                    destinationVC.shoppingCart = ShoppingCart(producer: producer.producer!, TotalCost: 0) 
+                    destinationVC.producer = producer.producer!
                 }
             }
         } else if segue.identifier == "initiateInfoVC"{

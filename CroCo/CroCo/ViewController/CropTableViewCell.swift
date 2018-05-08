@@ -9,9 +9,11 @@
 
 import UIKit
 import Firebase
-//protocol ShoppingCartReq {
-//    <#requirements#>
-//}
+
+protocol ShoppingCartRequisite {
+    func changeTotalAmount(by amountOfMoney: Double)
+}
+
 class CropTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberOfCropPortionsAvailableLabel: UILabel!
@@ -26,53 +28,44 @@ class CropTableViewCell: UITableViewCell {
     
     var stock: Stock? { didSet { updateCrops() }}
     
+    var shoppingCartDelegate: ShoppingCartRequisite?
+    
     private var producers: [Producer] = []
 
     var portions: Double = 0
 
     @IBAction func addPortionButtonPressed(_ sender: UIButton) {
-        if portions == 0 {
+        if stock!.amountOfCropPortionsAvailable > 0 {
+            
             stock!.amountOfCropPortionsAvailable -= 1
             portions += 1
             stock?.amountOfCropsSelected += 1
-        } else {
-            portions += 1
-            stock!.amountOfCropPortionsAvailable -= 1
-            stock?.amountOfCropsSelected += 1
+            shoppingCartDelegate?.changeTotalAmount(by: +stock!.sellingPrice)
         }
+        
         updateCrops()
     }
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
-        if portions == 0 {
-            portions = 0
-            stock?.amountOfCropsSelected -= 1
-            //alert
-        } else {
-            portions -= 1
+        if portions > 0 {
+            
             stock!.amountOfCropPortionsAvailable += 1
+            portions -= 1
             stock?.amountOfCropsSelected -= 1
+            shoppingCartDelegate?.changeTotalAmount(by: -stock!.sellingPrice)
         }
+        
         updateCrops()
     }
     
     private func updateCrops(){
-        guard let crop = stock else {return}
-        if crop.amountOfCropPortionsAvailable > 0 {
-            addPortionButton.isEnabled = true
-        } else if crop.amountOfCropPortionsAvailable == 0 {
-            addPortionButton.isEnabled = false
-        }
         
-        if portions > 0 {
-            removePortionButton.isEnabled = true
-        } else if portions == 0 {
-            removePortionButton.isEnabled = false
-        }
+        addPortionButton.isEnabled = !(stock!.amountOfCropPortionsAvailable == 0)
+        removePortionButton.isEnabled = !(portions == 0)
+        
 //        shoppingCart!.TotalCost = portions * crop.sellingPrice
-        print(crop.totalCostOfCropsSelected)
-        numberOfCropPortionsAvailableLabel.text = String(crop.amountOfCropPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. €\(crop.sellingPrice) per portie."
-        cropNameLabel.text = crop.cropName.rawValue
+        numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfCropPortionsAvailable)
+        pricingAndWeightPerPortionLabel.text = "\(stock!.quantity.rawValue) \(stock!.quantityTypes.rawValue) per portie. €\(stock!.sellingPrice) per portie."
+        cropNameLabel.text = stock!.cropName.rawValue
         numberOfPortions.text = "\(portions)"
     }
     
