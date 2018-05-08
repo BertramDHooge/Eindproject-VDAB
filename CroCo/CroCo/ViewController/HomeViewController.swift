@@ -278,6 +278,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             }
         }
     }
+    @IBAction func UnwindSegue(_ sender: UIStoryboardSegue){
+        
+    }
+    @IBAction func addProducer(_ sender: UIButton) {
+        performSegue(withIdentifier: "addProducer", sender: self)
+    }
     
     // MARK: -Navigation Control
     
@@ -302,6 +308,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             }
         }
     }
+    
 }
 
 
