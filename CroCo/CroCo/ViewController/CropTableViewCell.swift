@@ -9,7 +9,9 @@
 
 import UIKit
 import Firebase
-
+//protocol ShoppingCartReq {
+//    <#requirements#>
+//}
 class CropTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberOfCropPortionsAvailableLabel: UILabel!
@@ -22,33 +24,39 @@ class CropTableViewCell: UITableViewCell {
     @IBOutlet weak var removePortionButton: UIButton!
     @IBOutlet weak var numberOfPortions: UILabel!
     
-    var crop: Crop? { didSet { updateCrops() }}
+    var stock: Stock? { didSet { updateCrops() }}
     
-    var portions = 0
+    private var producers: [Producer] = []
+
+    var portions: Double = 0
 
     @IBAction func addPortionButtonPressed(_ sender: UIButton) {
         if portions == 0 {
-            crop!.amountOfCropPortionsAvailable -= 1
+            stock!.amountOfCropPortionsAvailable -= 1
             portions += 1
+            stock?.amountOfCropsSelected += 1
         } else {
             portions += 1
-            crop!.amountOfCropPortionsAvailable -= 1
+            stock!.amountOfCropPortionsAvailable -= 1
+            stock?.amountOfCropsSelected += 1
         }
         updateCrops()
     }
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
         if portions == 0 {
             portions = 0
+            stock?.amountOfCropsSelected -= 1
             //alert
         } else {
             portions -= 1
-            crop!.amountOfCropPortionsAvailable += 1
+            stock!.amountOfCropPortionsAvailable += 1
+            stock?.amountOfCropsSelected -= 1
         }
         updateCrops()
     }
     
     private func updateCrops(){
-        guard let crop = crop else {return}
+        guard let crop = stock else {return}
         if crop.amountOfCropPortionsAvailable > 0 {
             addPortionButton.isEnabled = true
         } else if crop.amountOfCropPortionsAvailable == 0 {
@@ -60,14 +68,15 @@ class CropTableViewCell: UITableViewCell {
         } else if portions == 0 {
             removePortionButton.isEnabled = false
         }
-        
+//        shoppingCart!.TotalCost = portions * crop.sellingPrice
+        print(crop.totalCostOfCropsSelected)
         numberOfCropPortionsAvailableLabel.text = String(crop.amountOfCropPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. €\(crop.cost) per portie."
+        pricingAndWeightPerPortionLabel.text = "\(crop.quantity.rawValue) \(crop.quantityTypes.rawValue) per portie. €\(crop.sellingPrice) per portie."
         cropNameLabel.text = crop.cropName.rawValue
         numberOfPortions.text = "\(portions)"
     }
     
-    private var producers: [Producer] = []
+
     
     
     override func awakeFromNib() {

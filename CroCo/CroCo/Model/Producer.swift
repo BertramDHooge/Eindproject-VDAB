@@ -16,7 +16,15 @@ class Producer {
     let deliveryHours: Date?
     let pickUpHours: Date?
     var validation: Int?
-    var crops: [Crop]
+    var stocks: [Stock]
+//    var orderLists: [OrderList]
+    var totalCropsCost: Double {
+        var totalCost = 0.0
+        for stock in stocks {
+            totalCost += stock.totalCostOfCropsSelected
+        }
+        return totalCost
+    }
     var description: String   {
         if let companyName = companyName {
             return "\(companyName):\n\(contact.description)\nProducten: \(mainProduce.rawValue)"
@@ -25,7 +33,7 @@ class Producer {
         }
     }
     
-    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocation, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, crops: [Crop]) {
+    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocation, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, stocks: [Stock]) {
         self.companyName = companyName
         self.contact = contact
         self.companyImage = companyImage
@@ -35,10 +43,10 @@ class Producer {
         self.deliveryHours = deliveryHours
         self.pickUpHours = pickUpHours
         self.validation = validation
-        self.crops = crops
+        self.stocks = stocks
     }
-    convenience init(contact: Contact, location: CLLocation, mainProduce: MainProduce, crop: [Crop]) {
-        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, crops: crop)
+    convenience init(contact: Contact, location: CLLocation, mainProduce: MainProduce, stocks: [Stock]) {
+        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: stocks)
         
         
 //        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)

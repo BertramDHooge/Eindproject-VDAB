@@ -13,34 +13,40 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     
-//    var arrayOfProducers: [Producer] = []
+    @IBOutlet weak var totalCostLabel: UILabel!
     
-    var producers: Producer? = nil
+    //    var arrayOfProducers: [Producer] = []
+    
+    var shoppingCart: ShoppingCart!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+
+        
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return producers!.crops.count
+        return shoppingCart.producer.stocks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let producersCropCell = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath)
-        let crop = producers!.crops[indexPath.row]
-        if let producersCropCell = producersCropCell as? CropTableViewCell {
-            producersCropCell.crop = crop
-        }
-        // Configure the ...
+        let producersStockItemCell = tableView.dequeueReusableCell(withIdentifier: "producersCrop", for: indexPath) as? CropTableViewCell
+//        producersStockItemCell?.shoppingCart
+        let stock = shoppingCart.producer.stocks[indexPath.row]
+        producersStockItemCell!.stock = stock
 
-        return producersCropCell
+        // Configure the ...
+        totalCostLabel.text = String(shoppingCart.TotalCost)
+
+        return producersStockItemCell!
     }
+    
  
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
     
 
     override func didReceiveMemoryWarning() {
