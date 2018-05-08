@@ -32,7 +32,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var homeTabBar: UITabBar!
     
     //   MARK Global Variables
-    private var rootReference: DatabaseReference?
     
     
     let locationManager = CLLocationManager()
@@ -60,9 +59,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         activityIndicator.activityIndicatorViewStyle = .gray
         
-        rootReference = Database.database().reference()
-        let producerReference = rootReference?.child("producer")
-        producerReference?.setValue(["companyName":"Veltwinkel"])
+//        rootReference = Database.database().reference()
+//        let producerReference = rootReference?.child("producer")
+//        producerReference?.setValue(["companyName":"Veltwinkel"])
         
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
