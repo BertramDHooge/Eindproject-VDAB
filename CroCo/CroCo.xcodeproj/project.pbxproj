@@ -21,14 +21,16 @@
 		157B15CA20A086C300C94E21 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C920A086C300C94E21 /* Order.swift */; };
 		36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */; };
 		36007666209EDCA6007EEDD2 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007665209EDCA6007EEDD2 /* Producers.swift */; };
+		3600766C209F6EC3007EEDD2 /* AddProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
 		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
 		D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52E92093496300DA9537 /* loginViewController.swift */; };
 		D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52EB2093530000DA9537 /* CreateViewController.swift */; };
 		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
+		FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44121020A05C4700EFECD4 /* Extensions.swift */; };
 		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
-		FB473845208F08E900DCE76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* ViewController.swift */; };
+		FB473845208F08E900DCE76A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* HomeViewController.swift */; };
 		FB473848208F08E900DCE76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB473846208F08E900DCE76A /* Main.storyboard */; };
 		FB47384A208F08EB00DCE76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB473849208F08EB00DCE76A /* Assets.xcassets */; };
 		FB47384D208F08EB00DCE76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */; };
@@ -55,6 +57,7 @@
 		157B15C920A086C300C94E21 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
 		36007665209EDCA6007EEDD2 /* Producers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producers.swift; sourceTree = "<group>"; };
+		3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProducerViewController.swift; path = "/Users/ward/Documents/GitHub/Eindproject-VDAB/CroCo/CroCo/ViewController/AddProducerViewController.swift"; sourceTree = "<absolute>"; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
 		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
@@ -62,9 +65,10 @@
 		D37E52E92093496300DA9537 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginViewController.swift; path = ../loginViewController.swift; sourceTree = "<group>"; };
 		D37E52EB2093530000DA9537 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
+		FB44121020A05C4700EFECD4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB473844208F08E900DCE76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB473844208F08E900DCE76A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB473847208F08E900DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB473849208F08EB00DCE76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB47384C208F08EB00DCE76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,9 +95,9 @@
 		1502AC6C2090B0EB00EBF16C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FB473844208F08E900DCE76A /* ViewController.swift */,
+				FB473844208F08E900DCE76A /* HomeViewController.swift */,
 				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
-				157B15C520A04F1500C94E21 /* addProducerViewController.swift */,
+				3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */,
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
 				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
@@ -143,6 +147,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D3E9DA0820A0981F003EE907 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				157B15C520A04F1500C94E21 /* addProducerViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		D92882088FB55D4A50C56E38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,7 @@
 				FB473840208F08E900DCE76A /* Products */,
 				453ABCBAE29A1430C1A68B4B /* Pods */,
 				D92882088FB55D4A50C56E38 /* Frameworks */,
+				D3E9DA0820A0981F003EE907 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +190,7 @@
 				1502AC6C2090B0EB00EBF16C /* ViewController */,
 				150FC0002091F821002BBA8F /* View */,
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
+				FB44121020A05C4700EFECD4 /* Extensions.swift */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
@@ -303,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB473845208F08E900DCE76A /* ViewController.swift in Sources */,
+				FB473845208F08E900DCE76A /* HomeViewController.swift in Sources */,
 				150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */,
 				1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */,
 				157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */,
@@ -319,15 +333,16 @@
 				1502AC752090B57200EBF16C /* Stock.swift in Sources */,
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
-				157B15C620A04F1500C94E21 /* addProducerViewController.swift in Sources */,
 				36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */,
 				FB893F802099F58D00B35505 /* ProducerInfoTableViewCell.swift in Sources */,
 				FB893F822099F9FD00B35505 /* DeliveryInfoTableViewCell.swift in Sources */,
 				36007666209EDCA6007EEDD2 /* Producers.swift in Sources */,
 				D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */,
+				FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */,
 				D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */,
 				1502AC772090B5B800EBF16C /* user.swift in Sources */,
 				FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */,
+				3600766C209F6EC3007EEDD2 /* AddProducerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
