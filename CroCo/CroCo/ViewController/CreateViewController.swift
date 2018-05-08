@@ -30,10 +30,12 @@ class CreateAccountViewController: UIViewController {
 
     // MARK: - IBActions
 
+    /// Dismisses the current ViewController
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
 
+    /// If all the necessary TextFields are filled in this creates a new account in the database with the entered data
     @IBAction func createAccount(_ sender: UIButton) {
         // Checking the input
         guard let username = usernameTextField.text, username != "",

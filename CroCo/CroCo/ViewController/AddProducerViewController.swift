@@ -4,6 +4,7 @@
 //
 //  Created by Ward Janssen on 06/05/2018.
 //
+//  Documentation still needed
 
 import UIKit
 

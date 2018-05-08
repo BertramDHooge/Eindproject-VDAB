@@ -31,14 +31,13 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     
-    /// <#Description#>
-    ///
-    /// - Parameter sender: <#sender description#>
+    /// Goes back to the previous ViewController
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     
+    /// Logs in the user if the textFields have been correctly filled out
     @IBAction func login(_ sender: UIButton) {
         // Checking the input
         guard let emailAddress = emailAddressTextField.text, emailAddress != "",

@@ -27,6 +27,7 @@
 		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
 		FB1FC97F20A19CD600720000 /* AddProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC97E20A19CD600720000 /* AddProducerViewController.swift */; };
+		FB1FC98120A1BF6900720000 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC98020A1BF6900720000 /* Protocols.swift */; };
 		FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44121020A05C4700EFECD4 /* Extensions.swift */; };
 		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
 		FB473845208F08E900DCE76A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* HomeViewController.swift */; };
@@ -64,6 +65,7 @@
 		D37E52EB2093530000DA9537 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
 		FB1FC97E20A19CD600720000 /* AddProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProducerViewController.swift; sourceTree = "<group>"; };
+		FB1FC98020A1BF6900720000 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		FB44120E20A0576100EFECD4 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = /.Trash/addProducerViewController.swift; sourceTree = "<absolute>"; };
 		FB44121020A05C4700EFECD4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +202,7 @@
 				150FC0002091F821002BBA8F /* View */,
 				FB473842208F08E900DCE76A /* AppDelegate.swift */,
 				FB44121020A05C4700EFECD4 /* Extensions.swift */,
+				FB1FC98020A1BF6900720000 /* Protocols.swift */,
 				FB473849208F08EB00DCE76A /* Assets.xcassets */,
 				FB47384B208F08EB00DCE76A /* LaunchScreen.storyboard */,
 				FB47384E208F08EB00DCE76A /* Info.plist */,
@@ -351,6 +354,7 @@
 				FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */,
 				D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */,
 				1502AC772090B5B800EBF16C /* user.swift in Sources */,
+				FB1FC98120A1BF6900720000 /* Protocols.swift in Sources */,
 				FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
