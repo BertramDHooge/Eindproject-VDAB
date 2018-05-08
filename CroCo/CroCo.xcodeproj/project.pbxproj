@@ -25,6 +25,7 @@
 		D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52E92093496300DA9537 /* loginViewController.swift */; };
 		D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52EB2093530000DA9537 /* CreateViewController.swift */; };
 		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
+		D3D06DAF20A1B3170079EC7B /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
 		FB1FC97F20A19CD600720000 /* AddProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC97E20A19CD600720000 /* AddProducerViewController.swift */; };
 		FB1FC98120A1BF6900720000 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC98020A1BF6900720000 /* Protocols.swift */; };
@@ -66,6 +67,7 @@
 		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
 		FB1FC97E20A19CD600720000 /* AddProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProducerViewController.swift; sourceTree = "<group>"; };
 		FB1FC98020A1BF6900720000 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		FB44120E20A0576100EFECD4 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = /.Trash/addProducerViewController.swift; sourceTree = "<absolute>"; };
 		FB44121020A05C4700EFECD4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +101,8 @@
 			children = (
 				FB473844208F08E900DCE76A /* HomeViewController.swift */,
 				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
-				FB1FC97E20A19CD600720000 /* AddProducerViewController.swift */,
+				3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */,
+				D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */,
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
 				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
@@ -346,6 +349,7 @@
 				1502AC752090B57200EBF16C /* Stock.swift in Sources */,
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
+				D3D06DAF20A1B3170079EC7B /* ImageUploadManager.swift in Sources */,
 				36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */,
 				FB893F802099F58D00B35505 /* ProducerInfoTableViewCell.swift in Sources */,
 				FB893F822099F9FD00B35505 /* DeliveryInfoTableViewCell.swift in Sources */,
