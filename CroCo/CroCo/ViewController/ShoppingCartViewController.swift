@@ -27,6 +27,9 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        shoppingCart.TotalCost = totalSingleCropCost
+//        totalCostLabel.text = String(shoppingCart.TotalCost)
+
 
         shoppingCart = ShoppingCart(producer: producer!, TotalCost: 0)
         // Do any additional setup after loading the view.
@@ -49,7 +52,6 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         producersStockItemCell?.shoppingCartDelegate = self
 
         // Configure the ...
-        totalCostLabel.text = String(shoppingCart.TotalCost)
 
         return producersStockItemCell!
     }

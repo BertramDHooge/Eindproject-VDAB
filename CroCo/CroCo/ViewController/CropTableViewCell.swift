@@ -26,11 +26,13 @@ class CropTableViewCell: UITableViewCell {
     @IBOutlet weak var removePortionButton: UIButton!
     @IBOutlet weak var numberOfPortions: UILabel!
     
-    var stock: Stock? { didSet { updateCrops() }}
+    var stock: Stock? { didSet { updateStock() }}
     
     var shoppingCartDelegate: ShoppingCartRequisite?
     
     private var producers: [Producer] = []
+    
+    var delegate: ShoppingCartRequisite?
 
     var portions: Double = 0
 
@@ -43,7 +45,7 @@ class CropTableViewCell: UITableViewCell {
             shoppingCartDelegate?.changeTotalAmount(by: +stock!.sellingPrice)
         }
         
-        updateCrops()
+        updateStock()
     }
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
         if portions > 0 {
@@ -54,10 +56,10 @@ class CropTableViewCell: UITableViewCell {
             shoppingCartDelegate?.changeTotalAmount(by: -stock!.sellingPrice)
         }
         
-        updateCrops()
+        updateStock()
     }
     
-    private func updateCrops(){
+    private func updateStock(){
         
         addPortionButton.isEnabled = !(stock!.amountOfCropPortionsAvailable == 0)
         removePortionButton.isEnabled = !(portions == 0)
