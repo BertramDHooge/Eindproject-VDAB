@@ -18,6 +18,7 @@
 		157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */; };
 		36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */; };
 		36007666209EDCA6007EEDD2 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007665209EDCA6007EEDD2 /* Producers.swift */; };
+		3600766C209F6EC3007EEDD2 /* AddProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
 		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
 		D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52E92093496300DA9537 /* loginViewController.swift */; };
@@ -49,8 +50,10 @@
 		150FBFFC2091F1A2002BBA8F /* Quantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantities.swift; sourceTree = "<group>"; };
 		150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
 		157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
+		157B15C520A04F1500C94E21 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = /.Trash/addProducerViewController.swift; sourceTree = "<absolute>"; };
 		36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
 		36007665209EDCA6007EEDD2 /* Producers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producers.swift; sourceTree = "<group>"; };
+		3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProducerViewController.swift; path = "/Users/ward/Documents/GitHub/Eindproject-VDAB/CroCo/CroCo/ViewController/AddProducerViewController.swift"; sourceTree = "<absolute>"; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
 		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
@@ -93,6 +96,7 @@
 				FB44121420A08D5B00EFECD4 /* addProducerViewController.swift */,
 				FB473844208F08E900DCE76A /* HomeViewController.swift */,
 				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
+				3600766B209F6EC3007EEDD2 /* AddProducerViewController.swift */,
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
 				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
@@ -140,6 +144,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D3E9DA0820A0981F003EE907 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				157B15C520A04F1500C94E21 /* addProducerViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		D92882088FB55D4A50C56E38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 				453ABCBAE29A1430C1A68B4B /* Pods */,
 				D92882088FB55D4A50C56E38 /* Frameworks */,
 				FB44121320A06D7700EFECD4 /* Recovered References */,
+				D3E9DA0820A0981F003EE907 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -334,6 +347,7 @@
 				D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */,
 				1502AC772090B5B800EBF16C /* user.swift in Sources */,
 				FB52C53620909FE2004728A7 /* MainProduce.swift in Sources */,
+				3600766C209F6EC3007EEDD2 /* AddProducerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

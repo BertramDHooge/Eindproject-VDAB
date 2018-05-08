@@ -14,7 +14,7 @@ import Firebase
 class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
     //   protocol nog invoegen: UITableViewDataSourcePrefetching
     
-    //    MARK: prefetching data
+    //    MARK: -Prefetching data
     
 //    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
 //        <#code#>
@@ -119,7 +119,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     
-    // MARK: -Managing MapView
+    // MARK: -Managing the MapView
     
     /// Defines the look of the annotations on the map (one by one) by returning an (optional) annotationView
     ///
