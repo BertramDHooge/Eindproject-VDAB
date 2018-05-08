@@ -17,9 +17,12 @@ class forgotPasswordViewController: UIViewController {
     
         //  MARK: my actions
     
+    /// Dismisses the current ViewController
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "back to login", sender: UIBarButtonItem.self)
     }
+    
+    /// Resets the password connected with the inseted email address
     @IBAction func passwordResetButton(_ sender: UIButton) {
         if let email = passwordTextField.text, passwordTextField.text != "" {
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in

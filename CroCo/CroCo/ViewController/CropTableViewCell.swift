@@ -37,6 +37,7 @@ class CropTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    /// Adds a single portion to the shopping cart
     @IBAction func addPortionButtonPressed(_ sender: UIButton) {
         
         if stock!.amountOfCropPortionsAvailable > 0 {
@@ -50,6 +51,7 @@ class CropTableViewCell: UITableViewCell {
         updateUI()
     }
     
+    /// Removes a single portion from the shopping cart
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
         
         if portions > 0 {
@@ -63,6 +65,7 @@ class CropTableViewCell: UITableViewCell {
         updateUI()
     }
     
+    /// Updates the UserInterface to conform to the data
     private func updateUI(){
         
         addPortionButton.isEnabled = !(stock!.amountOfCropPortionsAvailable == 0)
