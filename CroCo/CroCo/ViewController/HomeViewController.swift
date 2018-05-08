@@ -64,6 +64,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let producerReference = rootReference?.child("producer")
         producerReference?.setValue(["companyName":"Veltwinkel"])
         
+        // MARK: Dummy Data
+        
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
         let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
@@ -74,7 +76,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
         let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: Place.leuven)
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let bertramCrops = [Stock(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 100, amountOfCropPortionsAvailable: 8, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+        let bertramCrops = [Stock(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 100, amountOfCropPortionsAvailable: 8, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 22, amountOfCropPortionsAvailable: 100, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 200, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
