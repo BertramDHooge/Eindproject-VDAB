@@ -11,7 +11,7 @@ import CoreLocation
 
 class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShoppingCartDelegate {
     
-    func updatingStock(amountOfmoney: Double) {
+    func updatingStock(amountOfMoney amountOfmoney: Double) {
 //        shoppingCart.producer.totalCropsCost = portions * stock.sellingPrice
         shoppingCart.TotalCost += shoppingCart.producer.totalCropsCost
         totalCostLabel.text = String(shoppingCart.TotalCost)

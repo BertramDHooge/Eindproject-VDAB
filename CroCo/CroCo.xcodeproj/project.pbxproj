@@ -14,6 +14,7 @@
 		1502AC752090B57200EBF16C /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC742090B57200EBF16C /* Stock.swift */; };
 		1502AC772090B5B800EBF16C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502AC762090B5B700EBF16C /* user.swift */; };
 		150D0F6E20A1A519003265F4 /* addProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D0F6D20A1A519003265F4 /* addProducerViewController.swift */; };
+		150D0F7020A1D567003265F4 /* Portion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150D0F6F20A1D567003265F4 /* Portion.swift */; };
 		150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFC2091F1A2002BBA8F /* Quantities.swift */; };
 		150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */; };
 		157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */; };
@@ -49,6 +50,7 @@
 		1502AC742090B57200EBF16C /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		1502AC762090B5B700EBF16C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		150D0F6D20A1A519003265F4 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = "../../../../../../Desktop/Backup Proj/CroCo/CroCo/ViewCell/addProducerViewController.swift"; sourceTree = "<group>"; };
+		150D0F6F20A1D567003265F4 /* Portion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portion.swift; sourceTree = "<group>"; };
 		150FBFFC2091F1A2002BBA8F /* Quantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantities.swift; sourceTree = "<group>"; };
 		150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropTableViewCell.swift; sourceTree = "<group>"; };
 		157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				1502AC722090B55B00EBF16C /* FoodTypes.swift */,
 				FB52C53520909FE2004728A7 /* MainProduce.swift */,
 				1502AC742090B57200EBF16C /* Stock.swift */,
+				150D0F6F20A1D567003265F4 /* Portion.swift */,
 				157B15C920A086C300C94E21 /* Order.swift */,
 				150FBFFC2091F1A2002BBA8F /* Quantities.swift */,
 			);
@@ -342,6 +345,7 @@
 				157B15CA20A086C300C94E21 /* Order.swift in Sources */,
 				1502AC752090B57200EBF16C /* Stock.swift in Sources */,
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
+				150D0F7020A1D567003265F4 /* Portion.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
 				36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */,
 				FB893F802099F58D00B35505 /* ProducerInfoTableViewCell.swift in Sources */,

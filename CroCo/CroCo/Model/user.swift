@@ -13,4 +13,5 @@ struct User {
     let name: String
     let email: String
     let adress: String
+//    let favorited: Bool
 }

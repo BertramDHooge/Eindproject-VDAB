@@ -15,6 +15,7 @@ struct Stock {
     var cropName: FoodName
     var quantityTypes: QuantityTypes
     var quantity: Quantity
+//    var porties: Portion
     var sellingPrice: Double
     var amountOfCropPortionsAvailable: Int
     var amountOfCropsSelected: Int

@@ -8,8 +8,6 @@ class Producer {
     let companyName: String?
     let contact: Contact
     var companyImage: String? = nil
-//    var location: CLLocationCoordinate2D
-//    type CLLocation heeft methode distance
     var location: CLLocation
     var delivery: Bool
     let mainProduce: MainProduce
