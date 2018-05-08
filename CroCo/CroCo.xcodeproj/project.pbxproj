@@ -27,7 +27,6 @@
 		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
 		D5C3FC6C1DA825C6A156DD35 /* Pods_CroCo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */; };
 		FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44121020A05C4700EFECD4 /* Extensions.swift */; };
-		FB44121520A08D5B00EFECD4 /* addProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB44121420A08D5B00EFECD4 /* addProducerViewController.swift */; };
 		FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473842208F08E900DCE76A /* AppDelegate.swift */; };
 		FB473845208F08E900DCE76A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB473844208F08E900DCE76A /* HomeViewController.swift */; };
 		FB473848208F08E900DCE76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB473846208F08E900DCE76A /* Main.storyboard */; };
@@ -65,7 +64,6 @@
 		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
 		FB44120E20A0576100EFECD4 /* addProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addProducerViewController.swift; path = /.Trash/addProducerViewController.swift; sourceTree = "<absolute>"; };
 		FB44121020A05C4700EFECD4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		FB44121420A08D5B00EFECD4 /* addProducerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProducerViewController.swift; sourceTree = "<group>"; };
 		FB47383F208F08E900DCE76A /* CroCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CroCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB473842208F08E900DCE76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB473844208F08E900DCE76A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 		1502AC6C2090B0EB00EBF16C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FB44121420A08D5B00EFECD4 /* addProducerViewController.swift */,
 				FB473844208F08E900DCE76A /* HomeViewController.swift */,
 				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
@@ -326,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB44121520A08D5B00EFECD4 /* addProducerViewController.swift in Sources */,
 				FB473845208F08E900DCE76A /* HomeViewController.swift in Sources */,
 				150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */,
 				1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */,
