@@ -1248,8 +1248,9 @@
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="bottom" secondItem="4s1-gn-de6" secondAttribute="bottom" constant="11" id="2dz-A5-uHX"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="trailing" secondItem="Hui-eM-Ipq" secondAttribute="trailing" constant="16" id="2vX-Px-Sh6"/>
                             <constraint firstItem="bi2-X3-BvI" firstAttribute="leading" secondItem="ekS-9a-ko4" secondAttribute="leading" id="42h-VU-gih"/>
-                            <constraint firstItem="4s1-gn-de6" firstAttribute="top" secondItem="ekS-9a-ko4" secondAttribute="top" constant="615" id="4va-hj-iz1"/>
                             <constraint firstItem="4KA-Ko-3CL" firstAttribute="leading" secondItem="ekS-9a-ko4" secondAttribute="leading" constant="329" id="66F-FS-bGR"/>
+                            <constraint firstItem="4s1-gn-de6" firstAttribute="centerY" secondItem="pab-Gp-pah" secondAttribute="centerY" id="6Sa-wE-cY4"/>
+                            <constraint firstItem="3GF-IV-rce" firstAttribute="centerY" secondItem="pab-Gp-pah" secondAttribute="centerY" id="7a2-YC-HzG"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="trailing" secondItem="pab-Gp-pah" secondAttribute="trailing" id="8zZ-El-FHy"/>
                             <constraint firstItem="pab-Gp-pah" firstAttribute="leading" secondItem="ekS-9a-ko4" secondAttribute="leading" id="DQC-38-twd"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="trailing" secondItem="g0N-Qj-wrW" secondAttribute="trailing" id="IGh-6A-S46"/>
@@ -1263,7 +1264,6 @@
                             <constraint firstItem="bi2-X3-BvI" firstAttribute="top" secondItem="jjI-Qw-xsC" secondAttribute="bottom" id="XiE-fE-xTJ"/>
                             <constraint firstItem="bi2-X3-BvI" firstAttribute="leading" secondItem="jjI-Qw-xsC" secondAttribute="trailing" constant="-375" id="acB-Mh-mvU"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="bottom" secondItem="3GF-IV-rce" secondAttribute="bottom" constant="11.5" id="cb8-Aq-ZL3"/>
-                            <constraint firstItem="3GF-IV-rce" firstAttribute="top" secondItem="ekS-9a-ko4" secondAttribute="top" constant="615" id="cqu-07-5gM"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="bottom" secondItem="4KA-Ko-3CL" secondAttribute="bottom" constant="587" id="dWq-pL-nrk"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="bottom" secondItem="pab-Gp-pah" secondAttribute="bottom" id="dYl-xP-FIO"/>
                             <constraint firstItem="g0N-Qj-wrW" firstAttribute="leading" secondItem="ekS-9a-ko4" secondAttribute="leading" id="g5n-KD-Z4N"/>
@@ -1271,7 +1271,7 @@
                             <constraint firstItem="jjI-Qw-xsC" firstAttribute="leading" secondItem="ekS-9a-ko4" secondAttribute="leading" id="lWh-R0-QcG"/>
                             <constraint firstItem="ekS-9a-ko4" firstAttribute="bottom" secondItem="Hui-eM-Ipq" secondAttribute="bottom" constant="11" id="nbh-xA-5mZ"/>
                             <constraint firstItem="Hui-eM-Ipq" firstAttribute="leading" secondItem="4s1-gn-de6" secondAttribute="trailing" constant="8" id="qAf-2s-Rrh"/>
-                            <constraint firstItem="Hui-eM-Ipq" firstAttribute="top" secondItem="ekS-9a-ko4" secondAttribute="top" constant="615" id="z5Y-s6-eiH"/>
+                            <constraint firstItem="Hui-eM-Ipq" firstAttribute="centerY" secondItem="pab-Gp-pah" secondAttribute="centerY" id="tjl-pn-8y3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ekS-9a-ko4"/>
                     </view>
@@ -1356,8 +1356,8 @@
         <image name="OK" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G91-rJ-KL6"/>
+        <segue reference="Bv9-8W-g2C"/>
         <segue reference="Jy8-Qc-7jV"/>
-        <segue reference="5z5-ZW-2HL"/>
+        <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>
