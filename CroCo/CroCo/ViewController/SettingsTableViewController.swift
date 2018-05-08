@@ -19,6 +19,8 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    /// Dismisses the current ViewController
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }

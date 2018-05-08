@@ -67,20 +67,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
-        let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: Place.kesselLo)
+        let adressMammoth = Address(streetName: "Ice Lane", streetNumber: "1", postalCode: 1333, place: Place.kesselLo)
         let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
         let mammothCrops = [Stock(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
-        let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: Place.leuven)
+        let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: "1", postalCode: 1234, place: Place.leuven)
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let bertramCrops = [Stock(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 100, amountOfCropPortionsAvailable: 8, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 22, amountOfCropPortionsAvailable: 100, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
         let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
-        let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: Place.werchter)
+        let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: "1", postalCode: 3118, place: Place.werchter)
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let veltWinkelCrops = [Stock(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 22, amountOfCropPortionsAvailable: 100, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
@@ -122,13 +122,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     
     // MARK: -Managing the MapView
-    
-    /// Defines the look of the annotations on the map (one by one) by returning an (optional) annotationView
-    ///
-    /// - Parameters:
-    ///   - mapView: The Mapview in which the annotations are located
-    ///   - annotation: The current annotation for which the look is being defined
-    /// - Returns: The annotationView that you want to be shown on the map
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if annotation is MKUserLocation {
@@ -146,12 +139,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    /// Function that is called whenever the user taps the accessoryItem (more info) on an annotationView, segues to ProducerInformationViewController while providing the necessary values
-    ///
-    /// - Parameters:
-    ///   - mapView: The mapview in which work is being done
-    ///   - view: The annotationView in which the accessoryItem was tapped
-    ///   - control: The tapped Accessory (unused)
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         let pin = view.annotation as? AnnotationPin
@@ -212,23 +199,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     // MARK: -Managing the TableView
     
-    /// Determines the amount of cells per section (section by section)
-    ///
-    /// - Parameters:
-    ///   - tableView: The tableView in which the sections are located
-    ///   - section: The current section
-    /// - Returns: The amount of cell that is desired in the current section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return producers.count
     }
     
-    /// Determines the way the cells in the tableView are shown (cell by cell)
-    ///
-    /// - Parameters:
-    ///   - tableView: The tableView in which the cells are located
-    ///   - indexPath: The indexPath for the current cell
-    /// - Returns: The shown cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath) 
@@ -244,11 +219,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         return producerCell
     }
     
-    /// Function that is called whenever the user selects a cell in the tableView
-    ///
-    /// - Parameters:
-    ///   - tableView: The tableView in which the selected cell is located
-    ///   - indexPath: The indexPath for the selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         myIndex = indexPath.row
@@ -256,11 +226,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         performSegue(withIdentifier: "producerCropsListSegue", sender: self)
     }
     
-    /// Function that is called whenever the user presses the accessory item in a tableViewCell, segues to ProducerInformationViewController while providing the necessary values
-    ///
-    /// - Parameters:
-    ///   - tableView: The tableView in which the cell with the accessoryItem is located
-    ///   - indexPath: The indexPath for the cell in which the accessoryItem is located
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
         performSegue(withIdentifier: "initiateInfoVC", sender: producers[indexPath.row])
@@ -295,11 +260,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     // MARK: -Navigation Control
     
-    /// Function that is called whenever the application segues away from the current ViewController
-    ///
-    /// - Parameters:
-    ///   - segue: The segue that will be performed
-    ///   - sender: The object that activated the segue (currently used for datatransferring)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "producerCropsListSegue" {

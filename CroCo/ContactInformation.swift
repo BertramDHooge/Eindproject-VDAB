@@ -35,10 +35,10 @@ enum Place: String {
 
 class Address: CustomStringConvertible {
     let streetName: String
-    let streetNumber: Int
+    let streetNumber: String
     let postalCode: Int
     let place: Place
-    init(streetName: String, streetNumber: Int, postalCode: Int, place: Place){
+    init(streetName: String, streetNumber: String, postalCode: Int, place: Place){
         self.streetName = streetName
         self.streetNumber = streetNumber
         self.postalCode = postalCode

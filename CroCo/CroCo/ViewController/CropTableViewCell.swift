@@ -10,10 +10,6 @@
 import UIKit
 import Firebase
 
-protocol ShoppingCartRequisite {
-    func changeTotalAmount(by amountOfMoney: Double)
-}
-
 class CropTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberOfCropPortionsAvailableLabel: UILabel!
@@ -26,17 +22,23 @@ class CropTableViewCell: UITableViewCell {
     @IBOutlet weak var removePortionButton: UIButton!
     @IBOutlet weak var numberOfPortions: UILabel!
     
-    var stock: Stock? { didSet { updateStock() }}
+    var stock: Stock? { didSet { updateUI() }}
     
-    var shoppingCartDelegate: ShoppingCartRequisite?
+    var shoppingCartDelegate: ShoppingCartDelegate?
     
     private var producers: [Producer] = []
     
-    var delegate: ShoppingCartRequisite?
+    var delegate: ShoppingCartDelegate?
 
     var portions: Double = 0
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
 
     @IBAction func addPortionButtonPressed(_ sender: UIButton) {
+        
         if stock!.amountOfCropPortionsAvailable > 0 {
             
             stock!.amountOfCropPortionsAvailable -= 1
@@ -45,9 +47,11 @@ class CropTableViewCell: UITableViewCell {
             shoppingCartDelegate?.changeTotalAmount(by: +stock!.sellingPrice)
         }
         
-        updateStock()
+        updateUI()
     }
+    
     @IBAction func removePortionButtonPressed(_ sender: UIButton) {
+        
         if portions > 0 {
             
             stock!.amountOfCropPortionsAvailable += 1
@@ -56,15 +60,14 @@ class CropTableViewCell: UITableViewCell {
             shoppingCartDelegate?.changeTotalAmount(by: -stock!.sellingPrice)
         }
         
-        updateStock()
+        updateUI()
     }
     
-    private func updateStock(){
+    private func updateUI(){
         
         addPortionButton.isEnabled = !(stock!.amountOfCropPortionsAvailable == 0)
         removePortionButton.isEnabled = !(portions == 0)
         
-//        shoppingCart!.TotalCost = portions * crop.sellingPrice
         numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfCropPortionsAvailable)
         pricingAndWeightPerPortionLabel.text = "\(stock!.quantity.rawValue) \(stock!.quantityTypes.rawValue) per portie. €\(stock!.sellingPrice) per portie."
         cropNameLabel.text = stock!.cropName.rawValue
@@ -74,10 +77,6 @@ class CropTableViewCell: UITableViewCell {
 
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

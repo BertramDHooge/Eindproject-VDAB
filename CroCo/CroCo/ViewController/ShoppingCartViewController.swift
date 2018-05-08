@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShoppingCartRequisite {
+class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShoppingCartDelegate {
 
     @IBOutlet weak var shoppingCartTableView: UITableView!
     
@@ -35,6 +35,14 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
     }
     
+    /// Dismisses the current ViewController
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    /// Changes the total cost of the items in the shoppingcart by the entered amount
+    ///
+    /// - Parameter amountOfMoney: The amount the total needs to be changed by
     func changeTotalAmount(by amountOfMoney: Double) {
         shoppingCart.TotalCost += amountOfMoney
     }
@@ -54,11 +62,6 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         // Configure the ...
 
         return producersStockItemCell!
-    }
-    
- 
-    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
     }
     
     
