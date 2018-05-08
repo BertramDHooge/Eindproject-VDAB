@@ -56,7 +56,14 @@ class AddProducerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        if delivery.isOn {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            return dateFormatter.string
+        }
 //    docRef = FireStore.firestore().collection("producer").document("Producent1")
 //        docRef.setData(dataToSave) {
 //            (error) in

@@ -17,7 +17,7 @@
 		<key>Pods-CroCo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>3</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
@@ -27,7 +27,7 @@
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>
