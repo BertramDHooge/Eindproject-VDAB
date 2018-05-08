@@ -40,7 +40,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     private let activityIndicator = UIActivityIndicatorView()
     // index of which cell pressed index 1 = producer 1 ??? index 0 = producer 1 (comment ward)
     var myIndex = 0
+    
+    private var shoppingCart: ShoppingCart!
+    
     private var producers: [Producer] = []
+    
     var searchCityName: String? {
         didSet {
             producers.removeAll()
@@ -258,7 +262,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         if segue.identifier == "producerCropsListSegue" {
             if let destinationVC = segue.destination as? ShoppingCartViewController {
                 if let producer = sender as? ProducersTableViewCell {
-                    destinationVC.producers = producer.producer
+                    destinationVC.shoppingCart = ShoppingCart(producer: producer.producer!, TotalCost: 0) 
                 }
             }
         } else if segue.identifier == "initiateInfoVC"{

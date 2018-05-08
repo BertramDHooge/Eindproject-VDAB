@@ -10,8 +10,7 @@ import Foundation
 
 struct ShoppingCart {
     var producer: Producer
-    var shoppingCartItemOrdered: [Stock]
-    var TotalCost: Double
+    var TotalCost: Double = 0
 }
 
 
