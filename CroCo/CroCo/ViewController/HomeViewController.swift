@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
     @IBOutlet weak var producersListHomePageTableView: UITableView!
+    @IBOutlet weak var favoritedButton: UIButton!
     
     
     @IBOutlet weak var homeTabBar: UITabBar!
@@ -74,7 +75,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
         let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: Place.leuven)
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let bertramCrops = [Stock(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 100, amountOfCropPortionsAvailable: 8, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+        let bertramCrops = [Stock(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 100, amountOfCropPortionsAvailable: 8, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 22, amountOfCropPortionsAvailable: 100, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
@@ -87,7 +88,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: mammothCrops)
         
-        let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
+        let bertramProducer = Producer(companyName: "POOP", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
         
         producers.append(mammothProducer)
         producers.append(bertramProducer)
@@ -285,6 +286,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBAction func addProducer(_ sender: UIButton) {
         performSegue(withIdentifier: "addProducer", sender: self)
     }
+    
+    // MARK: Favorited?
+    
+
     
     
     

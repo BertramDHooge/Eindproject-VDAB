@@ -13,11 +13,12 @@ class ProducersTableViewCell: UITableViewCell {
         didSet { updateUI() }
     }
     
-
+    var favorited: Bool = false
+    
     @IBOutlet weak var bikeDeliveryLabel: UILabel!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
-    
+    @IBOutlet weak var favoriteStarButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,9 +33,19 @@ class ProducersTableViewCell: UITableViewCell {
     }
     
     @IBAction func favoriteStarButton(_ sender: UIButton) {
-        
+        if favorited == false {
+            sender.setTitle("★", for: .normal)
+            favoriteStarButton.setTitleColor(UIColor.orange, for: .normal)
+            favorited = true
+            print("left")
+        } else {
+            favoriteStarButton.setTitle("☆", for: .normal)
+            favoriteStarButton.setTitleColor(UIColor.orange, for: .normal)
+            favorited = false
+            print("right")
+        }
     }
-    
+
     /// Updates the UserInterface to conform to the data
     private func updateUI() {
         guard let producer = producer else {return}
