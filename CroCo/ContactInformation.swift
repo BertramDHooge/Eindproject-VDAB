@@ -22,30 +22,20 @@ class Name: CustomStringConvertible {
     }
 }
 
-enum Place: String {
-    case werchter = "Werchter"
-    case tremelo = "Tremelo"
-    case oudHeverlee = "Oud Heverlee"
-    case leuven = "Leuven"
-    case betekom = "Betekom"
-    case kesselLo = "Kessel-Lo"
-    case herent = "Herent"
-    case wilsele = "Wilsele"
-}
-
 class Address: CustomStringConvertible {
+    
     let streetName: String
     let streetNumber: Int
     let postalCode: Int
-    let place: Place
-    init(streetName: String, streetNumber: Int, postalCode: Int, place: Place){
+    let place: String
+    init(streetName: String, streetNumber: Int, postalCode: Int, place: String){
         self.streetName = streetName
         self.streetNumber = streetNumber
         self.postalCode = postalCode
         self.place = place
     }
     var fullAdress: String {
-        return "\(streetName) \(streetNumber)\n\(postalCode) \(place.rawValue)"
+        return "\(streetName) \(streetNumber)\n\(postalCode) \(place)"
     }
     var description: String {
         return fullAdress
