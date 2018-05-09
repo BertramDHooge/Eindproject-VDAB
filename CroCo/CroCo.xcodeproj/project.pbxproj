@@ -24,7 +24,7 @@
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
 		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
 		D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52E92093496300DA9537 /* loginViewController.swift */; };
-		D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52EB2093530000DA9537 /* CreateViewController.swift */; };
+		D37E52EC2093530000DA9537 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37E52EB2093530000DA9537 /* CreateAccountViewController.swift */; };
 		D3C8B79320920B5F002B18C1 /* ProducersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */; };
 		D3D06DAF20A1B3170079EC7B /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */; };
 		D3D06DB120A1DB170079EC7B /* AddProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D06DB020A1DB160079EC7B /* AddProducerViewController.swift */; };
@@ -65,7 +65,7 @@
 		D325D55D2090BC1E00840DCD /* ContactInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = SOURCE_ROOT; };
 		D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D37E52E92093496300DA9537 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginViewController.swift; path = ../loginViewController.swift; sourceTree = "<group>"; };
-		D37E52EB2093530000DA9537 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		D37E52EB2093530000DA9537 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducersTableViewCell.swift; sourceTree = "<group>"; };
 		D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		D3D06DB020A1DB160079EC7B /* AddProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProducerViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				D3D06DB020A1DB160079EC7B /* AddProducerViewController.swift */,
 				D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */,
 				D37E52E92093496300DA9537 /* loginViewController.swift */,
-				D37E52EB2093530000DA9537 /* CreateViewController.swift */,
+				D37E52EB2093530000DA9537 /* CreateAccountViewController.swift */,
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
 				157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */,
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
@@ -340,7 +340,7 @@
 				150FBFFD2091F1A2002BBA8F /* Quantities.swift in Sources */,
 				1502AC732090B56100EBF16C /* FoodTypes.swift in Sources */,
 				157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */,
-				D37E52EC2093530000DA9537 /* CreateViewController.swift in Sources */,
+				D37E52EC2093530000DA9537 /* CreateAccountViewController.swift in Sources */,
 				1502AC6E2090B12300EBF16C /* ShoppingCartViewController.swift in Sources */,
 				FB52C52E20905E47004728A7 /* AnnotationPin.swift in Sources */,
 				157B15C820A0805000C94E21 /* ShoppingCart.swift in Sources */,

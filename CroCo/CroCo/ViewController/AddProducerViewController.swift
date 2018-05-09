@@ -33,6 +33,9 @@ class AddProducerViewController: UIViewController {
     
     @IBAction func pickingHour(_ sender: UIDatePicker) {
     }
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     //    solve: int for streetnumber is not logic, not for postalCode either. Maybe find dependency for places on Git?
     
