@@ -33,7 +33,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var homeTabBar: UITabBar!
     
     //   MARK Global Variables
-    private var rootReference: DatabaseReference?
     
     let locationManager = CLLocationManager()
     
@@ -71,9 +70,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         activityIndicator.activityIndicatorViewStyle = .gray
         
-        rootReference = Database.database().reference()
-        let producerReference = rootReference?.child("producer")
-        producerReference?.setValue(["companyName":"Veltwinkel"])
+//        rootReference = Database.database().reference()
+//        let producerReference = rootReference?.child("producer")
+//        producerReference?.setValue(["companyName":"Veltwinkel"])
         
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
@@ -112,7 +111,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         case .authorizedAlways, .authorizedWhenInUse:
             
             locationManager.startUpdatingLocation()
-            show(locationManager.location)
+            mapView.show(locationManager.location)
         case .denied, .restricted:
             
             print("location access denied")
@@ -153,40 +152,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let pin = view.annotation as? AnnotationPin
         performSegue(withIdentifier: "initiateInfoVC", sender: pin?.producer)
-    }
-    
-    /// Converts an inserted string to a location (when possible) and shows this location on the map
-    ///
-    /// - Parameter location: The String you want to have converted to a location
-    func searchMapLocation(for location: String) {
-        
-        let searchRequest = MKLocalSearchRequest()
-        searchRequest.naturalLanguageQuery = location
-        
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        activeSearch.start { (response, error) in
-            if let response = response {
-                
-                let latitude = response.boundingRegion.center.latitude
-                let longitude = response.boundingRegion.center.longitude
-                
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-                
-                self.show(CLLocation(latitude: latitude, longitude: longitude))
-            }
-        }
-    }
-    
-    /// Shows a location on the map
-    ///
-    /// - Parameter location: The location that will be shown
-    func show(_ location: CLLocation?) {
-        
-        if let location = location {
-            let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-            mapView.setRegion(region, animated: true)
-        }
     }
     
     /// Requests whether or not the users current location can be used
@@ -251,13 +216,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.showActivity(activityIndicator) {
             if let search = self.locationSearchField.text {
-                self.searchMapLocation(for: search)
+                
+                self.mapView.searchAndShowMapLocation(for: search)
             }
         }
     }
+    
     @IBAction func UnwindSegue(_ sender: UIStoryboardSegue){
         
     }
+    
     @IBAction func addProducer(_ sender: UIButton) {
         performSegue(withIdentifier: "addProducer", sender: self)
     }
