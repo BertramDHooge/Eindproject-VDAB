@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 extension UIView{
     
@@ -31,3 +32,38 @@ extension UIView{
     }
     
 }
+
+extension MKMapView{
+    
+    /// Shows a location on the map
+    ///
+    /// - Parameter location: The location that will be shown
+    func show(_ location: CLLocation?) {
+        
+        if let location = location {
+            let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            self.setRegion(region, animated: true)
+        }
+    }
+    
+    /// Converts an inserted string to a location (when possible) and shows this location on the map
+    ///
+    /// - Parameter location: The String you want to have converted to a location
+    func searchAndShowMapLocation(for location: String){
+        
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = location
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, error) in
+            if let response = response {
+                
+                let latitude = response.boundingRegion.center.latitude
+                let longitude = response.boundingRegion.center.longitude
+                
+                self.show(CLLocation(latitude: latitude, longitude: longitude))
+            }
+        }
+    }
+}
+
