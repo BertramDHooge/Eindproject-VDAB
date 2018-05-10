@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
     @IBOutlet weak var producersListHomePageTableView: UITableView!
+    @IBOutlet weak var favoritedButton: UIButton!
     
     
     @IBOutlet weak var homeTabBar: UITabBar!
@@ -77,26 +78,27 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
         let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: "Kessel Lo")
         let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
-        let mammothCrops = [Stock(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+        let mammothCrops = [Stock(portion: Portion(cropType: FoodTypes.fruit, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.kg, quantity: Quantity._1, sellingPrice: 2.0), amountOfCropPortionsAvailable: 50, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+//        (cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
         let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: "Leuven")
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let bertramCrops = [Stock(cropType: FoodTypes.meat, cropName: FoodName.cow, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 100, amountOfCropPortionsAvailable: 8, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+        let bertramCrops = [Stock(portion: Portion(cropType: FoodTypes.meat, cropName: FoodName.deer, quantityTypes: QuantityTypes.kg, quantity: Quantity._5, sellingPrice: 5.0), amountOfCropPortionsAvailable: 10, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0), Stock(portion: Portion(cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._1, sellingPrice: 1.50), amountOfCropPortionsAvailable: 100, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
         let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
         let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: "Werchter")
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let veltWinkelCrops = [Stock(cropType: FoodTypes.vegetable, cropName: FoodName.tomatoes, quantityTypes: QuantityTypes.kg, quantity: Quantity._10, sellingPrice: 22, amountOfCropPortionsAvailable: 100, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+        let veltWinkelCrops = [Stock(portion: Portion(cropType: FoodTypes.vegetable, cropName: FoodName.carrots, quantityTypes: QuantityTypes.bussel, quantity: Quantity._10, sellingPrice: 3.0), amountOfCropPortionsAvailable: 30, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         let VeltWinkelProducer: Producer = Producer(companyName: "VeltWinkel", contact: veltWinkelInfo, companyImage: nil, location:locationVeltWinkel, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, stocks: veltWinkelCrops)
         
         let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: mammothCrops)
         
-        let bertramProducer = Producer(companyName: "VeltWinkel", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
+        let bertramProducer = Producer(companyName: "POOP", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
         
         producers.append(mammothProducer)
         producers.append(bertramProducer)
@@ -110,7 +112,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         case .authorizedAlways, .authorizedWhenInUse:
             
             locationManager.startUpdatingLocation()
-            show(locationManager.location)
+            mapView.show(locationManager.location)
         case .denied, .restricted:
             
             print("location access denied")
@@ -151,40 +153,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         let pin = view.annotation as? AnnotationPin
         performSegue(withIdentifier: "initiateInfoVC", sender: pin?.producer)
-    }
-    
-    /// Converts an inserted string to a location (when possible) and shows this location on the map
-    ///
-    /// - Parameter location: The String you want to have converted to a location
-    func searchMapLocation(for location: String) {
-        
-        let searchRequest = MKLocalSearchRequest()
-        searchRequest.naturalLanguageQuery = location
-        
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        activeSearch.start { (response, error) in
-            if let response = response {
-                
-                let latitude = response.boundingRegion.center.latitude
-                let longitude = response.boundingRegion.center.longitude
-                
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-                
-                self.show(CLLocation(latitude: latitude, longitude: longitude))
-            }
-        }
-    }
-    
-    /// Shows a location on the map
-    ///
-    /// - Parameter location: The location that will be shown
-    func show(_ location: CLLocation?) {
-        
-        if let location = location {
-            let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-            mapView.setRegion(region, animated: true)
-        }
     }
     
     /// Requests whether or not the users current location can be used
@@ -249,16 +217,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.showActivity(activityIndicator) {
             if let search = self.locationSearchField.text {
-                self.searchMapLocation(for: search)
+                
+                self.mapView.searchAndShowMapLocation(for: search)
             }
         }
     }
+    
     @IBAction func UnwindSegue(_ sender: UIStoryboardSegue){
         
     }
+    
     @IBAction func addProducer(_ sender: UIButton) {
         performSegue(withIdentifier: "addProducer", sender: self)
     }
+    
+    // MARK: Favorited?
+    
+
     
     
     

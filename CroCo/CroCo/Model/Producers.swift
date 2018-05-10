@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 class Producers {
-    private var producers: [Producer]?
+    var producers: [Producer]?
     var deliveryLocation: CLLocation?
     
     private func sortProducersByDistanceToStartLocation(destinationProducerCrop: CLLocation) -> [Producer] {
