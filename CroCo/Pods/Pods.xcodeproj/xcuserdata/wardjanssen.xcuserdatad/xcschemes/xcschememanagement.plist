@@ -17,12 +17,20 @@
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+ brandNewFireStore
 			<integer>1</integer>
+
+			<integer>2</integer>
+ master
 		</dict>
 		<key>Pods-CroCo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+ brandNewFireStore
 			<integer>10</integer>
+
+			<integer>4</integer>
+ master
 		</dict>
 		<key>Protobuf.xcscheme</key>
 		<dict>
@@ -62,7 +70,11 @@
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+ brandNewFireStore
 			<integer>9</integer>
+
+			<integer>3</integer>
+ master
 		</dict>
 	</dict>
 </dict>
