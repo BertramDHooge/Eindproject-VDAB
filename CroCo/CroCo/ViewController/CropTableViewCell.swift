@@ -45,7 +45,7 @@ class CropTableViewCell: UITableViewCell {
             stock!.amountOfCropPortionsAvailable -= 1
             portions += 1
             stock?.amountOfCropsSelected += 1
-            shoppingCartDelegate?.changeTotalAmount(by: +stock!.portion.sellingPriceSinglePerSinglePortion)
+            shoppingCartDelegate?.changeTotalAmount(by: +stock!.portion.sellingPriceSinglePortion)
         }
         
         updateUI()
@@ -59,7 +59,7 @@ class CropTableViewCell: UITableViewCell {
             stock!.amountOfCropPortionsAvailable += 1
             portions -= 1
             stock?.amountOfCropsSelected -= 1
-            shoppingCartDelegate?.changeTotalAmount(by: -stock!.portion.sellingPriceSinglePerSinglePortion)
+            shoppingCartDelegate?.changeTotalAmount(by: -stock!.portion.sellingPriceSinglePortion)
         }
         
         updateUI()
@@ -72,7 +72,7 @@ class CropTableViewCell: UITableViewCell {
         removePortionButton.isEnabled = !(portions == 0)
         
         numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfCropPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.quantityTotalPortionRequest.rawValue) \(stock!.portion.standardisedQuantitySingleCropType.rawValue) per portie. €\(stock!.portion.sellingPriceSinglePortion) per portie."
+        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.sellingPriceSinglePortion) \(stock!.portion.standardisedQuantitySingleCropType.rawValue) per portie. €\(stock!.portion.sellingPriceSinglePortion) per portie."
         cropNameLabel.text = stock!.portion.cropName.rawValue
         numberOfPortions.text = "\(portions)"
     }

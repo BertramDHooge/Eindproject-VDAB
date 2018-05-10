@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="15u-5o-wb5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dkt-Rj-oc0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,13 +48,13 @@
                                         <rect key="frame" x="0.0" y="29" width="355" height="608"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je bedrijfsnaam in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63f-UI-2KI">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="168"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier de voornaam van de contactpersoon in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMO-4S-z8H">
-                                                <rect key="frame" x="0.0" y="38" width="355" height="30"/>
+                                                <rect key="frame" x="0.0" y="176" width="355" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="6bx-jk-Kkm"/>
                                                 </constraints>
@@ -63,7 +63,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier de achternaam van de contactpersoon in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-Nq-J8x">
-                                                <rect key="frame" x="0.0" y="76" width="355" height="30"/>
+                                                <rect key="frame" x="0.0" y="214" width="355" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="fkO-Ld-7hY"/>
                                                 </constraints>
@@ -72,7 +72,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je telefoonnummer in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcl-H9-80Z">
-                                                <rect key="frame" x="0.0" y="114" width="355" height="30"/>
+                                                <rect key="frame" x="0.0" y="252" width="355" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="36y-nY-kEF"/>
                                                 </constraints>
@@ -81,7 +81,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je Emailadres in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-KJ-5RA">
-                                                <rect key="frame" x="0.0" y="152" width="355" height="30"/>
+                                                <rect key="frame" x="0.0" y="290" width="355" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="E8O-hP-z82"/>
                                                 </constraints>
@@ -90,33 +90,33 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xXd-LC-GLi">
-                                                <rect key="frame" x="0.0" y="190" width="355" height="106"/>
+                                                <rect key="frame" x="0.0" y="328" width="355" height="108"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rgn-Bc-WgP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="198.5" height="106"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="198.5" height="108"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-F6-cfu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="198.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="198.5" height="31"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Levering aan huis?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k66-yR-ydk">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="31"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieo-Tp-uqH">
-                                                                        <rect key="frame" x="149.5" y="0.0" width="51" height="30"/>
+                                                                        <rect key="frame" x="149.5" y="0.0" width="51" height="31"/>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je straatnaam van afhaling in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMw-vc-bPu">
-                                                                <rect key="frame" x="0.0" y="38" width="198.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="39" width="198.5" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je plaatsnaam van afhaling" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5B-ly-OYD">
-                                                                <rect key="frame" x="0.0" y="76" width="198.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="77" width="198.5" height="31"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -127,7 +127,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BC3-qh-JyF">
-                                                        <rect key="frame" x="206.5" y="0.0" width="148.5" height="106"/>
+                                                        <rect key="frame" x="206.5" y="0.0" width="148.5" height="108"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2p-Yq-BUO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="148.5" height="30"/>
@@ -140,13 +140,13 @@
                                                                 </state>
                                                             </button>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je huisnummer van afhaling in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8k-lh-dab">
-                                                                <rect key="frame" x="0.0" y="38" width="148.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="38" width="148.5" height="32"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je postcode van afhaling in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jZz-2E-ijw">
-                                                                <rect key="frame" x="0.0" y="76" width="148.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="78" width="148.5" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -159,7 +159,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-hC-tGU">
-                                                <rect key="frame" x="0.0" y="304" width="355" height="30"/>
+                                                <rect key="frame" x="0.0" y="444" width="355" height="30"/>
                                                 <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Nu9-Uv-KcF"/>
@@ -168,31 +168,27 @@
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Komende levering?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-nb-x0k">
-                                                <rect key="frame" x="0.0" y="342" width="355" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wanneer gebeuren leveringen?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZk-nb-x0k">
+                                                <rect key="frame" x="0.0" y="482" width="355" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="6TQ-cG-HXA"/>
                                                     <constraint firstAttribute="height" constant="21" id="AJN-kh-9mk"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bCw-Eo-FFO">
-                                                <rect key="frame" x="0.0" y="371" width="355" height="100"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je Emailadres in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx0-JR-ysb">
+                                                <rect key="frame" x="0.0" y="511" width="355" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="23M-Qy-S64"/>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="QRA-30-uNb"/>
+                                                    <constraint firstAttribute="height" constant="30" id="BZ3-Xd-9gy"/>
                                                 </constraints>
-                                                <date key="date" timeIntervalSinceReferenceDate="547324188.43400204">
-                                                    <!--2018-05-06 18:29:48 +0000-->
-                                                </date>
-                                                <connections>
-                                                    <action selector="deliveryHour:" destination="3IX-iG-ebQ" eventType="valueChanged" id="Rv5-Hx-w1X"/>
-                                                </connections>
-                                            </datePicker>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Komende afhaling?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1x-lC-RyZ">
-                                                <rect key="frame" x="0.0" y="479" width="355" height="21"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wanneer gebeurt de afhaling?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1x-lC-RyZ">
+                                                <rect key="frame" x="0.0" y="549" width="355" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="o04-Dh-iSn"/>
                                                 </constraints>
@@ -200,18 +196,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-Eo-mu2">
-                                                <rect key="frame" x="0.0" y="508" width="355" height="100"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je Emailadres in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Uw-Q9-Rvr">
+                                                <rect key="frame" x="0.0" y="578" width="355" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="aVN-KM-vB0"/>
+                                                    <constraint firstAttribute="height" constant="30" id="iXS-BO-Etu"/>
                                                 </constraints>
-                                                <date key="date" timeIntervalSinceReferenceDate="547324188.43400204">
-                                                    <!--2018-05-06 18:29:48 +0000-->
-                                                </date>
-                                                <connections>
-                                                    <action selector="pickingHour:" destination="3IX-iG-ebQ" eventType="valueChanged" id="cYq-RV-A3z"/>
-                                                </connections>
-                                            </datePicker>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="608" id="4Fg-Uu-LuP"/>

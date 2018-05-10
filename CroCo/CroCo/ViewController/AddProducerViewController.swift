@@ -23,10 +23,6 @@ class AddProducerViewController: UIViewController {
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var delivery: UISwitch!
 
-    @IBAction func deliveryHour(_ sender: UIDatePicker) {
-    }
-    @IBAction func pickingHour(_ sender: UIDatePicker) {
-    }
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
