@@ -10,7 +10,7 @@ import UIKit
 
 class stockViewController: UIViewController {
 
-    var onSave: ((_ records: [foodtype: String, cropName: String, quantity: String, quantityType: String stockPortionsAmount: String, pricePerPortion: String])->())?
+    var onSave: (([_ foodtype: String,_ cropName: String,_ quantity: Int,_ quantityType: String,_ stockPortionsAmount: Int,_ pricePerPortion: Double])->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +26,4 @@ class stockViewController: UIViewController {
 
    
  
-
 }

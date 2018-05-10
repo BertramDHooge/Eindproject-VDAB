@@ -84,14 +84,14 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addStockSegue" {
-            let stockData = segue.destination  as! stockViewController
-            stockData.onSave = {[foodtype, cropName, quantity, quantityType, stockPortionsAmount, pricePerPortion]  in
-                
-        }
-    }
-   
-            
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "addStockSegue" {
+//            let stockData = segue.destination  as! stockViewController
+//            stockData.onSave = {[foodtype, cropName, quantity, quantityType, stockPortionsAmount, pricePerPortion]  in
+//          // breng hier de verbinding met fireStore
+//        }
+//    }
+//
+//    }
+//      unwind(for: self, towardsViewController: stockViewController)
 }
