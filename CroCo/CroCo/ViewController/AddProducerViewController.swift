@@ -44,14 +44,71 @@ class AddProducerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        listen for keyboard events - problem solved by putting content in scroll view
     
-    }
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+//
+//
+//
+//
+//    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
+//        stop listing for keyboard hide/show events
+//
+//    deinit {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//
+//    }
+//
+//
+//    @objc func keyboardWillChange(notification: Notification) {
+//
+//        guard let keyboardRect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+//            return
+//        }
+//        if notification.name == Notification.Name.UIKeyboardWillShow ||
+//            notification.name == Notification.Name.UIKeyboardWillChangeFrame {
+//
+//            view.frame.origin.y = -keyboardRect.height
+//        } else {
+//            view.frame.origin.y = 0
+//        }
+//
+//    }
+//
+//    func moveTextField(textField: UITextField, moveDistance: Int, up: Bool) {
+//        let moveDuration = 0.3
+//        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+//
+//        UIView.beginAnimations("animateTextField", context: nil)
+//        UIView.setAnimationBeginsFromCurrentState(true)
+//        UIView.setAnimationDuration(moveDuration)
+//        self.view.frame = CGRect.offsetBy(CGRect()
+//    }
+//
+////      Keyboard shows
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        moveTextField(textField, moveDistance: -250, up: true)
+//    }
+////      Keyboard hidden
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        moveTextField(textField, moveDistance: -250, up: false)
+//    }
+//    func textFieldShouldReturn(rextField: UITextField) -> Bool {
+//        UITextField.resignFirstResponder()
+//        return true
     }
     
-
 
 }
