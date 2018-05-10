@@ -7,14 +7,22 @@ import MapKit
 class Producer {
     let companyName: String?
     let contact: Contact
+//    still find out how to stock image in FireStore
     var companyImage: String? = nil
+//    in order to stock a String type in FireStore
+//    optional because when there is no delivery they might not reveal their address
+        var address: Address?
 //    var location: CLLocationCoordinate2D
 //    type CLLocation heeft methode distance
     var location: CLLocation
     var delivery: Bool
+//    make drop down list in add Producer
     let mainProduce: MainProduce
-    let deliveryHours: Date?
-    let pickUpHours: Date?
+//    turn Date type into string (timeintervalsince) in order to use in Firestore
+//    this date schould specify in the date/time Picker day and starting hour of delivery and pickup
+    let deliveryHour: Date?
+    let pickUpHour: Date?
+//    if there is still time to do we count the amount of validation stars commited by users
     var validation: Int?
     var stocks: [Stock]
 //    var orderLists: [OrderList]
@@ -40,12 +48,16 @@ class Producer {
         self.location = location
         self.delivery = delivery
         self.mainProduce = mainProduce
-        self.deliveryHours = deliveryHours
-        self.pickUpHours = pickUpHours
+        self.deliveryHour = deliveryHours
+        self.pickUpHour = pickUpHours
         self.validation = validation
         self.stocks = stocks
+        
     }
-    convenience init(contact: Contact, location: CLLocation, mainProduce: MainProduce, stocks: [Stock]) {
+    
+//    convenience initialiser
+    
+    convenience init(contact: Contact, location: CLLocation, address: Address, mainProduce: MainProduce, stocks: [Stock]) {
         self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: stocks)
         
         
