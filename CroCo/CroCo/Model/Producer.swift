@@ -26,10 +26,10 @@ class Producer {
     var validation: Int?
     var stocks: [Stock]
 //    var orderLists: [OrderList]
-    var totalCropsCost: Double {
+    var totalStockCost: Double {
         var totalCost = 0.0
         for stock in stocks {
-            totalCost += stock.totalCostOfCropsSelected
+            totalCost += stock.totalCostOfSelectedStock
         }
         return totalCost
     }

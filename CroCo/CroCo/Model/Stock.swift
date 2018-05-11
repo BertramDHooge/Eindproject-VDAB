@@ -12,7 +12,7 @@ import Foundation
 
 struct Stock {
     var portion: Portion
-    var amountOfCropPortionsAvailable: Int
-    var amountOfCropsSelected: Int
-    var totalCostOfCropsSelected: Double
+    var amountOfStockPortionsAvailable: Int
+    var amountOfStockSelected: Int
+    var totalCostOfSelectedStock: Double
 }

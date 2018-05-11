@@ -10,9 +10,9 @@ import Foundation
 
 struct Portion {
 
-    var cropName: FoodName
-    var cropType: FoodTypes
-    var standardisedQuantitySingleCropType: QuantityTypes
+    var stockName: StockName
+    var stockType: StockTypes
+    var standardisedQuantitySingleStockType: QuantityTypes
     // this is the amount off portions the producer has in stock - warning: not the real quantity of this Foodtype. The real quantity is times quantityType this number
     var totalPortionsInStock: Int
     var sellingPriceSinglePortion: Double

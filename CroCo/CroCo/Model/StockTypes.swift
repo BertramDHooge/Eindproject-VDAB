@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum FoodTypes: String {
+enum StockTypes: String {
     case vegetable = "vegetable", meat = "meat", fruit = "fruit"
    
 }
-enum FoodName: String {
+enum StockName: String {
     case carrots = "Wortel", peas = "Erwten", corn = "Mais", strawberries = "Aardbeien", tomatoes = "Tomaten", bellPeppers = "Paprika"
     
     case cow = "Koe", horse = "Paard", goat = "Geit", lamb = "Lamb", pig = "Varken", deer = "Hert", boar = "Everzwijn", rabbit = "Konijn"
