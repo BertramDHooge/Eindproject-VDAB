@@ -20,7 +20,6 @@
 		157B15C820A0805000C94E21 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C720A0805000C94E21 /* ShoppingCart.swift */; };
 		157B15CA20A086C300C94E21 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C920A086C300C94E21 /* Order.swift */; };
 		36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */; };
-		36007666209EDCA6007EEDD2 /* Producers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007665209EDCA6007EEDD2 /* Producers.swift */; };
 		368EE60620A4F84C0011F3C2 /* stockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EE60520A4F84C0011F3C2 /* stockViewController.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
 		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
@@ -60,7 +59,6 @@
 		157B15C720A0805000C94E21 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		157B15C920A086C300C94E21 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
-		36007665209EDCA6007EEDD2 /* Producers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producers.swift; sourceTree = "<group>"; };
 		368EE60520A4F84C0011F3C2 /* stockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = stockViewController.swift; path = CroCo/ViewController/stockViewController.swift; sourceTree = SOURCE_ROOT; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				FB52C52D20905E47004728A7 /* AnnotationPin.swift */,
 				157B15C720A0805000C94E21 /* ShoppingCart.swift */,
 				1502AC762090B5B700EBF16C /* user.swift */,
-				36007665209EDCA6007EEDD2 /* Producers.swift */,
 				FB52C5372090A1FF004728A7 /* Producer.swift */,
 				1502AC722090B55B00EBF16C /* StockTypes.swift */,
 				FB52C53520909FE2004728A7 /* MainProduce.swift */,
@@ -361,7 +358,6 @@
 				FB893F802099F58D00B35505 /* ProducerInfoTableViewCell.swift in Sources */,
 				D3D06DB120A1DB170079EC7B /* AddProducerViewController.swift in Sources */,
 				FB893F822099F9FD00B35505 /* DeliveryInfoTableViewCell.swift in Sources */,
-				36007666209EDCA6007EEDD2 /* Producers.swift in Sources */,
 				D37E52EA2093496300DA9537 /* loginViewController.swift in Sources */,
 				FB44121120A05C4700EFECD4 /* Extensions.swift in Sources */,
 				D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */,

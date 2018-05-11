@@ -9,7 +9,17 @@
 import UIKit
 import Firebase
 
-class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, AddStockDelegate {
+    
+    func addStock(_ stock: Stock) {
+        
+        if stockList.contains(where: { (closureStock) -> Bool in
+            closureStock.portion.stockName == stock.portion.stockName
+        }){
+        stockList.append(stock)
+        }
+    }
+    
     
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var mainProduce: UITextField!
@@ -17,7 +27,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     let mainProduct = ["groenten", "fruit", "melk", "eieren", "vlees"]
     
     var pickerViewMainProduce = UIPickerView()
-    var stockList: [Stock]?
+    var stockList: [Stock] = []
     //   MARK: -My outlets
     
     @IBOutlet weak var contactDotNameDotSurname: UITextField!
@@ -80,6 +90,16 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent: Int) {
         mainProduce.text = mainProduct[row]
         mainProduce.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "initiateAddStockVC" {
+            
+            if let destinationVC = segue.destination as? stockViewController {
+                
+                destinationVC.delegate = self
+            }
+        }
     }
     // MARK: - Navigation
     

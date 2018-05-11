@@ -8,7 +8,7 @@ class Producer {
     let companyName: String?
     let contact: Contact
 //    still find out how to stock image in FireStore
-    var companyImage: String? = nil
+//    var companyImage: String? = nil
 //    in order to stock a String type in FireStore
 //    optional because when there is no delivery they might not reveal their address
         var address: Address?
