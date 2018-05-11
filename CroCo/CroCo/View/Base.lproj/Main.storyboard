@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lb0-hQ-V07">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3IX-iG-ebQ">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -610,7 +610,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BW3-Rn-ykn">
-                                                    <rect key="frame" x="257" y="3" width="49" height="31"/>
+                                                    <rect key="frame" x="257" y="2" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 </switch>
                                             </subviews>
@@ -1112,7 +1112,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ4-8S-wcc">
-                                                    <rect key="frame" x="8" y="8" width="98" height="33.5"/>
+                                                    <rect key="frame" x="8" y="8" width="156.5" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fZ4-8S-wcc" secondAttribute="height" multiplier="62:21" id="eZb-59-IRq"/>
                                                     </constraints>
@@ -1121,7 +1121,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delivery at home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-kE-YP0">
-                                                    <rect key="frame" x="77" y="49.5" width="211.5" height="33.5"/>
+                                                    <rect key="frame" x="135.5" y="69.5" width="336" height="53"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xLa-kE-YP0" secondAttribute="height" multiplier="19:3" id="d7C-ed-mPa"/>
                                                     </constraints>
@@ -1130,7 +1130,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup at location from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-Se-U4S">
-                                                    <rect key="frame" x="155" y="91" width="279.5" height="33"/>
+                                                    <rect key="frame" x="338" y="130.5" width="444.5" height="53"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="cv9-Se-U4S" secondAttribute="height" multiplier="176:21" id="niT-2V-T1l"/>
                                                     </constraints>
@@ -1139,7 +1139,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 -15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAq-fG-wfu">
-                                                    <rect key="frame" x="442.5" y="90.5" width="182.5" height="33.5"/>
+                                                    <rect key="frame" x="790.5" y="130.5" width="290.5" height="53"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="gAq-fG-wfu" secondAttribute="height" multiplier="115:21" id="mCI-d2-ruf"/>
                                                     </constraints>
@@ -1148,7 +1148,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OK" translatesAutoresizingMaskIntoConstraints="NO" id="rrH-lv-KTE">
-                                                    <rect key="frame" x="296.5" y="50" width="31.5" height="31"/>
+                                                    <rect key="frame" x="982.5" y="70.5" width="50.5" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="rrH-lv-KTE" secondAttribute="height" multiplier="1:1" id="Ncv-SH-2hf"/>
                                                     </constraints>
