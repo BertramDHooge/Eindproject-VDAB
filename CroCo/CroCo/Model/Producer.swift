@@ -15,6 +15,7 @@ class Producer {
 //    var location: CLLocationCoordinate2D
 //    type CLLocation heeft methode distance
     var location: CLLocation
+    var locationString: String
     var delivery: Bool
 //    make drop down list in add Producer
     let mainProduce: MainProduce
@@ -41,11 +42,12 @@ class Producer {
         }
     }
     
-    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocation, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, stocks: [Stock]) {
+    init(companyName: String?, contact: Contact, companyImage: String?, location: CLLocation, locationString: String, delivery: Bool, mainProduce: MainProduce, deliveryHours: Date, pickUpHours: Date, validation: Int?, stocks: [Stock]) {
         self.companyName = companyName
         self.contact = contact
         self.companyImage = companyImage
         self.location = location
+        self.locationString = locationString
         self.delivery = delivery
         self.mainProduce = mainProduce
         self.deliveryHour = deliveryHours
@@ -57,8 +59,8 @@ class Producer {
     
 //    convenience initialiser
     
-    convenience init(contact: Contact, location: CLLocation, address: Address, mainProduce: MainProduce, stocks: [Stock]) {
-        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: stocks)
+    convenience init(contact: Contact, location: CLLocation, locationString: String, address: Address, mainProduce: MainProduce, stocks: [Stock]) {
+        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, locationString: locationString, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: stocks)
         
         
 //        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)

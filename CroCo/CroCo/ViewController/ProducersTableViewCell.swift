@@ -15,6 +15,7 @@ class ProducersTableViewCell: UITableViewCell {
     
     var favorited: Bool = false
     
+    @IBOutlet weak var distanceFromLocationLabel: UILabel!
     @IBOutlet weak var bikeDeliveryLabel: UILabel!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
@@ -23,6 +24,7 @@ class ProducersTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        updateUI()
 
     }
 

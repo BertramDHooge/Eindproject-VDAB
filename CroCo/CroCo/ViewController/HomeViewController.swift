@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     let locationManager = CLLocationManager()
     
-    let usedLocation: CLLocation? = nil
+    var usedLocation: CLLocation? = nil
     
     private let activityIndicator = UIActivityIndicatorView()
     
@@ -45,19 +45,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     private var shoppingCart: ShoppingCart!
     
-    private var producers: [Producer] = []
+    private var firebaseDemoProducers: [Producer] = []
+    
+    var usedProducers: [Producer] = []
     
     private var sortedProducers: [Producer] {
         if let location = usedLocation {
-            return producers.sorted(by: {(producer1, producer2) -> Bool in producer1.location.distance(from: location) < producer2.location.distance(from: location)})
+            return usedProducers.sorted(by: {(producer1, producer2) -> Bool in producer1.location.distance(from: location) < producer2.location.distance(from: location)})
         } else {
-            return producers
+            return usedProducers
         }
     }
     
     var searchCityName: String? {
         didSet {
-            producers.removeAll()
+            firebaseDemoProducers.removeAll()
             producersListHomePageTableView.reloadData()
             //            searchForProducers()
             
@@ -94,15 +96,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let veltWinkelCrops = [Stock(portion: Portion(stockName: StockName.carrots, stockType: StockTypes.vegetable, standardisedQuantitySingleStockType: QuantityTypes.bussel, totalPortionsInStock: Quantity._10.rawValue, sellingPriceSinglePortion: 3.0), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
-        let VeltWinkelProducer: Producer = Producer(companyName: "VeltWinkel", contact: veltWinkelInfo, companyImage: nil, location:locationVeltWinkel, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, stocks: veltWinkelCrops)
+        let VeltWinkelProducer: Producer = Producer(companyName: "VeltWinkel", contact: veltWinkelInfo, companyImage: nil, location: locationVeltWinkel, locationString: "Antwerpen", delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, stocks: veltWinkelCrops)
         
-        let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: mammothCrops)
+        let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, locationString: "Brussel", delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: mammothCrops)
         
-        let bertramProducer = Producer(companyName: "POOP", contact: infoBertram, companyImage: nil, location: locationFarmBertram, delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
+        let bertramProducer = Producer(companyName: "POOP", contact: infoBertram, companyImage: nil, location: locationFarmBertram, locationString: "Leuven", delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
         
-        producers.append(mammothProducer)
-        producers.append(bertramProducer)
-        producers.append(VeltWinkelProducer)
+        firebaseDemoProducers.append(mammothProducer)
+        firebaseDemoProducers.append(bertramProducer)
+        firebaseDemoProducers.append(VeltWinkelProducer)
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -123,10 +125,34 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        for producer in producers {
+        for producer in firebaseDemoProducers {
             
-            let pin = AnnotationPin(with: producer)
-            mapView.addAnnotation(pin)
+            let searchRequest = MKLocalSearchRequest()
+            searchRequest.naturalLanguageQuery = producer.locationString
+            
+            let activeSearch = MKLocalSearch(request: searchRequest)
+            activeSearch.start { (response, error) in
+                if let response = response {
+                    
+                    let latitude = response.boundingRegion.center.latitude
+                    let longitude = response.boundingRegion.center.longitude
+                    
+                    self.usedProducers.append(Producer(companyName: producer.companyName, contact: producer.contact, companyImage: producer.companyImage, location: CLLocation(latitude: latitude, longitude: longitude), locationString: producer.locationString, delivery: producer.delivery, mainProduce: producer.mainProduce, deliveryHours: producer.deliveryHour!, pickUpHours: producer.pickUpHour!, validation: producer.validation, stocks: producer.stocks))
+                    
+                    let pin = AnnotationPin(with: producer, and: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                    self.mapView.addAnnotation(pin)
+                }
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        producersListHomePageTableView.showActivity(activityIndicator) {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                
+                self.producersListHomePageTableView.reloadData()
+            }
         }
     }
     
@@ -147,6 +173,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         } else {
             return nil
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        usedLocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        producersListHomePageTableView.reloadData()
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -177,19 +209,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return producers.count
+        return sortedProducers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
-        let producer = producers[indexPath.row]
+        let producer = sortedProducers[indexPath.row]
         
         if let producerCell = producerCell as? ProducersTableViewCell {
             
             producerCell.producer = producer
             producerCell.adressLabel.text = producer.contact.address.fullAdress
             producerCell.companyNameLabel.text = producer.companyName
+            producerCell.distanceFromLocationLabel.text = "\(Int(producer.location.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
         }
         producerCell.backgroundColor = .clear
         return producerCell
@@ -204,7 +237,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "initiateInfoVC", sender: producers[indexPath.row])
+        performSegue(withIdentifier: "initiateInfoVC", sender: firebaseDemoProducers[indexPath.row])
     }
     
     
