@@ -69,19 +69,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let settings = FirestoreSettings()
+//
+//        Firestore.firestore().settings = settings
+//
+//        dataBase = Firestore.firestore()
         
         activityIndicator.activityIndicatorViewStyle = .gray
         
-//        rootReference = Database.database().reference()
-//        let producerReference = rootReference?.child("producer")
-//        producerReference?.setValue(["companyName":"Veltwinkel"])
+        //        rootReference = Database.database().reference()
+        //        let producerReference = rootReference?.child("producer")
+        //        producerReference?.setValue(["companyName":"Veltwinkel"])
         
         let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
         let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: "Kessel Lo")
         let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
         let mammothCrops = [Stock(portion: Portion(portionDescription: "bussel van 3 keukenraap", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
-//        (cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
+        //        (cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
@@ -143,6 +148,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 }
             }
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -156,6 +162,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     
+    // MARK: -Firestore
+//
+//    let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
+//    let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
+//    let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: "Kessel Lo")
+//    let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress:
+//
+    
+//     let bertramProducer: Producer = Producer(companyName: "PopcornParty", contact: infoBertram, location: locationFarmBertram, locationString: "Oud Heverlee", delivery: false, mainProduce: MainProduce.meat, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "bos aardbeien", sellingPriceSinglePortion: 2.0), amountOfStockPortionsAvailable: 10, amountOfStockSelected: 1, totalCostOfSelectedStock: 2)])
+   
     // MARK: -Managing the MapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -265,7 +281,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     // MARK: Favorited?
     
-
+    
     
     
     
