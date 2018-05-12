@@ -72,8 +72,8 @@ class CropTableViewCell: UITableViewCell {
         removePortionButton.isEnabled = !(portions == 0)
         
         numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfStockPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.sellingPriceSinglePortion) \(stock!.portion.standardisedQuantitySingleStockType.rawValue) per portie. €\(stock!.portion.sellingPriceSinglePortion) per portie."
-        cropNameLabel.text = stock!.portion.stockName.rawValue
+        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.portionDescription) €\(stock!.portion.sellingPriceSinglePortion) per portie."
+        cropNameLabel.text = stock!.portion.portionDescription
         numberOfPortions.text = "\(portions)"
     }
     
