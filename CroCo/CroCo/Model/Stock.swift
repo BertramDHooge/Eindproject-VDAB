@@ -8,8 +8,6 @@
 
 import Foundation
 
-// ik denk dat we best een file crops maken waarin een array van crop in zit - Ward
-
 struct Stock {
     var portion: Portion
     var amountOfStockPortionsAvailable: Int

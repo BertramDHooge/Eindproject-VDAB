@@ -9,11 +9,14 @@
 import Foundation
 
 struct Portion {
+// This is future proof model but to get the first sprint we make a portion with name, quantityType and portionQuantity all in one together with an adaptable price
+    
+//    var stockName: StockName
+//    var stockType: StockTypes
+//    var standardisedQuantitySingleStockType: QuantityTypes
+//    // this is the amount off portions the producer has in stock - warning: not the real quantity of this Foodtype. The real quantity is times quantityType this number
+//    var totalPortionsInStock: Int
 
-    var stockName: StockName
-    var stockType: StockTypes
-    var standardisedQuantitySingleStockType: QuantityTypes
-    // this is the amount off portions the producer has in stock - warning: not the real quantity of this Foodtype. The real quantity is times quantityType this number
-    var totalPortionsInStock: Int
+    var portionDescription: String
     var sellingPriceSinglePortion: Double
 }

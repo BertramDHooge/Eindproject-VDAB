@@ -89,16 +89,15 @@
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rgn-Bc-WgP">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="183.5" height="106"/>
                                                                                         <subviews>
-                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-hC-tGU">
+                                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rRM-P9-4xR">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="183.5" height="30"/>
-                                                                                                <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <constraints>
-                                                                                                    <constraint firstAttribute="height" constant="30" id="Nu9-Uv-KcF"/>
+                                                                                                    <constraint firstAttribute="height" constant="30" id="viT-PQ-aiH"/>
                                                                                                 </constraints>
-                                                                                                <state key="normal" title="upload foto">
-                                                                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                </state>
-                                                                                            </button>
+                                                                                                <nil key="textColor"/>
+                                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                                                            </textField>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je straatnaam van afhaling in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMw-vc-bPu">
                                                                                                 <rect key="frame" x="0.0" y="38" width="183.5" height="30"/>
                                                                                                 <constraints>
@@ -285,6 +284,7 @@
                         <outlet property="contactDotNameDotSurname" destination="BMO-4S-z8H" id="uSZ-wU-ak8"/>
                         <outlet property="delivery" destination="ieo-Tp-uqH" id="8mu-Qs-ByP"/>
                         <outlet property="emailAddress" destination="lxD-KJ-5RA" id="Q5s-mP-i8B"/>
+                        <outlet property="mainProduceTextField" destination="rRM-P9-4xR" id="ieQ-6v-pg2"/>
                         <outlet property="place" destination="v5B-ly-OYD" id="hp1-Wd-a21"/>
                         <outlet property="postalCode" destination="jZz-2E-ijw" id="JBv-zY-eqy"/>
                         <outlet property="streetName" destination="eMw-vc-bPu" id="K7P-gG-izM"/>
@@ -341,7 +341,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="unZ-TF-fx8">                                        <rect key="frame" x="0.0" y="80" width="72.5" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="unZ-TF-fx8">
+                                        <rect key="frame" x="0.0" y="80" width="72.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>

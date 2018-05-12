@@ -22,7 +22,6 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     @IBOutlet weak var companyName: UITextField!
-    @IBOutlet weak var mainProduce: UITextField!
     
     let mainProduct = ["groenten", "fruit", "melk", "eieren", "vlees"]
     
@@ -38,6 +37,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var streetNumber: UITextField!
     @IBOutlet weak var telephoneNumber: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
+    @IBOutlet weak var mainProduceTextField: UITextField!
     @IBOutlet weak var delivery: UISwitch!
 
     //  MARK: -My actions
@@ -69,9 +69,9 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         pickerViewMainProduce.delegate = self
         pickerViewMainProduce.dataSource = self
         
-        mainProduce.inputView = pickerViewMainProduce
-        mainProduce.textAlignment = .center
-        mainProduce.placeholder = "kies je hoofdproduct"
+        mainProduceTextField.inputView = pickerViewMainProduce
+        mainProduceTextField.textAlignment = .center
+        mainProduceTextField.placeholder = "kies je hoofdproduct"
     }
     
     
@@ -88,8 +88,8 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_: UIPickerView, didSelectRow row: Int, inComponent: Int) {
-        mainProduce.text = mainProduct[row]
-        mainProduce.resignFirstResponder()
+        mainProduceTextField.text = mainProduct[row]
+        mainProduceTextField.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

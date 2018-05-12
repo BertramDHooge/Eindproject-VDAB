@@ -80,27 +80,26 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
         let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: "Kessel Lo")
         let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
-        let mammothCrops = [Stock(portion: Portion(stockName: StockName.tomatoes, stockType: StockTypes.fruit, standardisedQuantitySingleStockType: QuantityTypes.kg, totalPortionsInStock: Quantity._1.rawValue, sellingPriceSinglePortion: 2.0), amountOfStockPortionsAvailable: 50, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
+        let mammothCrops = [Stock(portion: Portion(portionDescription: "bussel van 3 keukenraap", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
 //        (cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
         
         let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
         let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: "Leuven")
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let bertramCrops = [Stock(portion: Portion(stockName: StockName.deer, stockType: StockTypes.meat, standardisedQuantitySingleStockType: QuantityTypes.kg, totalPortionsInStock: Quantity._5.rawValue, sellingPriceSinglePortion: 5.0), amountOfStockPortionsAvailable: 10, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0), Stock(portion: Portion(stockName: StockName.apples, stockType: StockTypes.fruit, standardisedQuantitySingleStockType: QuantityTypes.kg, totalPortionsInStock: Quantity._1.rawValue, sellingPriceSinglePortion: 1.50), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
-        
+        let bertramCrops = [Stock(portion: Portion(portionDescription: "bussel wortelen van 12 stuks", sellingPriceSinglePortion: 1.5), amountOfStockPortionsAvailable: 50, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
         let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
         let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: "Werchter")
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let veltWinkelCrops = [Stock(portion: Portion(stockName: StockName.carrots, stockType: StockTypes.vegetable, standardisedQuantitySingleStockType: QuantityTypes.bussel, totalPortionsInStock: Quantity._10.rawValue, sellingPriceSinglePortion: 3.0), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
+        let veltWinkelCrops = [Stock(portion: Portion(portionDescription: "2 kg bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
-        let VeltWinkelProducer: Producer = Producer(companyName: "VeltWinkel", contact: veltWinkelInfo, companyImage: nil, location: locationVeltWinkel, locationString: "Antwerpen", delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: 5, stocks: veltWinkelCrops)
+        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "0.5 kg gekookte aardappeltjes", sellingPriceSinglePortion: 1.0), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 1, totalCostOfSelectedStock: 1)])
         
-        let mammothProducer = Producer(companyName: "Tolis", contact: infoMammoth, companyImage: nil, location: locationmammot, locationString: "Brussel", delivery: true, mainProduce: MainProduce.vegetableFruitDairy, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: mammothCrops)
+        let mammothProducer: Producer = Producer(companyName: "Tolis", contact: infoMammoth, location: locationmammot, locationString: "Brussel", delivery: true, mainProduce: MainProduce.fruit, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "0.5 kg gekookte aardappeltjes", sellingPriceSinglePortion: 1.0), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 1, totalCostOfSelectedStock: 1)])
         
-        let bertramProducer = Producer(companyName: "POOP", contact: infoBertram, companyImage: nil, location: locationFarmBertram, locationString: "Leuven", delivery: true, mainProduce: MainProduce.vegetableFruitEggs, deliveryHours: Date(), pickUpHours: Date(), validation: nil, stocks: bertramCrops)
+        let bertramProducer: Producer = Producer(companyName: "PopcornParty", contact: infoBertram, location: locationFarmBertram, locationString: "Oud Heverlee", delivery: false, mainProduce: MainProduce.meat, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "bos aardbeien", sellingPriceSinglePortion: 2.0), amountOfStockPortionsAvailable: 10, amountOfStockSelected: 1, totalCostOfSelectedStock: 2)])
         
         firebaseDemoProducers.append(mammothProducer)
         firebaseDemoProducers.append(bertramProducer)
@@ -137,7 +136,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let latitude = response.boundingRegion.center.latitude
                     let longitude = response.boundingRegion.center.longitude
                     
-                    self.usedProducers.append(Producer(companyName: producer.companyName, contact: producer.contact, companyImage: producer.companyImage, location: CLLocation(latitude: latitude, longitude: longitude), locationString: producer.locationString, delivery: producer.delivery, mainProduce: producer.mainProduce, deliveryHours: producer.deliveryHour!, pickUpHours: producer.pickUpHour!, validation: producer.validation, stocks: producer.stocks))
+                    self.usedProducers.append(Producer(companyName: producer.companyName, contact: producer.contact, location: CLLocation(latitude: latitude, longitude: longitude), locationString: producer.locationString, delivery: producer.delivery, mainProduce: producer.mainProduce, deliveryHours: producer.deliveryHour!, pickUpHours: producer.pickUpHour!, stocks: producer.stocks))
                     
                     let pin = AnnotationPin(with: producer, and: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
                     self.mapView.addAnnotation(pin)
