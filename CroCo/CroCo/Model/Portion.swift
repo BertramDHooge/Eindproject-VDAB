@@ -16,13 +16,7 @@ struct Portion {
 //    var standardisedQuantitySingleStockType: QuantityTypes
 //    // this is the amount off portions the producer has in stock - warning: not the real quantity of this Foodtype. The real quantity is times quantityType this number
 //    var totalPortionsInStock: Int
-    // this should be added:
-    
-    var weight: Int
-    var typeOfWeight: String
-    var typeOfWeightAndWeightPerPortion: String {
-        return "\(weight) \(typeOfWeight)"
-    }
-    var stockName: String
+
+    var portionDescription: String
     var sellingPriceSinglePortion: Double
 }

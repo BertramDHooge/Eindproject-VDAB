@@ -92,19 +92,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
         let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: "Leuven")
         let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let bertramCrops = [Stock(portion: Portion(portionDescription: "bussel wortelen van 12 stuks", sellingPriceSinglePortion: 1.5), amountOfStockPortionsAvailable: 50, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
+        let bertramCrops = [Stock(portion: Portion(weight: 12, typeOfWeight: "Bussel", stockName: "wortelen", sellingPriceSinglePortion: 1.5), amountOfStockPortionsAvailable: 50, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
         let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
         let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: "Werchter")
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let veltWinkelCrops = [Stock(portion: Portion(portionDescription: "2 kg bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
+        let veltWinkelCrops = [Stock(portion: Portion(weight: 2, typeOfWeight: "Kg", stockName: "Bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
-        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "0.5 kg gekookte aardappeltjes", sellingPriceSinglePortion: 1.0), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 1, totalCostOfSelectedStock: 1)])
+        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: veltWinkelCrops)
         
-        let mammothProducer: Producer = Producer(companyName: "Tolis", contact: infoMammoth, location: locationmammot, locationString: "Brussel", delivery: true, mainProduce: MainProduce.fruit, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "0.5 kg gekookte aardappeltjes", sellingPriceSinglePortion: 1.0), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 1, totalCostOfSelectedStock: 1)])
+        let mammothProducer: Producer = Producer(companyName: "Tolis", contact: infoMammoth, location: locationmammot, locationString: "Brussel", delivery: true, mainProduce: MainProduce.fruit, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: mammothCrops)
         
-        let bertramProducer: Producer = Producer(companyName: "PopcornParty", contact: infoBertram, location: locationFarmBertram, locationString: "Oud Heverlee", delivery: false, mainProduce: MainProduce.meat, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "bos aardbeien", sellingPriceSinglePortion: 2.0), amountOfStockPortionsAvailable: 10, amountOfStockSelected: 1, totalCostOfSelectedStock: 2)])
+        let bertramProducer: Producer = Producer(companyName: "POOP", contact: infoBertram, location: locationFarmBertram, locationString: "Oud Heverlee", delivery: false, mainProduce: MainProduce.meat, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: bertramCrops)
         
         firebaseDemoProducers.append(mammothProducer)
         firebaseDemoProducers.append(bertramProducer)
