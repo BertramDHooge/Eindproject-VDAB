@@ -30,7 +30,7 @@ class CropTableViewCell: UITableViewCell {
     
     var delegate: ShoppingCartDelegate?
 
-    var portions: Double = 0
+    var portions: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,8 +72,8 @@ class CropTableViewCell: UITableViewCell {
         removePortionButton.isEnabled = !(portions == 0)
         
         numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfStockPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.portionDescription) €\(stock!.portion.sellingPriceSinglePortion) per portie."
-        cropNameLabel.text = stock!.portion.portionDescription
+        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.typeOfWeightAndWeightPerPortion) per portie. €\(stock!.portion.sellingPriceSinglePortion) per portie."
+        cropNameLabel.text = stock!.portion.stockName
         numberOfPortions.text = "\(portions)"
     }
     

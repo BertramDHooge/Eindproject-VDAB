@@ -73,7 +73,7 @@ class stockViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         
         if let cropName = cropName.text, !cropName.isEmpty,  let stockQuantity = stockQuantity.text, !stockQuantity.isEmpty, let pricePerPortion = pricePerPortion.text, !pricePerPortion.isEmpty {
             
-            stock = Stock(portion: Portion(portionDescription: "20 g bieslook", sellingPriceSinglePortion: 2), amountOfStockPortionsAvailable: 9, amountOfStockSelected: 5, totalCostOfSelectedStock: 60.0)
+            stock = Stock(portion: Portion(weight: 20, typeOfWeight: "grams", stockName: "Bieslook", sellingPriceSinglePortion: 2), amountOfStockPortionsAvailable: 9, amountOfStockSelected: 5, totalCostOfSelectedStock: 60.0)
             delegate?.addStock(stock!)
             self.dismiss(animated: true, completion: nil)
         }

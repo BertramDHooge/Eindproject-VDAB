@@ -14,7 +14,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func addStock(_ stock: Stock) {
         
         if stockList.contains(where: { (closureStock) -> Bool in
-            closureStock.portion.portionDescription == stock.portion.portionDescription
+            closureStock.portion.stockName == stock.portion.stockName
         }){
         stockList.append(stock)
         }
