@@ -557,6 +557,7 @@
                         <viewLayoutGuide key="safeArea" id="1Va-9x-dVa"/>
                     </view>
                     <connections>
+                        <outlet property="addProducerAndStockButton" destination="Qfc-F5-FoL" id="kd6-pr-dvJ"/>
                         <outlet property="homeTabBar" destination="J5a-VX-VDG" id="B8K-9P-6SM"/>
                         <outlet property="locationSearchField" destination="ANe-pm-2xo" id="R67-xg-Hwg"/>
                         <outlet property="mapView" destination="T7f-8v-Ogy" id="93O-34-ZYH"/>

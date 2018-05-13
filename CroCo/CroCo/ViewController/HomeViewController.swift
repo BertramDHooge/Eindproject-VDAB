@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     //MARK: -Outlets
     
+    @IBOutlet weak var addProducerAndStockButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
     @IBOutlet weak var producersListHomePageTableView: UITableView!
@@ -68,7 +69,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" {
+            addProducerAndStockButton.isHidden = false
+        return
+        } else {
+            addProducerAndStockButton.isHidden = true
+            
+        }
 //        let settings = FirestoreSettings()
 //
 //        Firestore.firestore().settings = settings
@@ -276,6 +283,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     @IBAction func addProducer(_ sender: UIButton) {
+        
         performSegue(withIdentifier: "addProducer", sender: self)
     }
     

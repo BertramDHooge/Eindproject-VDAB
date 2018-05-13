@@ -104,6 +104,7 @@
 			children = (
 				FB473844208F08E900DCE76A /* HomeViewController.swift */,
 				D3C8B79220920B5F002B18C1 /* ProducersTableViewCell.swift */,
+				FB893F7F2099F58D00B35505 /* ProducerInfoTableViewCell.swift */,
 				D3D06DB020A1DB160079EC7B /* AddProducerViewController.swift */,
 				368EE60520A4F84C0011F3C2 /* stockViewController.swift */,
 				D3D06DAE20A1B3170079EC7B /* ImageUploadManager.swift */,
@@ -116,7 +117,6 @@
 				36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
 				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
-				FB893F7F2099F58D00B35505 /* ProducerInfoTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -525,7 +525,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 958327Q86U;
 				INFOPLIST_FILE = CroCo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.vdab.bertramDHooge.CroCo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -541,7 +544,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 958327Q86U;
 				INFOPLIST_FILE = CroCo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.vdab.bertramDHooge.CroCo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
