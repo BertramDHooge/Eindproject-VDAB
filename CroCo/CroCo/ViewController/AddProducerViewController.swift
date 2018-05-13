@@ -30,6 +30,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     var pickerViewMainProduce = UIPickerView()
     var stockList: [Stock] = []
+    
     //   MARK: -My outlets
     
     @IBOutlet weak var contactDotNameDotSurname: UITextField!
@@ -68,7 +69,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
         let veltWinkelCrops = [Stock(portion: Portion(portionDescription: "2 kg bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
-        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "0.5 kg gekookte aardappeltjes", sellingPriceSinglePortion: 1.0), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 1, totalCostOfSelectedStock: 1)])
+        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: veltWinkelCrops)
 
 //        let producet = Producer(companyName: companyName, contact: Contact(name: Name(firstName: firstName, lastName: lastName), address: Address(streetName: streetName, streetNumber: Int(streetNumber)!, postalCode: Int(postalCode)!, place: place), telephoneNumber: telephoneNumber, emailAddress: emailAddress), location: CLLocation(latitude: 50.748273, longitude: 4.346720), locationString: place, delivery: false, mainProduce: .fruit, deliveryHours: "", pickUpHours: "", stocks: stockList)
         
@@ -130,15 +131,16 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //    guard let emailAddress = emailAddress.text, !emailAddress.isEmpty else {return}
     private func addProducer(_ producer: Producer) {
         var reference: DocumentReference? = nil
-        let testDictionary: [String: Any] = ["CompanyName": producer.companyName,
+
+        let testDictionary: [String: Any] = ["CompanyName": producer.companyName as Any,
                                              "ContactFirstName": producer.contact.name.firstName,
                                              "ContactlastName": producer.contact.name.lastName,
                                              "Place": producer.contact.address.place,
                                              "PostalCode": producer.contact.address.postalCode,
-                                             "StreetName": producer.address?.streetName,
-                                             "StreetNumber": producer.address?.streetNumber,
-                                             "TelephoneNumber": producer.contact.telephoneNumber,
-                                             "EmailAddress": producer.contact.emailAddress,
+                                             "StreetName": producer.address?.streetName as Any,
+                                             "StreetNumber": producer.address?.streetNumber as Any,
+                                             "TelephoneNumber": producer.contact.telephoneNumber as Any,
+                                             "EmailAddress": producer.contact.emailAddress as Any,
                                              "Stock": ["stock": "Stock"]]
         reference = dataBase.collection("Producers").addDocument(data: testDictionary) {error in
             if let error = error {

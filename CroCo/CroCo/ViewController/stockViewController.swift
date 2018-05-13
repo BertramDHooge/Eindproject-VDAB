@@ -75,7 +75,7 @@ class stockViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             
             stock = Stock(portion: Portion(portionDescription: cropName, sellingPriceSinglePortion: Double(pricePerPortion)!), amountOfStockPortionsAvailable: Int(stockQuantity)!, amountOfStockSelected: 5, totalCostOfSelectedStock: 60.0)
             delegate?.addStock(stock!)
-            print(stock?.portion.portionDescription)
+//            print(stock?.portion.portionDescription)
             self.dismiss(animated: true, completion: nil)
         }
     }
