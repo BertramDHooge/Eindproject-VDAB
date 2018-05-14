@@ -1518,7 +1518,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="K8X-aQ-6WM">
                                             <connections>
                                                 <action selector="cancel:" destination="ZnB-RO-S5p" id="JZ4-vw-j1V"/>
-                                                <segue destination="DNw-OF-dkx" kind="show" identifier="back to login" id="V5l-RH-wab"/>
+                                                <segue destination="NbY-k3-LVb" kind="unwind" unwindAction="unwind:" id="OKc-ha-F5t"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1575,6 +1575,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGz-kq-9pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NbY-k3-LVb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1017" y="-1166"/>
         </scene>
