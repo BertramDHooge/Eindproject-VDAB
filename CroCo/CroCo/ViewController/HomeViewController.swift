@@ -28,16 +28,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
     @IBOutlet weak var producersListHomePageTableView: UITableView!
-    @IBOutlet weak var favoritedButton: UIButton!
     
+    @IBOutlet weak var producersListButton: UIButton!
+    @IBOutlet weak var filterProducersButton: UIButton!
     
-    @IBOutlet weak var homeTabBar: UITabBar!
     
     //   MARK Global Variables
     
     let locationManager = CLLocationManager()
     
     var usedLocation: CLLocation? = nil
+    
+    var homeButtonSelected: Bool = true {
+        didSet {
+            updateFilterOrHomeButtonPressed()
+            producersListHomePageTableView.reloadData()
+        }
+    }
     
     private let activityIndicator = UIActivityIndicatorView()
     
@@ -166,7 +173,36 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             }
         }
     }
-    
+    // MARK: Producers filter or list
+    /// Function that is called whenever the user taps the filter button
+    ///
+    /// - Parameter sender: The tapped button (currently unused in the function)
+    @IBAction func showProducersListButtonPressedd(_ sender: UIButton) {
+        homeButtonSelected = true
+        updateFilterOrHomeButtonPressed()
+        
+    }
+    /// Function that is called whenever the user taps the filter button
+    ///
+    /// - Parameter sender: The tapped button (currently unused in the function)
+    @IBAction func showFiltersButtonPressed(_ sender: UIButton) {
+        homeButtonSelected = false
+        updateFilterOrHomeButtonPressed()
+    }
+    /// Function that is called to change filter and producers list button color
+    ///
+    /// - Parameter none: none
+    func updateFilterOrHomeButtonPressed(){
+        if homeButtonSelected {
+            filterProducersButton.setImage(UIImage(named: "Filtered"), for: .normal)
+            producersListButton.setImage(UIImage(named: "HomeSelected"), for: .normal)
+            let selectedRows = true
+        } else {
+            producersListButton.setImage(UIImage(named: "Home"), for: .normal)
+            filterProducersButton.setImage(UIImage(named: "FilteredSelected"), for: .normal)
+            let selectedRows = false
+        }
+    }
     
     // MARK: -Firestore
 //
@@ -228,25 +264,39 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     // MARK: -Managing the TableView
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return sortedProducers.count
+        let numberOfRows: Int
+        updateFilterOrHomeButtonPressed()
+        if homeButtonSelected {
+            let numberOfRows = sortedProducers.count
+            return numberOfRows
+        } else {
+            let numberOfRows = 0
+            return numberOfRows
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
-        let producer = sortedProducers[indexPath.row]
-        
-        if let producerCell = producerCell as? ProducersTableViewCell {
+        if homeButtonSelected {
+            let producer = sortedProducers[indexPath.row]
             
-            producerCell.producer = producer
-            producerCell.adressLabel.text = producer.contact.address.fullAdress
-            producerCell.companyNameLabel.text = producer.companyName
-            producerCell.distanceFromLocationLabel.text = "\(Int(producer.location.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
+            if let producerCell = producerCell as? ProducersTableViewCell {
+                
+                producerCell.producer = producer
+                producerCell.adressLabel.text = producer.contact.address.fullAdress
+                producerCell.companyNameLabel.text = producer.companyName
+                producerCell.distanceFromLocationLabel.text = "\(Int(producer.location.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
+            }
+            producerCell.backgroundColor = .clear
+            return producerCell
+        } else {
+            
         }
-        producerCell.backgroundColor = .clear
         return producerCell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -258,9 +308,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "initiateInfoVC", sender: firebaseDemoProducers[indexPath.row])
+        performSegue(withIdentifier: "initiateInfoVC", sender: sortedProducers[indexPath.row])
     }
     
+//    @IBAction func InfoProducerButtonPressed(_ sender: UIButton) {
+//        performSegue(withIdentifier: "initiateInfoVC", sender: firebaseDemoProducers)
+//
+//    }
     
     // MARK: -IBActions
     

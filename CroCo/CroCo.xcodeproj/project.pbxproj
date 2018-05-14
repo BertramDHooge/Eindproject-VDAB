@@ -113,8 +113,8 @@
 				1502AC6A2090AFDC00EBF16C /* SettingsTableViewController.swift */,
 				157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */,
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
-				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
 				36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */,
+				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
 				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
 			);
