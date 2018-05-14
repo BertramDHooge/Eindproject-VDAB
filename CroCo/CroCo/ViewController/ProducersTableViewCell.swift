@@ -57,6 +57,6 @@ class ProducersTableViewCell: UITableViewCell {
             return
         }
         companyNameLabel.text = producer.companyName ?? producer.contact.name.firstName
-        adressLabel.text = producer.contact.address.fullAdress
+        adressLabel.text = producer.contact.address.fullAddress
     }
 }

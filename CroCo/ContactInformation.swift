@@ -34,11 +34,11 @@ class Address: CustomStringConvertible {
         self.postalCode = postalCode
         self.place = place
     }
-    var fullAdress: String {
+    var fullAddress: String {
         return "\(streetName) \(streetNumber)\n\(postalCode) \(place)"
     }
     var description: String {
-        return fullAdress
+        return fullAddress
     }
 }
 //

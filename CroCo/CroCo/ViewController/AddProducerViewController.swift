@@ -53,15 +53,15 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     //    solve: int for streetnumber is not logic, not for postalCode either. Maybe find dependency for places on Git?
     
     @IBAction func saveBarButonTapped(_ sender: UIBarButtonItem) {
-//        guard let companyName = companyName.text, !companyName.isEmpty else {return}
-//        guard let firstName = contactDotNameDotSurname.text, !firstName.isEmpty else {return}
-//        guard let lastName = contactDotNameDotLastname.text, !lastName.isEmpty else {return}
-//        guard let place = place.text, !place.isEmpty else {return}
-//        guard let postalCode = postalCode.text, !postalCode.isEmpty else {return}
-//        guard let streetName = streetName.text, !streetName.isEmpty else {return}
-//        guard let streetNumber = streetNumber.text, !streetNumber.isEmpty else {return}
-//        guard let telephoneNumber = telephoneNumber.text, !telephoneNumber.isEmpty else {return}
-//        guard let emailAddress = emailAddress.text, !emailAddress.isEmpty else {return}
+        guard let companyName = companyName.text, !companyName.isEmpty else {return}
+        guard let firstName = contactDotNameDotSurname.text, !firstName.isEmpty else {return}
+        guard let lastName = contactDotNameDotLastname.text, !lastName.isEmpty else {return}
+        guard let place = place.text, !place.isEmpty else {return}
+        guard let postalCode = postalCode.text, !postalCode.isEmpty else {return}
+        guard let streetName = streetName.text, !streetName.isEmpty else {return}
+        guard let streetNumber = streetNumber.text, !streetNumber.isEmpty else {return}
+        guard let telephoneNumber = telephoneNumber.text, !telephoneNumber.isEmpty else {return}
+        guard let emailAddress = emailAddress.text, !emailAddress.isEmpty else {return}
         
         let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
         let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
@@ -70,10 +70,15 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let veltWinkelCrops = [Stock(portion: Portion(portionDescription: "2 kg bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
         
         let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: veltWinkelCrops)
-
-//        let producet = Producer(companyName: companyName, contact: Contact(name: Name(firstName: firstName, lastName: lastName), address: Address(streetName: streetName, streetNumber: Int(streetNumber)!, postalCode: Int(postalCode)!, place: place), telephoneNumber: telephoneNumber, emailAddress: emailAddress), location: CLLocation(latitude: 50.748273, longitude: 4.346720), locationString: place, delivery: false, mainProduce: .fruit, deliveryHours: "", pickUpHours: "", stocks: stockList)
         
-        addProducer(VeltWinkelProducer)
+        let address = Address(streetName: streetName, streetNumber: Int(streetNumber)!, postalCode: Int(postalCode)!, place: place)
+
+        print(address.fullAddress)
+        
+        let producer = Producer(companyName: companyName, contact: Contact(name: Name(firstName: firstName, lastName: lastName), address: address, telephoneNumber: telephoneNumber, emailAddress: emailAddress), location: nil, locationString: address.fullAddress, delivery: false, mainProduce: .dairy, deliveryHours: "", pickUpHours: "", stocks: stockList)
+        
+        addProducer(producer)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -137,8 +142,8 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
                                              "ContactlastName": producer.contact.name.lastName,
                                              "Place": producer.contact.address.place,
                                              "PostalCode": producer.contact.address.postalCode,
-                                             "StreetName": producer.address?.streetName as Any,
-                                             "StreetNumber": producer.address?.streetNumber as Any,
+                                             "StreetName": producer.contact.address.streetName as Any,
+                                             "StreetNumber": producer.contact.address.streetNumber as Any,
                                              "TelephoneNumber": producer.contact.telephoneNumber as Any,
                                              "EmailAddress": producer.contact.emailAddress as Any,
                                              "Stock": ["stock": "Stock"]]
