@@ -40,12 +40,12 @@ class CropTableViewCell: UITableViewCell {
     /// Adds a single portion to the shopping cart
     @IBAction func addPortionButtonPressed(_ sender: UIButton) {
         
-        if stock!.amountOfCropPortionsAvailable > 0 {
+        if stock!.amountOfStockPortionsAvailable > 0 {
             
-            stock!.amountOfCropPortionsAvailable -= 1
+            stock!.amountOfStockPortionsAvailable -= 1
             portions += 1
-            stock?.amountOfCropsSelected += 1
-            shoppingCartDelegate?.changeTotalAmount(by: +stock!.sellingPrice)
+            stock?.amountOfStockSelected += 1
+            shoppingCartDelegate?.changeTotalAmount(by: +stock!.portion.sellingPriceSinglePortion)
         }
         
         updateUI()
@@ -56,10 +56,10 @@ class CropTableViewCell: UITableViewCell {
         
         if portions > 0 {
             
-            stock!.amountOfCropPortionsAvailable += 1
+            stock!.amountOfStockPortionsAvailable += 1
             portions -= 1
-            stock?.amountOfCropsSelected -= 1
-            shoppingCartDelegate?.changeTotalAmount(by: -stock!.sellingPrice)
+            stock?.amountOfStockSelected -= 1
+            shoppingCartDelegate?.changeTotalAmount(by: -stock!.portion.sellingPriceSinglePortion)
         }
         
         updateUI()
@@ -68,12 +68,12 @@ class CropTableViewCell: UITableViewCell {
     /// Updates the UserInterface to conform to the data
     private func updateUI(){
         
-        addPortionButton.isEnabled = !(stock!.amountOfCropPortionsAvailable == 0)
+        addPortionButton.isEnabled = !(stock!.amountOfStockPortionsAvailable == 0)
         removePortionButton.isEnabled = !(portions == 0)
         
-        numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfCropPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(stock!.quantity.rawValue) \(stock!.quantityTypes.rawValue) per portie. €\(stock!.sellingPrice) per portie."
-        cropNameLabel.text = stock!.cropName.rawValue
+        numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfStockPortionsAvailable)
+        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.portionDescription) €\(stock!.portion.sellingPriceSinglePortion) per portie."
+        cropNameLabel.text = stock!.portion.portionDescription
         numberOfPortions.text = "\(portions)"
     }
     

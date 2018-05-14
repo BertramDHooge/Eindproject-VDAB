@@ -14,6 +14,7 @@ class DeliveryInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var deliveryInfoImageView: UIImageView!
     @IBOutlet weak var pickupHoursInfo: UILabel!
     
+// TO DO deliveryHoursDescription
     
     override func awakeFromNib() {
         super.awakeFromNib()

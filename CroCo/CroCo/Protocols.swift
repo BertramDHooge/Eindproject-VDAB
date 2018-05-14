@@ -13,3 +13,8 @@ protocol ShoppingCartDelegate {
     
     func changeTotalAmount(by amountOfMoney: Double)
 }
+
+protocol AddStockDelegate {
+    
+    func addStock(_ stock: Stock)
+}
