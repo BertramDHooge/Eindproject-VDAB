@@ -44,7 +44,7 @@ class CreateAccountViewController: UIViewController {
                 let alertController = UIAlertController(title: "Insufficient information", message: "You must fill out all the fields to complete the registration successfully.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okAction)
-
+                present(alertController, animated: true, completion: nil)
                 return
         }
 
