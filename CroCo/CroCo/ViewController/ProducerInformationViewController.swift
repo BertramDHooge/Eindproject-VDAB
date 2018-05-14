@@ -18,7 +18,6 @@ class ProducerInformationViewController: UIViewController, UITableViewDelegate, 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
     /// Dismisses the current ViewController
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
