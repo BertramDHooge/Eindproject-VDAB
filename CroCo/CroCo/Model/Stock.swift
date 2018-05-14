@@ -11,8 +11,12 @@ import Foundation
 // ik denk dat we best een file crops maken waarin een array van crop in zit - Ward
 
 struct Stock {
-    var portion: Portion
-    var amountOfStockPortionsAvailable: Int
-    var amountOfStockSelected: Int
-    var totalCostOfSelectedStock: Double
+    var cropType: FoodTypes
+    var cropName: FoodName
+    var quantityTypes: QuantityTypes
+    var quantity: Quantity
+    var sellingPrice: Double
+    var amountOfCropPortionsAvailable: Int
+    var amountOfCropsSelected: Int
+    var totalCostOfCropsSelected: Double
 }
