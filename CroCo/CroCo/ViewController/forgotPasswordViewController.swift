@@ -13,7 +13,7 @@ class forgotPasswordViewController: UIViewController {
 
     //    MARK: my outlets
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
         //  MARK: my actions
     
@@ -24,7 +24,7 @@ class forgotPasswordViewController: UIViewController {
     
     /// Resets the password connected with the inseted email address
     @IBAction func passwordResetButton(_ sender: UIButton) {
-        if let email = emailTextField.text, email != "" {
+        if let email = passwordTextField.text, passwordTextField.text != "" {
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
                 if let error = error {
                     let alertController = UIAlertController(title: "Email verzonden", message: error.localizedDescription, preferredStyle: .alert)

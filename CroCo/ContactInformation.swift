@@ -41,10 +41,6 @@ class Address: CustomStringConvertible {
         return fullAdress
     }
 }
-//
-//struct Contact{
-//    var contact: ContactInfo
-//}
 
 class Contact: CustomStringConvertible {
     let name: Name
