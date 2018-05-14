@@ -337,10 +337,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    @IBAction func UnwindSegue(_ sender: UIStoryboardSegue){
-        
-    }
-    
     @IBAction func addProducer(_ sender: UIButton) {
         
         performSegue(withIdentifier: "addProducer", sender: self)
@@ -369,6 +365,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 }
             }
         }
+    }
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+        
     }
     
 }
