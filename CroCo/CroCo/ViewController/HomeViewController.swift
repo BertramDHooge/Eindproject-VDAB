@@ -30,6 +30,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var producersListHomePageTableView: UITableView!
     @IBOutlet weak var favoritedButton: UIButton!
     
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     
     @IBOutlet weak var homeTabBar: UITabBar!
     
@@ -41,6 +43,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     private let activityIndicator = UIActivityIndicatorView()
     
+    var homeButtonSelected: Bool = true {
+        didSet {
+            updateHomeAndFilter()
+            producersListHomePageTableView.reloadData()
+        }
+    }
     /// Index of the most recently pressed cell (defaults to 0 if no cells have been pressed)
     var myIndex = 0
     
@@ -141,6 +149,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
         
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -264,29 +273,56 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             locationManager.requestWhenInUseAuthorization()
         }
     }
+    // MARK: ???
     
+    let MainProduceArray = ["Vegetable", "Fruit", "Dairy", "eggs", "Poultry", "meat"]
+
     
     // MARK: -Managing the TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return sortedProducers.count
+        if homeButtonSelected {
+            return sortedProducers.count
+        } else {
+            return MainProduceArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let producerCell = tableView.dequeueReusableCell(withIdentifier: "producersCell", for: indexPath)
+        let identifierName = "producersCell"
+        updateHomeAndFilter()
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
+        
+        if homeButtonSelected {
+        cell.isHidden = false
         let producer = sortedProducers[indexPath.row]
         
-        if let producerCell = producerCell as? ProducersTableViewCell {
-            
-            producerCell.producer = producer
-            producerCell.adressLabel.text = producer.contact.address.fullAddress
-            producerCell.companyNameLabel.text = producer.companyName
-            producerCell.distanceFromLocationLabel.text = "\(Int((producer.location?.distance(from: usedLocation ?? locationManager.location!))! / 1000)) km"
+            if let producerCell = cell as? ProducersTableViewCell {
+                producerCell.isUserInteractionEnabled = true
+                producerCell.accessibilityElementsHidden = true
+                producerCell.producer = producer
+                producerCell.adressLabel.text = producer.contact.address.fullAdress
+                producerCell.companyNameLabel.text = producer.companyName
+                producerCell.distanceFromLocationLabel.text = "\(Int(producer.location.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
+            }
+            cell.backgroundColor = .clear
+            return cell
+        } else {
+            let typesOfProduce = MainProduceArray[indexPath.row]
+            if let typesOfProduceCell = cell as? ProducersTableViewCell {
+                typesOfProduceCell.isUserInteractionEnabled = false
+                typesOfProduceCell.accessibilityElementsHidden = false
+                typesOfProduceCell.favoriteStarButton.isHidden = true
+                typesOfProduceCell.adressLabel.isHidden = true
+                typesOfProduceCell.companyNameLabel.text = typesOfProduce
+                typesOfProduceCell.distanceFromLocationLabel.isHidden = true
+            }
+            cell.backgroundColor = .clear
+            return cell
         }
-        producerCell.backgroundColor = .clear
-        return producerCell
+        return cell
+//        return stockTypeCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -317,20 +353,42 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    @IBAction func UnwindSegue(_ sender: UIStoryboardSegue){
-        
-    }
-    
     @IBAction func addProducer(_ sender: UIButton) {
         
         performSegue(withIdentifier: "addProducer", sender: self)
     }
     
+    
+    @IBAction func HomeButtonPressed(_ sender: UIButton) {
+        homeButtonSelected = true
+        updateHomeAndFilter()
+    }
+    
+    @IBAction func FilterButtonPressed(_ sender: Any) {
+        homeButtonSelected = false
+        updateHomeAndFilter()
+    }
+    
+    
     // MARK: Favorited?
     
     
+    // MARK: update for home and filter button
     
-    
+    func updateHomeAndFilter(){
+        if homeButtonSelected {
+            homeButton.setImage(UIImage(named: "HomeSelected"), for: .normal)
+            filterButton.setImage(UIImage(named: "Filtered"), for: .normal)
+//            let identifierName = "producersCell"
+//            return identifierName
+        } else {
+            homeButton.setImage(UIImage(named: "Home"), for: .normal)
+            filterButton.setImage(UIImage(named: "FilteredSelected"), for: .normal)
+//            let identifierName = "producersCell"
+//            return identifierName
+        }
+        return
+    }
     
     // MARK: -Navigation Control
     
@@ -349,6 +407,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 }
             }
         }
+    }
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+        
     }
     
 }
