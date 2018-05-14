@@ -221,7 +221,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             return nil
         } else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
-            annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
+            
+            switch pinAnnotation.producer.mainProduce{
+            case .dairy, .eggs, .fruit, .meat, .poultry, .vegetable:
+                annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
+            default:
+                annotationView.glyphText = "..."
+            }
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             annotationView.canShowCallout = true

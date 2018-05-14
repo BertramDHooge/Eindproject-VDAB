@@ -554,6 +554,17 @@
                                     <segue destination="L5C-Ky-ws4" kind="show" id="YJD-cW-5RD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Used location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRY-mz-I0q">
+                                <rect key="frame" x="170" y="181" width="35" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="5"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="target" translatesAutoresizingMaskIntoConstraints="NO" id="nj2-Cq-a1G">
+                                <rect key="frame" x="180" y="162" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -586,8 +597,12 @@
                         <outlet property="filterProducersButton" destination="AOF-U0-cUW" id="5zP-n1-xtD"/>
                         <outlet property="locationSearchField" destination="ANe-pm-2xo" id="R67-xg-Hwg"/>
                         <outlet property="mapView" destination="T7f-8v-Ogy" id="93O-34-ZYH"/>
+<<<<<<< HEAD
                         <outlet property="producersListButton" destination="hIJ-GK-vGd" id="sEn-es-7uG"/>
                         <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="Uek-Hs-LvO"/>
+=======
+                        <outlet property="producersListHomePageTableView" destination="Ca2-2i-Mhl" id="ivs-RM-qir"/>
+>>>>>>> fe717b0b43d9c49cd4941be926a126e2bf6ed3a0
                         <segue destination="3IX-iG-ebQ" kind="show" identifier="addProducer" id="5n8-q2-451"/>
                     </connections>
                 </viewController>
@@ -1405,6 +1420,16 @@
                                     <constraint firstAttribute="height" constant="189" id="bsa-2d-mtZ"/>
                                 </constraints>
                             </imageView>
+<<<<<<< HEAD
+=======
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KA-Ko-3CL">
+                                <rect key="frame" x="329" y="50" width="30" height="22"/>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="Dkt-Rj-oc0" eventType="touchUpInside" id="HpD-LQ-V9h"/>
+                                    <segue destination="Ca2-fC-bed" kind="show" identifier="initiateInfoVC" id="G91-rJ-KL6"/>
+                                </connections>
+                            </button>
+>>>>>>> fe717b0b43d9c49cd4941be926a126e2bf6ed3a0
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pab-Gp-pah">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
@@ -1593,6 +1618,7 @@
         <image name="HomeSelected" width="50" height="50"/>
         <image name="Menu" width="50" height="50"/>
         <image name="OK" width="50" height="50"/>
+        <image name="target" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="G91-rJ-KL6"/>

@@ -64,6 +64,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         return producersStockItemCell!
     }
     
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "initiateInfoVC", sender: producer)
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -71,14 +75,20 @@ class ShoppingCartViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "initiateInfoVC"{
+            if let destinationVC = segue.destination as? ProducerInformationViewController{
+                if let producer = sender as? Producer{
+                    destinationVC.producer = producer
+                }
+            }
+        }
     }
-    */
+ 
 
 }
