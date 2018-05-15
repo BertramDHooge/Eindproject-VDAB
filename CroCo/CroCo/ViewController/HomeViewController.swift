@@ -106,27 +106,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        for producer in sortedProducers {
-            
-            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
-            self.mapView.addAnnotation(pin)
-        }
+        let database = Firestore.firestore()
         
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
-            self.addProducerAndStockButton.isHidden = false
-        } else {
-            self.addProducerAndStockButton.isHidden = false
-            
-        }
-        
-        self.reference = Firestore.firestore().collection("Producers")
-        self.reference.getDocuments(completion: { (snapshot, error) in
+        database.collection("Producers").addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot else { return }
             let myData = snapshot.documents
             for document in myData {
@@ -141,7 +123,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let streetName = data["StreetName"]as? String,
                     let telephoneNumber = data["TelephoneNumber"] as? String,
                     let mainProduce = data["MainProduce"] as? String,
-                let stock = data["Stock"] as? [String: [String: Any]]{
+                    let stock = data["Stock"] as? [String: [String: Any]]{
                     
                     var stocks: [Stock] = []
                     
@@ -181,8 +163,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let activeSearch = MKLocalSearch(request: searchRequest)
                     activeSearch.start { (response, error) in
                         if let response = response {
-                            let annotations = self.mapView.annotations
-                            self.mapView.removeAnnotations(annotations)
                             
                             let latitude = response.boundingRegion.center.latitude
                             let longitude = response.boundingRegion.center.longitude
@@ -191,20 +171,32 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                             
                             let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: usedMainProduce, deliveryHours: "", pickUpHours: "", stocks: stocks)
                             
-                            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
-                            self.mapView.addAnnotation(pin)
-                            
                             if !self.usedProducers.contains(where: { (usedProducer) -> Bool in
                                 usedProducer.companyName == producer.companyName
                             }) {
                                 
                                 self.usedProducers.append(producer)
+                                let pin = AnnotationPin(with: producer)
+                                self.mapView.addAnnotation(pin)
                             }
                         }
                     }
                 }
             }
-        })
+        }
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
+            self.addProducerAndStockButton.isHidden = false
+        } else {
+            self.addProducerAndStockButton.isHidden = false
+            
+        }       
+        
     }
     
     // MARK: -Managing the MapView
@@ -215,7 +207,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         } else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             
-           annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
+            annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             annotationView.canShowCallout = true
