@@ -314,7 +314,7 @@
                                     <navigationItem title="product" id="FpC-la-9jX">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hWT-RK-bEu">
                                             <connections>
-                                                <action selector="cancelButtonPressed:" destination="3IX-iG-ebQ" id="j3V-NB-cFf"/>
+                                                <action selector="cancelButtonTapped:" destination="lb0-hQ-V07" id="kiG-qy-tf4"/>
                                                 <segue destination="3yO-3L-9GQ" kind="unwind" unwindAction="UnwindSegue:" id="ex3-0T-66D"/>
                                             </connections>
                                         </barButtonItem>
@@ -404,11 +404,11 @@
                                     <constraint firstAttribute="height" constant="275" id="q3W-Cf-7Bp"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="producersCell" id="ocy-YY-rzR" customClass="ProducersTableViewCell" customModule="CroCo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="producersCell" id="ocy-YY-rzR" customClass="ProducersTableViewCell" customModule="CroCo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ocy-YY-rzR" id="1We-Re-TzX">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" restorationIdentifier="favoriteStarIcon" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ub-t3-xNr" userLabel="favoriteStarButton">
@@ -1647,7 +1647,7 @@
         <image name="target" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tLU-qy-vCB"/>
+        <segue reference="Bv9-8W-g2C"/>
         <segue reference="ccl-gD-TXR"/>
         <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
