@@ -27,8 +27,6 @@ class CropTableViewCell: UITableViewCell {
     var shoppingCartDelegate: ShoppingCartDelegate?
     
     private var producers: [Producer] = []
-    
-    var delegate: ShoppingCartDelegate?
 
     var portions: Double = 0
     
@@ -44,7 +42,6 @@ class CropTableViewCell: UITableViewCell {
             
             stock!.amountOfStockPortionsAvailable -= 1
             portions += 1
-            stock?.amountOfStockSelected += 1
             shoppingCartDelegate?.changeTotalAmount(by: +stock!.portion.sellingPriceSinglePortion)
         }
         
@@ -58,7 +55,6 @@ class CropTableViewCell: UITableViewCell {
             
             stock!.amountOfStockPortionsAvailable += 1
             portions -= 1
-            stock?.amountOfStockSelected -= 1
             shoppingCartDelegate?.changeTotalAmount(by: -stock!.portion.sellingPriceSinglePortion)
         }
         
