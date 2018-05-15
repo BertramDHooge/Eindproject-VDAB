@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     let locationManager = CLLocationManager()
     
-    var usedLocation: CLLocation? = nil
+    var usedLocation: CLLocation?
     
     private let activityIndicator = UIActivityIndicatorView()
     

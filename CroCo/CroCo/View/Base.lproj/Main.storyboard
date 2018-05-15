@@ -435,7 +435,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="producerCellInfo" text="Company Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-nf-7jJ" userLabel="ProducerCellInfoLabel">
-                                                    <rect key="frame" x="130" y="2" width="198" height="21"/>
+                                                    <rect key="frame" x="101.5" y="2" width="198" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="198" id="DZh-YS-BRf"/>
                                                         <constraint firstAttribute="height" constant="21" id="d3T-TM-rLf"/>
@@ -465,7 +465,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jaf-nf-7jJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zsb-rL-jyv" secondAttribute="trailing" id="21m-h8-SNC"/>
+                                                <constraint firstItem="jaf-nf-7jJ" firstAttribute="leading" secondItem="Zsb-rL-jyv" secondAttribute="trailing" id="21m-h8-SNC"/>
                                                 <constraint firstItem="jQz-tP-nSy" firstAttribute="top" secondItem="jaf-nf-7jJ" secondAttribute="bottom" constant="1" id="3XD-2R-77T"/>
                                                 <constraint firstItem="HU6-Td-wSx" firstAttribute="leading" secondItem="8ub-t3-xNr" secondAttribute="trailing" constant="28" id="3Ye-c8-UZN"/>
                                                 <constraint firstItem="HU6-Td-wSx" firstAttribute="top" secondItem="Zsb-rL-jyv" secondAttribute="bottom" constant="3" id="7hK-WB-Rap"/>
@@ -479,7 +479,7 @@
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="jQz-tP-nSy" secondAttribute="trailing" constant="48" id="7PR-cY-bek"/>
-                                            <constraint firstAttribute="trailing" secondItem="jaf-nf-7jJ" secondAttribute="trailing" constant="47" id="83X-Px-jlu"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jaf-nf-7jJ" secondAttribute="trailing" constant="47" id="83X-Px-jlu"/>
                                             <constraint firstItem="8ub-t3-xNr" firstAttribute="top" secondItem="ocy-YY-rzR" secondAttribute="top" constant="1" id="I7r-94-ohr"/>
                                             <constraint firstItem="jaf-nf-7jJ" firstAttribute="top" secondItem="ocy-YY-rzR" secondAttribute="top" constant="3" id="Il4-89-V2s"/>
                                             <constraint firstAttribute="bottom" secondItem="jQz-tP-nSy" secondAttribute="bottom" id="NHj-hY-yKR"/>
@@ -1648,8 +1648,8 @@
         <image name="target" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G91-rJ-KL6"/>
+        <segue reference="Bv9-8W-g2C"/>
         <segue reference="Jy8-Qc-7jV"/>
-        <segue reference="5z5-ZW-2HL"/>
+        <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>
