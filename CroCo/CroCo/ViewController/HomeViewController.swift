@@ -290,39 +290,38 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let identifierName = "producersCell"
+        var identifierName = "producersCell"
+
         updateHomeAndFilter()
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
         
         if homeButtonSelected {
-        cell.isHidden = false
-        let producer = sortedProducers[indexPath.row]
-        
+            identifierName = "producersCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
+//            cell.isHidden = false
+            let producer = sortedProducers[indexPath.row]
+            
             if let producerCell = cell as? ProducersTableViewCell {
                 producerCell.isUserInteractionEnabled = true
                 producerCell.accessibilityElementsHidden = true
                 producerCell.producer = producer
-                producerCell.adressLabel.text = producer.contact.address.fullAdress
+                producerCell.adressLabel.text = producer.contact.address.fullAddress
                 producerCell.companyNameLabel.text = producer.companyName
-                producerCell.distanceFromLocationLabel.text = "\(Int(producer.location.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
+                producerCell.distanceFromLocationLabel.text = "\(Int(producer.location!.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
             }
             cell.backgroundColor = .clear
             return cell
         } else {
+            let identifierName = "filterCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
             let typesOfProduce = MainProduceArray[indexPath.row]
-            if let typesOfProduceCell = cell as? ProducersTableViewCell {
-                typesOfProduceCell.isUserInteractionEnabled = false
-                typesOfProduceCell.accessibilityElementsHidden = false
-                typesOfProduceCell.favoriteStarButton.isHidden = true
-                typesOfProduceCell.adressLabel.isHidden = true
-                typesOfProduceCell.companyNameLabel.text = typesOfProduce
-                typesOfProduceCell.distanceFromLocationLabel.isHidden = true
+            if let typesOfProduceCell = cell as? FilterTableViewCell {
+                typesOfProduceCell.mainProduceLabel.text = typesOfProduce
             }
             cell.backgroundColor = .clear
             return cell
         }
-        return cell
-//        return stockTypeCell
+         
+        //        return stockTypeCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
