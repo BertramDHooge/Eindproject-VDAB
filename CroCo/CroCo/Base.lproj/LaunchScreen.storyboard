@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SLAklein" translatesAutoresizingMaskIntoConstraints="NO" id="88h-dk-Km2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SLAklein" translatesAutoresizingMaskIntoConstraints="NO" id="88h-dk-Km2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="88h-dk-Km2" secondAttribute="trailing" id="5Al-gN-6W5"/>
-                            <constraint firstItem="88h-dk-Km2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gba-zp-LRf"/>
-                            <constraint firstItem="88h-dk-Km2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s3r-uO-Qmi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="88h-dk-Km2" secondAttribute="bottom" id="uVC-O6-RRZ"/>
+                            <constraint firstItem="88h-dk-Km2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="P6t-8C-eqw"/>
+                            <constraint firstItem="88h-dk-Km2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="l2G-uI-ZUj"/>
+                            <constraint firstAttribute="trailing" secondItem="88h-dk-Km2" secondAttribute="trailing" id="qRc-6o-5u9"/>
+                            <constraint firstItem="88h-dk-Km2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="siU-k4-fQ1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -65,21 +65,25 @@
                 let alertController = UIAlertController(title: "Login fout", message: error.localizedDescription, preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okayAction)
-                self.present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: nil)})
+                self.present(alertController, animated: true, completion: nil)
                 return
             } else {
                 let alertController = UIAlertController(title: "U bent nu ingelogd", message: nil, preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+                let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                    self.dismiss(animated: false, completion: nil)
+                })
                 alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: {self.performSegue(withIdentifier: "back Home from Log In Segue", sender: self)   })})
+                self.present(alertController, animated: true, completion: nil)
             }
             self.view.endEditing(true)
             self.updateUI()
         }
-        
-        //       my functions
-        
     }
+    
+    @IBAction func forgotPasswordButton(_ sender: UIButton) {
+    }
+    //       my functions
+    
     @objc func handleSignOutButtonTapped() {
         do {
             try Auth.auth().signOut()

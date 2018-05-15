@@ -758,7 +758,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-Pk-RFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="34"/>
+            <point key="canvasLocation" x="57" y="-379"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="GAd-Ay-qkT">
@@ -841,7 +841,8 @@
                                         </constraints>
                                         <state key="normal" title="Forgot password"/>
                                         <connections>
-                                            <segue destination="ZnB-RO-S5p" kind="show" id="rDI-df-i2e"/>
+                                            <action selector="forgotPasswordButton:" destination="DNw-OF-dkx" eventType="touchUpInside" id="ESi-Mh-fpM"/>
+                                            <segue destination="ZnB-RO-S5p" kind="show" id="hdP-k3-qET"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -900,7 +901,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY8-nx-teD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ltZ-vS-OdL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="967" y="-353"/>
+            <point key="canvasLocation" x="1017" y="-422"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0gs-A0-1CB">
@@ -958,7 +959,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccount:" destination="gdk-tO-mE6" eventType="touchUpInside" id="Oh4-0e-udw"/>
+                                            <action selector="signUpButtonTapped:" destination="gdk-tO-mE6" eventType="touchUpInside" id="Oh4-0e-udw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -981,7 +982,7 @@
                     </view>
                     <connections>
                         <outlet property="emailAddressTextField" destination="5VC-TX-pM8" id="NPm-44-JQB"/>
-                        <outlet property="passwordTextField" destination="XQC-l3-Rbp" id="pCZ-Kc-XKC"/>
+                        <outlet property="passwordSignUpTextField" destination="XQC-l3-Rbp" id="29I-hw-co8"/>
                         <outlet property="usernameTextField" destination="jXR-cc-eeu" id="Zyn-r4-XW9"/>
                     </connections>
                 </viewController>
@@ -1315,7 +1316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHN-XC-rP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.799999999999997" y="431.33433283358323"/>
+            <point key="canvasLocation" x="57" y="466"/>
         </scene>
         <!--Shopping Cart View Controller Scene-->
         <scene sceneID="3Qd-N6-ALk">
@@ -1325,6 +1326,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi2-X3-BvI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="bsa-2d-mtZ"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pab-Gp-pah">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="gpa-C9-mWT">
+                                        <barButtonItem key="leftBarButtonItem" title="Buy" id="axj-NO-cUs">
+                                            <connections>
+                                                <segue destination="DNw-OF-dkx" kind="show" id="Jy8-Qc-7jV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Cost:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GF-IV-rce">
+                                <rect key="frame" x="170" y="635" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4s1-gn-de6">
+                                <rect key="frame" x="260" y="635" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hui-eM-Ipq">
+                                <rect key="frame" x="279" y="635" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjI-Qw-xsC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Shopping List" id="31C-Af-C94">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="vrZ-iX-qKw">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="Dkt-Rj-oc0" id="qpy-LU-OnR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="W7I-Va-rbt">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r9U-aX-PKH">
+                                                <rect key="frame" x="302" y="7" width="57" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Settings"/>
+                                            </button>
+                                            <connections>
+                                                <segue destination="L5C-Ky-ws4" kind="show" id="5z5-ZW-2HL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KA-Ko-3CL">
+                                <rect key="frame" x="329" y="75" width="30" height="22"/>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="Dkt-Rj-oc0" eventType="touchUpInside" id="HpD-LQ-V9h"/>
+                                    <segue destination="Ca2-fC-bed" kind="show" identifier="initiateInfoVC" id="G91-rJ-KL6"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g0N-Qj-wrW">
                                 <rect key="frame" x="0.0" y="235" width="375" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1451,71 +1517,6 @@
                                     <outlet property="delegate" destination="Dkt-Rj-oc0" id="FUa-te-oNM"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi2-X3-BvI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="169"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="169" id="bsa-2d-mtZ"/>
-                                </constraints>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pab-Gp-pah">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="gpa-C9-mWT">
-                                        <barButtonItem key="leftBarButtonItem" title="Buy" id="axj-NO-cUs">
-                                            <connections>
-                                                <segue destination="DNw-OF-dkx" kind="show" id="Jy8-Qc-7jV"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Cost:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GF-IV-rce">
-                                <rect key="frame" x="170" y="635" width="82" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4s1-gn-de6">
-                                <rect key="frame" x="260" y="635" width="11" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hui-eM-Ipq">
-                                <rect key="frame" x="279" y="635" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjI-Qw-xsC">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Shopping List" id="31C-Af-C94">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="vrZ-iX-qKw">
-                                            <connections>
-                                                <action selector="backButtonPressed:" destination="Dkt-Rj-oc0" id="qpy-LU-OnR"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" id="W7I-Va-rbt">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r9U-aX-PKH">
-                                                <rect key="frame" x="302" y="7" width="57" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Settings"/>
-                                            </button>
-                                            <connections>
-                                                <segue destination="L5C-Ky-ws4" kind="show" id="5z5-ZW-2HL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KA-Ko-3CL">
-                                <rect key="frame" x="329" y="75" width="30" height="22"/>
-                                <connections>
-                                    <action selector="infoButtonPressed:" destination="Dkt-Rj-oc0" eventType="touchUpInside" id="HpD-LQ-V9h"/>
-                                    <segue destination="Ca2-fC-bed" kind="show" identifier="initiateInfoVC" id="G91-rJ-KL6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1558,10 +1559,10 @@
             </objects>
             <point key="canvasLocation" x="-823.20000000000005" y="419.64017991004499"/>
         </scene>
-        <!--Forgot Password View Controller-->
+        <!--Reset Password View Controller-->
         <scene sceneID="Adh-7x-j9N">
             <objects>
-                <viewController id="ZnB-RO-S5p" customClass="ForgotPasswordViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZnB-RO-S5p" customClass="ResetPasswordViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ov-NZ-Lqb"/>
                         <viewControllerLayoutGuide type="bottom" id="xeM-UA-VDV"/>
@@ -1576,8 +1577,8 @@
                                     <navigationItem title="Reset password" id="ChX-Ap-BwP">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="K8X-aQ-6WM">
                                             <connections>
-                                                <action selector="cancel:" destination="ZnB-RO-S5p" id="JZ4-vw-j1V"/>
-                                                <segue destination="NbY-k3-LVb" kind="unwind" unwindAction="unwind:" id="OKc-ha-F5t"/>
+                                                <action selector="cancel:" destination="ZnB-RO-S5p" id="WTz-TU-8Xn"/>
+                                                <segue destination="NbY-k3-LVb" kind="unwind" unwindAction="unwind:" id="rN1-oQ-KKY"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1603,7 +1604,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="passwordResetButton:" destination="ZnB-RO-S5p" eventType="touchUpInside" id="Dy3-gL-LUE"/>
+                                            <action selector="passwordResetButton:" destination="ZnB-RO-S5p" eventType="touchUpInside" id="vkI-IY-8aI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1630,13 +1631,13 @@
                         <viewLayoutGuide key="safeArea" id="jtM-BX-xIB"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="HMM-ra-GQ5" id="dPe-Qc-ruv"/>
+                        <outlet property="emailTextField" destination="HMM-ra-GQ5" id="naL-o4-BTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGz-kq-9pL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NbY-k3-LVb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="-1166"/>
+            <point key="canvasLocation" x="1898" y="-1223"/>
         </scene>
     </scenes>
     <resources>
@@ -1647,8 +1648,8 @@
         <image name="target" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tLU-qy-vCB"/>
-        <segue reference="ccl-gD-TXR"/>
-        <segue reference="YJD-cW-5RD"/>
+        <segue reference="G91-rJ-KL6"/>
+        <segue reference="Jy8-Qc-7jV"/>
+        <segue reference="5z5-ZW-2HL"/>
     </inferredMetricsTieBreakers>
 </document>

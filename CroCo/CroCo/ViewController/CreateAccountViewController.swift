@@ -13,20 +13,12 @@ class CreateAccountViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailAddressTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordSignUpTextField: UITextField!
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()        // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // MARK: - IBActions
     
@@ -36,11 +28,11 @@ class CreateAccountViewController: UIViewController {
     }
     
     /// If all the necessary TextFields are filled in this creates a new account in the database with the entered data
-    @IBAction func createAccount(_ sender: UIButton) {
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
         // Checking the input
         guard let username = usernameTextField.text, username != "",
             let emailAddress = emailAddressTextField.text, emailAddress != "",
-            let password = passwordTextField.text, password != "" else {
+            let password = passwordSignUpTextField.text, password != "" else {
                 let alertController = UIAlertController(title: "Insufficient information", message: "You must fill out all the fields to complete the registration successfully.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okAction)

@@ -8,7 +8,7 @@
  import UIKit
  import Firebase
  
- class ForgotPasswordViewController: UIViewController {
+ class ResetPasswordViewController: UIViewController {
     
     //    MARK: my outlets
     
@@ -18,7 +18,7 @@
     
     /// Dismisses the current ViewController
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "back to login", sender: UIBarButtonItem.self)
+        self.dismiss(animated: true, completion: nil)
     }
     
     /// Resets the password connected with the inseted email address
@@ -26,16 +26,20 @@
         if let email = emailTextField.text, email != "" {
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
                 if let error = error {
-                    let alertController = UIAlertController(title: "Email verzonden", message: error.localizedDescription, preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okayAction)
-                    self.present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: {self.performSegue(withIdentifier: "Back Home from Log In Segue", sender: self)   })})
                     
-                } else {
-                    let alertController = UIAlertController(title: "Emailadress onbekend", message: "Gelieve uw Email adres in te geven waarmee je met SLA hebt aangemeld", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Emailadress onbekend", message: "Gelieve uw emailadres na te kijken", preferredStyle: .alert)
+                    
+                    
+                    
                     let alertAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true, completion: nil)
+                    
+                } else {
+                    let alertController = UIAlertController(title: "Email verzonden", message: error?.localizedDescription, preferredStyle: .alert)
+                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okayAction)
+                    self.present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: nil)})
                 }
             })
         }
@@ -52,15 +56,5 @@
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
  }
