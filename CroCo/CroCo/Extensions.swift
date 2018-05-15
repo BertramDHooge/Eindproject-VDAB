@@ -21,14 +21,20 @@ extension UIView{
         UIApplication.shared.beginIgnoringInteractionEvents()
         activity.center = self.center
         activity.hidesWhenStopped = true
+        activity.color = .gray
+        self.addSubview(activity)
         activity.startAnimating()
         
         if let completion = completion {
             completion()
         }
         
-        activity.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            activity.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+        }
+        
     }
     
 }

@@ -54,13 +54,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     private var shoppingCart: ShoppingCart!
     
+    var reference: CollectionReference!
     private var firebaseDemoProducers: [Producer] = []
     
     var usedProducers: [Producer] = []
     
     private var sortedProducers: [Producer] {
         if let location = usedLocation {
-            return usedProducers.sorted(by: {(producer1, producer2) -> Bool in producer1.location.distance(from: location) < producer2.location.distance(from: location)})
+            return usedProducers.sorted(by: {(producer1, producer2) -> Bool in producer1.location!.distance(from: location) < producer2.location!.distance(from: location)})
         } else {
             return usedProducers
         }
@@ -77,19 +78,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
-            addProducerAndStockButton.isHidden = false
-        } else {
-            addProducerAndStockButton.isHidden = true
-            
-        }
-//        let settings = FirestoreSettings()
+        
+        
+        
+        
+        //        let settings = FirestoreSettings()
 //
 //        Firestore.firestore().settings = settings
 //
 //        dataBase = Firestore.firestore()
         
-        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
         
         //        rootReference = Database.database().reference()
         //        let producerReference = rootReference?.child("producer")
@@ -143,37 +142,72 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        for producer in firebaseDemoProducers {
+        for producer in sortedProducers {
             
-            let searchRequest = MKLocalSearchRequest()
-            searchRequest.naturalLanguageQuery = producer.locationString
-            
-            let activeSearch = MKLocalSearch(request: searchRequest)
-            activeSearch.start { (response, error) in
-                if let response = response {
-                    
-                    let latitude = response.boundingRegion.center.latitude
-                    let longitude = response.boundingRegion.center.longitude
-                    
-                    self.usedProducers.append(Producer(companyName: producer.companyName, contact: producer.contact, location: CLLocation(latitude: latitude, longitude: longitude), locationString: producer.locationString, delivery: producer.delivery, mainProduce: producer.mainProduce, deliveryHours: producer.deliveryHour!, pickUpHours: producer.pickUpHour!, stocks: producer.stocks))
-                    
-                    let pin = AnnotationPin(with: producer, and: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-                    self.mapView.addAnnotation(pin)
-                }
-            }
+            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
+            self.mapView.addAnnotation(pin)
         }
         
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-        producersListHomePageTableView.showActivity(activityIndicator) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                
-                self.producersListHomePageTableView.reloadData()
-            }
+            self.producersListHomePageTableView.reloadData()
         }
+        
+        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
+            addProducerAndStockButton.isHidden = false
+        } else {
+            addProducerAndStockButton.isHidden = false
+            
+        }
+        
+        reference = Firestore.firestore().collection("Producers")
+        reference.getDocuments(completion: { (snapshot, error) in
+            guard let snapshot = snapshot else { return }
+            let myData = snapshot.documents
+            for document in myData {
+                let data = document.data()
+                if let companyName = data["CompanyName"] as? String,
+                    let contactFirstName = data["ContactFirstName"] as? String,
+                    let contactLastName = data["ContactlastName"] as? String,
+                    let email = data["EmailAddress"] as? String,
+                    let place = data["Place"] as? String,
+                    let postalCode = data["PostalCode"] as? Int,
+                    let streetNumber = data["StreetNumber"] as? Int,
+                    let streetName = data["StreetName"]as? String,
+                    let telephoneNumber = data["TelephoneNumber"] as? String{
+                    print("Hey")
+                    let address = Address(streetName: streetName, streetNumber: streetNumber, postalCode: postalCode, place: place)
+                    let contact = Contact(name: Name(firstName: contactFirstName, lastName: contactLastName), address: address, telephoneNumber: telephoneNumber, emailAddress: email)
+                    
+                    let searchRequest = MKLocalSearchRequest()
+                    searchRequest.naturalLanguageQuery = address.fullAddress
+                    
+                    let activeSearch = MKLocalSearch(request: searchRequest)
+                    activeSearch.start { (response, error) in
+                        if let response = response {
+                            let annotations = self.mapView.annotations
+                            self.mapView.removeAnnotations(annotations)
+                            
+                            let latitude = response.boundingRegion.center.latitude
+                            let longitude = response.boundingRegion.center.longitude
+                            
+                            let location = CLLocation(latitude: latitude, longitude: longitude)
+                            
+                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: "", pickUpHours: "", stocks: [])
+                            
+                            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
+                            self.mapView.addAnnotation(pin)
+                            
+                            self.usedProducers.append(producer)
+                        }
+                    }
+                }
+            }
+        })
     }
     
     
@@ -276,7 +310,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             return cell
         } else {
             let typesOfProduce = MainProduceArray[indexPath.row]
-            
             if let typesOfProduceCell = cell as? ProducersTableViewCell {
                 typesOfProduceCell.isUserInteractionEnabled = false
                 typesOfProduceCell.accessibilityElementsHidden = false

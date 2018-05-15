@@ -7,14 +7,11 @@ import MapKit
 class Producer {
     let companyName: String?
     let contact: Contact
-//    still find out how to stock image in FireStore
     var companyImage: String? = nil
-//    in order to stock a String type in FireStore
-//    optional because when there is no delivery they might not reveal their address
         var address: Address?
 //    var location: CLLocationCoordinate2D
 //    type CLLocation heeft methode distance
-    var location: CLLocation
+    var location: CLLocation?
     var locationString: String
     var delivery = false
 //    make drop down list in add Producer
@@ -35,7 +32,7 @@ class Producer {
         }
     }
     
-    init(companyName: String?, contact: Contact, location: CLLocation, locationString: String, delivery: Bool, mainProduce: MainProduce, deliveryHours: String, pickUpHours: String, stocks: [Stock]) {
+    init(companyName: String?, contact: Contact, location: CLLocation?, locationString: String, delivery: Bool, mainProduce: MainProduce, deliveryHours: String, pickUpHours: String, stocks: [Stock]) {
         self.companyName = companyName
         self.contact = contact
         self.location = location
@@ -46,15 +43,6 @@ class Producer {
         self.pickUpHour = pickUpHours
         self.stocks = stocks
         
-    }
-    
-//    convenience initialiser
-    
-    convenience init(contact: Contact, location: CLLocation, locationString: String, address: Address, mainProduce: MainProduce, stocks: [Stock]) {
-        self.init(companyName: nil, contact: contact, location: location, locationString: locationString, delivery: true, mainProduce: mainProduce, deliveryHours: "", pickUpHours: "", stocks: stocks)
-        
-        
-//        self.init(companyName: nil, contact: contact, companyImage: nil, location: location, delivery: true, mainProduce: mainProduce, deliveryHours: Date(), pickUpHours: Date(), validation: nil)
     }
 }
 

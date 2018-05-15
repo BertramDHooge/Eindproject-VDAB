@@ -2,7 +2,7 @@
 //  FilterTableViewCell.swift
 //  CroCo
 //
-//  Created by Louis Loeckx on 14/05/2018.
+//  Created by Bertram D'Hooge on 14/05/2018.
 //  Copyright © 2018 VDAB. All rights reserved.
 //
 
