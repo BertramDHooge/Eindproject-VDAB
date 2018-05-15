@@ -55,9 +55,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     private var shoppingCart: ShoppingCart!
     
     var reference: CollectionReference!
-    private var firebaseDemoProducers: [Producer] = []
     
-    var usedProducers: [Producer] = []
+    var usedProducers: [Producer] = [] {
+        didSet {
+            producersListHomePageTableView.reloadData()
+        }
+    }
     
     private var sortedProducers: [Producer] {
         if let location = usedLocation {
@@ -69,7 +72,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     var searchCityName: String? {
         didSet {
-            firebaseDemoProducers.removeAll()
             producersListHomePageTableView.reloadData()
             //            searchForProducers()
             
@@ -79,49 +81,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-        //        let settings = FirestoreSettings()
-//
-//        Firestore.firestore().settings = settings
-//
-//        dataBase = Firestore.firestore()
-        
         activityIndicator.activityIndicatorViewStyle = .whiteLarge
         
         //        rootReference = Database.database().reference()
         //        let producerReference = rootReference?.child("producer")
         //        producerReference?.setValue(["companyName":"Veltwinkel"])
-        
-        let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
-        let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
-        let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: "Kessel Lo")
-        let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress: "imAMammoth@cold.com")
-        let mammothCrops = [Stock(portion: Portion(portionDescription: "bussel van 3 keukenraap", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 100, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
-        //        (cropType: FoodTypes.fruit, cropName: FoodName.apples, quantityTypes: QuantityTypes.kg, quantity: Quantity._20, sellingPrice: 22, amountOfCropPortionsAvailable: 2000, amountOfCropsSelected: 0, totalCostOfCropsSelected: 0.0)]
-        
-        let bertramName = Name(firstName: "Bertram", lastName: "nenHooge")
-        let locationFarmBertram = CLLocation(latitude: 50.749713, longitude: 4.347011)
-        let adressBertram = Address(streetName: "ClosetoSchool", streetNumber: 1, postalCode: 1234, place: "Leuven")
-        let infoBertram = Contact(name: bertramName, address: adressBertram, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let bertramCrops = [Stock(portion: Portion(portionDescription: "bussel wortelen van 12 stuks", sellingPriceSinglePortion: 1.5), amountOfStockPortionsAvailable: 50, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
-        
-        let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
-        let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
-        let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: "Werchter")
-        let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let veltWinkelCrops = [Stock(portion: Portion(portionDescription: "2 kg bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
-        
-        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: veltWinkelCrops)
-        
-        let mammothProducer: Producer = Producer(companyName: "Tolis", contact: infoMammoth, location: locationmammot, locationString: "Brussel", delivery: true, mainProduce: MainProduce.fruit, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: mammothCrops)
-        
-        let bertramProducer: Producer = Producer(companyName: "PopcornParty", contact: infoBertram, location: locationFarmBertram, locationString: "Oud Heverlee", delivery: false, mainProduce: MainProduce.meat, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: bertramCrops)
-        
-        firebaseDemoProducers.append(mammothProducer)
-        firebaseDemoProducers.append(bertramProducer)
-        firebaseDemoProducers.append(VeltWinkelProducer)
         
         locationManager.delegate = self
         requestLocationAccess()
@@ -152,20 +116,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            
-            self.producersListHomePageTableView.reloadData()
-        }
+        
         
         if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
-            addProducerAndStockButton.isHidden = false
+            self.addProducerAndStockButton.isHidden = false
         } else {
-            addProducerAndStockButton.isHidden = false
+            self.addProducerAndStockButton.isHidden = false
             
         }
         
-        reference = Firestore.firestore().collection("Producers")
-        reference.getDocuments(completion: { (snapshot, error) in
+        self.reference = Firestore.firestore().collection("Producers")
+        self.reference.getDocuments(completion: { (snapshot, error) in
             guard let snapshot = snapshot else { return }
             let myData = snapshot.documents
             for document in myData {
@@ -178,8 +139,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let postalCode = data["PostalCode"] as? Int,
                     let streetNumber = data["StreetNumber"] as? Int,
                     let streetName = data["StreetName"]as? String,
-                    let telephoneNumber = data["TelephoneNumber"] as? String{
-                    print("Hey")
+                    let telephoneNumber = data["TelephoneNumber"] as? String,
+                let stock = data["Stock"] as? [String: [String: Any]]{
+                    
+                    var stocks: [Stock] = []
+                    
+                    for (key, value) in stock{
+                        
+                        let sellingPrice = value["SellingPricePerPortion"] as! Double
+                        let amount = value["AmountOfPortions"] as! Int
+                        let stock = Stock(portion: Portion(portionDescription: key, sellingPriceSinglePortion: sellingPrice), amountOfStockPortionsAvailable: amount)
+                        stocks.append(stock)
+                    }
+                    
                     let address = Address(streetName: streetName, streetNumber: streetNumber, postalCode: postalCode, place: place)
                     let contact = Contact(name: Name(firstName: contactFirstName, lastName: contactLastName), address: address, telephoneNumber: telephoneNumber, emailAddress: email)
                     
@@ -197,12 +169,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                             
                             let location = CLLocation(latitude: latitude, longitude: longitude)
                             
-                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: "", pickUpHours: "", stocks: [])
+                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: "", pickUpHours: "", stocks: stocks)
                             
                             let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
                             self.mapView.addAnnotation(pin)
                             
-                            self.usedProducers.append(producer)
+                            if !self.usedProducers.contains(where: { (usedProducer) -> Bool in
+                                usedProducer.companyName == producer.companyName
+                            }) {
+                                
+                                self.usedProducers.append(producer)
+                            }
                         }
                     }
                 }
@@ -210,17 +187,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         })
     }
     
-    
-    // MARK: -Firestore
-//
-//    let mammothName = Name(firstName: "Mammoth", lastName: "Wooly")
-//    let locationmammot = CLLocation(latitude: 50.748273, longitude: 4.346720)
-//    let adressMammoth = Address(streetName: "Ice Lane", streetNumber: 1, postalCode: 1333, place: "Kessel Lo")
-//    let infoMammoth = Contact(name: mammothName, address: adressMammoth, telephoneNumber: "123456789", emailAddress:
-//
-    
-//     let bertramProducer: Producer = Producer(companyName: "PopcornParty", contact: infoBertram, location: locationFarmBertram, locationString: "Oud Heverlee", delivery: false, mainProduce: MainProduce.meat, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: [Stock(portion: Portion(portionDescription: "bos aardbeien", sellingPriceSinglePortion: 2.0), amountOfStockPortionsAvailable: 10, amountOfStockSelected: 1, totalCostOfSelectedStock: 2)])
-   
     // MARK: -Managing the MapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -333,7 +299,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "initiateInfoVC", sender: sortedProducers[indexPath.row])
+        if let cell = tableView.cellForRow(at: indexPath) as? ProducersTableViewCell {
+            
+            performSegue(withIdentifier: "initiateInfoVC", sender: cell.producer!)
+        }
     }
     
     
