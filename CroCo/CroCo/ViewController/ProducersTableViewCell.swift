@@ -35,28 +35,23 @@ class ProducersTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func favoriteStarButton(_ sender: UIButton) {
-        if favorited == false {
-            sender.setTitle("★", for: .normal)
-            favoriteStarButton.setTitleColor(UIColor.orange, for: .normal)
-            favorited = true
-            print("left")
-        } else {
-            favoriteStarButton.setTitle("☆", for: .normal)
-            favoriteStarButton.setTitleColor(UIColor.orange, for: .normal)
-            favorited = false
-            print("right")
-        }
-    }
+//    @IBAction func favoriteStarButton(_ sender: UIButton) {
+//        if favorited == false {
+//            sender.setTitle("★", for: .normal)
+//            favoriteStarButton.setTitleColor(UIColor.orange, for: .normal)
+//            favorited = true
+//            print("left")
+//        } else {
+//            favoriteStarButton.setTitle("☆", for: .normal)
+//            favoriteStarButton.setTitleColor(UIColor.orange, for: .normal)
+//            favorited = false
+//            print("right")
+//        }
+//    }
 
     /// Updates the UserInterface to conform to the data
     private func updateUI() {
         guard let producer = producer else {return}
-        if producer.delivery == false {
-            bikeDeliveryLabel.text = ""
-        } else {
-            return
-        }
         companyNameLabel.text = producer.companyName ?? producer.contact.name.firstName
         adressLabel.text = producer.contact.address.fullAddress
     }
