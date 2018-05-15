@@ -52,11 +52,7 @@ class ProducersTableViewCell: UITableViewCell {
     /// Updates the UserInterface to conform to the data
     private func updateUI() {
         guard let producer = producer else {return}
-        if producer.delivery == false {
-            bikeDeliveryLabel.text = ""
-        } else {
-            return
-        }
+        
         companyNameLabel.text = producer.companyName ?? producer.contact.name.firstName
         adressLabel.text = producer.contact.address.fullAddress
     }

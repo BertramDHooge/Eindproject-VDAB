@@ -23,10 +23,10 @@ class FilterTableViewCell: UITableViewCell {
 
     @IBAction func selectedStockButtonPressed(_ sender: UIButton) {
         if stockSelected {
-            selectedStockButton.setTitle("🔵", for: .normal)
+            selectedStockButton.setTitle("⚪️", for: .normal)
             stockSelected = false
         } else {
-            selectedStockButton.setTitle("⚪️", for: .normal)
+            selectedStockButton.setTitle("🔵", for: .normal)
             stockSelected = true
         }
     }
