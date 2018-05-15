@@ -22,7 +22,7 @@ class CropTableViewCell: UITableViewCell {
     @IBOutlet weak var removePortionButton: UIButton!
     @IBOutlet weak var numberOfPortions: UILabel!
     
-    var stock: Stock? { didSet { updateUI() }}
+    var stock: Stock? { didSet { updatStocks() }}
     
     var shoppingCartDelegate: ShoppingCartDelegate?
     
@@ -45,7 +45,7 @@ class CropTableViewCell: UITableViewCell {
             shoppingCartDelegate?.changeTotalAmount(by: +stock!.portion.sellingPriceSinglePortion)
         }
         
-        updateUI()
+        updatStocks()
     }
     
     /// Removes a single portion from the shopping cart
@@ -58,17 +58,17 @@ class CropTableViewCell: UITableViewCell {
             shoppingCartDelegate?.changeTotalAmount(by: -stock!.portion.sellingPriceSinglePortion)
         }
         
-        updateUI()
+        updatStocks()
     }
     
     /// Updates the UserInterface to conform to the data
-    private func updateUI(){
+    private func updatStocks(){
         
         addPortionButton.isEnabled = !(stock!.amountOfStockPortionsAvailable == 0)
         removePortionButton.isEnabled = !(portions == 0)
         
         numberOfCropPortionsAvailableLabel.text = String(stock!.amountOfStockPortionsAvailable)
-        pricingAndWeightPerPortionLabel.text = "\(stock!.portion.portionDescription) €\(stock!.portion.sellingPriceSinglePortion) per portie."
+        pricingAndWeightPerPortionLabel.text = " €\(stock!.portion.sellingPriceSinglePortion) per portie."
         cropNameLabel.text = stock!.portion.portionDescription
         numberOfPortions.text = "\(portions)"
     }
