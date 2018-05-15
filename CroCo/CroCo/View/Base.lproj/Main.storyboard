@@ -746,7 +746,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y7-Pk-RFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="-379"/>
+            <point key="canvasLocation" x="-145" y="34"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="GAd-Ay-qkT">
@@ -790,6 +790,9 @@
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="login:" destination="DNw-OF-dkx" eventType="touchUpInside" id="g3h-sz-PM6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAT-Tt-gQq">
                                         <rect key="frame" x="31.5" y="135" width="129" height="35"/>
@@ -802,6 +805,9 @@
                                         <state key="normal" title="Log out">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logoutActionButton:" destination="DNw-OF-dkx" eventType="touchUpInside" id="kE5-Te-owD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js9-PJ-pvS">
                                         <rect key="frame" x="63" y="180" width="66" height="35"/>
@@ -846,6 +852,7 @@
                                     <navigationItem title="Title" id="B23-ya-W6k">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="vsV-0i-CxO">
                                             <connections>
+                                                <action selector="backButtonPressed:" destination="DNw-OF-dkx" id="jgc-eT-yjo"/>
                                                 <segue destination="ltZ-vS-OdL" kind="unwind" unwindAction="unwind:" id="xh2-qi-t3O"/>
                                             </connections>
                                         </barButtonItem>
@@ -1628,8 +1635,8 @@
         <image name="target" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bv9-8W-g2C"/>
-        <segue reference="Jy8-Qc-7jV"/>
+        <segue reference="tLU-qy-vCB"/>
+        <segue reference="ccl-gD-TXR"/>
         <segue reference="YJD-cW-5RD"/>
     </inferredMetricsTieBreakers>
 </document>

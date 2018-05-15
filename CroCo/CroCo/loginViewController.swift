@@ -54,11 +54,11 @@
                 let alertController = UIAlertController(title: "Login fout", message: "Beide velden moet u invullen", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okAction)
-                present(alertController, animated: true, completion: nil)
+                present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: nil)})
                 return
         }
         
-        // erro while controlling email and password
+        // error while controlling email and password
         
         Auth.auth().signIn(withEmail: emailAddress, password: password) { (user, error) in
             if let error = error  {
@@ -74,7 +74,7 @@
                 self.present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: {self.performSegue(withIdentifier: "back Home from Log In Segue", sender: self)   })})
             }
             self.view.endEditing(true)
-            
+            self.updateUI()
         }
         
         //       my functions

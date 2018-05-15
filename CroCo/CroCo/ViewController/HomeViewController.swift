@@ -302,9 +302,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 producerCell.isUserInteractionEnabled = true
                 producerCell.accessibilityElementsHidden = true
                 producerCell.producer = producer
-                producerCell.adressLabel.text = producer.contact.address.fullAdress
+                producerCell.adressLabel.text = producer.contact.address.fullAddress
                 producerCell.companyNameLabel.text = producer.companyName
-                producerCell.distanceFromLocationLabel.text = "\(Int(producer.location.distance(from: usedLocation ?? locationManager.location!) / 1000)) km"
+                producerCell.distanceFromLocationLabel.text = "\(Int((producer.location?.distance(from: usedLocation ?? locationManager.location!))! / 1000)) km"
             }
             cell.backgroundColor = .clear
             return cell
@@ -321,7 +321,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             cell.backgroundColor = .clear
             return cell
         }
-        return cell
 //        return stockTypeCell
     }
     
