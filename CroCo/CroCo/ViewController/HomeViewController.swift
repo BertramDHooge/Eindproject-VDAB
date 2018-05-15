@@ -81,6 +81,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let homebar = false
+        if homebar {
+            
+            homeButton.isHidden = false
+            filterButton.isHidden = false
+        } else {
+            
+            homeButton.isHidden = true
+            filterButton.isHidden = true
+        }
+        
         activityIndicator.activityIndicatorViewStyle = .whiteLarge
         
         //        rootReference = Database.database().reference()
@@ -106,29 +117,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        for producer in sortedProducers {
-            
-            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
-            self.mapView.addAnnotation(pin)
-        }
-        
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
-            self.addProducerAndStockButton.isHidden = false
-        } else {
-            self.addProducerAndStockButton.isHidden = false
-            
-        }
-        
         self.reference = Firestore.firestore().collection("Producers")
         self.reference.getDocuments(completion: { (snapshot, error) in
             guard let snapshot = snapshot else { return }
             let myData = snapshot.documents
+            let annotations = self.mapView.annotations
+            self.mapView.removeAnnotations(annotations)
             for document in myData {
                 let data = document.data()
                 if let companyName = data["CompanyName"] as? String,
@@ -140,7 +134,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let streetNumber = data["StreetNumber"] as? Int,
                     let streetName = data["StreetName"]as? String,
                     let telephoneNumber = data["TelephoneNumber"] as? String,
-                let stock = data["Stock"] as? [String: [String: Any]]{
+                    let stock = data["Stock"] as? [String: [String: Any]]{
                     
                     var stocks: [Stock] = []
                     
@@ -161,8 +155,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let activeSearch = MKLocalSearch(request: searchRequest)
                     activeSearch.start { (response, error) in
                         if let response = response {
-                            let annotations = self.mapView.annotations
-                            self.mapView.removeAnnotations(annotations)
                             
                             let latitude = response.boundingRegion.center.latitude
                             let longitude = response.boundingRegion.center.longitude
@@ -185,6 +177,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 }
             }
         })
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
+            self.addProducerAndStockButton.isHidden = false
+        } else {
+            self.addProducerAndStockButton.isHidden = false
+            
+        }
+        
+        
     }
     
     // MARK: -Managing the MapView
@@ -313,6 +319,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     /// - Parameter sender: The tapped button (currently unused in the function)
     @IBAction func searchLocation(_ sender: UIButton) {
         
+        resignFirstResponder()
         mapView.showActivity(activityIndicator) {
             if let search = self.locationSearchField.text {
                 
