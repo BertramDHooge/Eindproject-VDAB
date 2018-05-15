@@ -24,7 +24,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     //MARK: -Outlets
     
-    @IBOutlet weak var homeBarView: UIView!
     @IBOutlet weak var addProducerAndStockButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchField: UITextField!
@@ -33,7 +32,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var logoLabel: UILabel!
     
     @IBOutlet weak var homeTabBar: UITabBar!
     
@@ -82,27 +80,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //MARK: if homeBar is not used
-
-        
-        let homebar = false
-        if homebar {
-            logoLabel.isHidden = true
-            homeButton.isHidden = false
-            homeButton.isEnabled = true
-            filterButton.isHidden = false
-            filterButton.isEnabled = true
-        } else {
-            logoLabel.isHidden = false
-            homeButton.isHidden = true
-            homeButton.isEnabled = false
-            filterButton.isHidden = true
-            filterButton.isEnabled = false
-            
-        }
-
-        homeBarView.backgroundColor = .gray
         
         activityIndicator.activityIndicatorViewStyle = .whiteLarge
         
@@ -388,9 +365,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
         return
     }
-    
-    
-    
     
     // MARK: -Navigation Control
     

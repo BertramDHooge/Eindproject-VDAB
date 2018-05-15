@@ -14,7 +14,7 @@ class FilterTableViewCell: UITableViewCell {
     
     @IBOutlet weak var selectedStockButton: UIButton!
     
-    var stockNotYetSelected: Bool = false
+    var stockSelected: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,15 +22,12 @@ class FilterTableViewCell: UITableViewCell {
     }
 
     @IBAction func selectedStockButtonPressed(_ sender: UIButton) {
-        if stockNotYetSelected {
-            selectedStockButton.setTitle("⚪️", for: .normal)
-//            for producer in producers {
-//                if producer.mianProduce.contains...
-//            }
-            stockNotYetSelected = false
-        } else {
+        if stockSelected {
             selectedStockButton.setTitle("🔵", for: .normal)
-            stockNotYetSelected = true
+            stockSelected = false
+        } else {
+            selectedStockButton.setTitle("⚪️", for: .normal)
+            stockSelected = true
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
