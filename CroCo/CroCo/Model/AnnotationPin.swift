@@ -12,9 +12,11 @@ import MapKit
 
 class AnnotationPin: NSObject, MKAnnotation {
     let producer: Producer
+    let location: CLLocationCoordinate2D
     
-    init(with producer: Producer) {
+    init(with producer: Producer, and location: CLLocationCoordinate2D) {
         self.producer = producer
+        self.location = location
     }
     
     var title: String? {
@@ -22,14 +24,14 @@ class AnnotationPin: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        if title != producer.companyName {
+        if title == producer.companyName {
             return nil
         }
         return producer.contact.name.firstName
     }
     
     var coordinate: CLLocationCoordinate2D {
-        return producer.location!.coordinate
+        return location
 //        return CLLocationCoordinate2D(latitude: producer.location.coordinate.latitude, longitude: producer.location.coordinate.longitude)
         
     }

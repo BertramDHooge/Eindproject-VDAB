@@ -10,26 +10,11 @@ import UIKit
 
 class FilterTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var mainProduceLabel: UILabel!
-    
-    @IBOutlet weak var selectedStockButton: UIButton!
-    
-    var stockSelected: Bool = false
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @IBAction func selectedStockButtonPressed(_ sender: UIButton) {
-        if stockSelected {
-            selectedStockButton.setTitle("🔵", for: .normal)
-            stockSelected = false
-        } else {
-            selectedStockButton.setTitle("⚪️", for: .normal)
-            stockSelected = true
-        }
-    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

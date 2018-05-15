@@ -106,9 +106,27 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         mapView.delegate = self
         
-        let database = Firestore.firestore()
+        for producer in sortedProducers {
+            
+            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
+            self.mapView.addAnnotation(pin)
+        }
         
-        database.collection("Producers").addSnapshotListener { (snapshot, error) in
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
+            self.addProducerAndStockButton.isHidden = false
+        } else {
+            self.addProducerAndStockButton.isHidden = false
+            
+        }
+        
+        self.reference = Firestore.firestore().collection("Producers")
+        self.reference.getDocuments(completion: { (snapshot, error) in
             guard let snapshot = snapshot else { return }
             let myData = snapshot.documents
             for document in myData {
@@ -122,8 +140,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let streetNumber = data["StreetNumber"] as? Int,
                     let streetName = data["StreetName"]as? String,
                     let telephoneNumber = data["TelephoneNumber"] as? String,
-                    let mainProduce = data["MainProduce"] as? String,
-                    let stock = data["Stock"] as? [String: [String: Any]]{
+                let stock = data["Stock"] as? [String: [String: Any]]{
                     
                     var stocks: [Stock] = []
                     
@@ -135,25 +152,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                         stocks.append(stock)
                     }
                     
-                    var usedMainProduce = MainProduce.other
-                    
-                    switch mainProduce {
-                    case "🥕":
-                        usedMainProduce = .vegetable
-                    case "🍏":
-                        usedMainProduce = .fruit
-                    case "🥛":
-                        usedMainProduce = .dairy
-                    case "🥚":
-                        usedMainProduce = .eggs
-                    case "🍖":
-                        usedMainProduce = .meat
-                    case "🐓":
-                        usedMainProduce = .poultry
-                    default:
-                        usedMainProduce = .other
-                    }
-                    
                     let address = Address(streetName: streetName, streetNumber: streetNumber, postalCode: postalCode, place: place)
                     let contact = Contact(name: Name(firstName: contactFirstName, lastName: contactLastName), address: address, telephoneNumber: telephoneNumber, emailAddress: email)
                     
@@ -163,40 +161,30 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let activeSearch = MKLocalSearch(request: searchRequest)
                     activeSearch.start { (response, error) in
                         if let response = response {
+                            let annotations = self.mapView.annotations
+                            self.mapView.removeAnnotations(annotations)
                             
                             let latitude = response.boundingRegion.center.latitude
                             let longitude = response.boundingRegion.center.longitude
                             
                             let location = CLLocation(latitude: latitude, longitude: longitude)
                             
-                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: usedMainProduce, deliveryHours: "", pickUpHours: "", stocks: stocks)
+                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: "", pickUpHours: "", stocks: stocks)
+                            
+                            let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
+                            self.mapView.addAnnotation(pin)
                             
                             if !self.usedProducers.contains(where: { (usedProducer) -> Bool in
                                 usedProducer.companyName == producer.companyName
                             }) {
                                 
                                 self.usedProducers.append(producer)
-                                let pin = AnnotationPin(with: producer)
-                                self.mapView.addAnnotation(pin)
                             }
                         }
                     }
                 }
             }
-        }
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
-            self.addProducerAndStockButton.isHidden = false
-        } else {
-            self.addProducerAndStockButton.isHidden = false
-            
-        }       
-        
+        })
     }
     
     // MARK: -Managing the MapView
@@ -207,7 +195,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         } else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             
-            annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
+            switch pinAnnotation.producer.mainProduce{
+            case .dairy, .eggs, .fruit, .meat, .poultry, .vegetable:
+                annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
+            default:
+                annotationView.glyphText = "..."
+            }
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             annotationView.canShowCallout = true
@@ -263,16 +256,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var identifierName = "producersCell"
-
+        let identifierName = "producersCell"
         updateHomeAndFilter()
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
         
         if homeButtonSelected {
-            identifierName = "producersCell"
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
-//            cell.isHidden = false
-            let producer = sortedProducers[indexPath.row]
-            
+        cell.isHidden = false
+        let producer = sortedProducers[indexPath.row]
+        
             if let producerCell = cell as? ProducersTableViewCell {
                 producerCell.isUserInteractionEnabled = true
                 producerCell.accessibilityElementsHidden = true
@@ -284,17 +275,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             cell.backgroundColor = .clear
             return cell
         } else {
-            let identifierName = "filterCell"
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifierName, for: indexPath)
             let typesOfProduce = MainProduceArray[indexPath.row]
-            if let typesOfProduceCell = cell as? FilterTableViewCell {
-                typesOfProduceCell.mainProduceLabel.text = typesOfProduce
+            if let typesOfProduceCell = cell as? ProducersTableViewCell {
+                typesOfProduceCell.isUserInteractionEnabled = false
+                typesOfProduceCell.accessibilityElementsHidden = false
+                typesOfProduceCell.favoriteStarButton.isHidden = true
+                typesOfProduceCell.adressLabel.isHidden = true
+                typesOfProduceCell.companyNameLabel.text = typesOfProduce
+                typesOfProduceCell.distanceFromLocationLabel.isHidden = true
             }
             cell.backgroundColor = .clear
             return cell
         }
-         
-        //        return stockTypeCell
+//        return stockTypeCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -324,7 +317,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             if let search = self.locationSearchField.text {
                 
                 self.mapView.searchAndShowMapLocation(for: search)
-                self.resignFirstResponder()
             }
         }
     }

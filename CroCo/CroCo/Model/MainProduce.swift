@@ -9,5 +9,7 @@
 import Foundation
 
 enum MainProduce: String {
-    case vegetable = "🥕", fruit = "🍏", dairy = "🥛", eggs = "🥚", poultry = "🐓", meat = "🍖", other = "..."
+    case vegetable = "🥕", fruit = "🍏", dairy = "🥛", eggs = "🥚", poultry = "🐓", meat = "🍖", vegetableFruit = "🥕🍏", vegetabledairy = "🥕🥛", vegetableEggs = "🥕🥚",  vegetablePoultry = "🥕🐓", fruitDairy = "🍏🥛",  fruitEggs = "🍏🥚",  fruitPoultry = "🍏🐓", meatVegetable = "🍖🥕", meatFruit = "🍖🍏", meatDairy = "🍖🥛", meatEggs = "🍖🥚", meatPoultry = "🍖🐓", EggsPoultry = "🥚🐓",     meatVegetableFruit = "🍖🥕🍏",  vegetableFruitEggs = "🥕🍏🥚", vegetableFruitDairy = "🥕🍏🥛", vegetableFruitPoultry = "🥕🍏🐓", meatFruitEggs = "🍖🍏🥚", meatFruitPoultry = "🍖🍏🐓", meatDairyEggs = "🍖🥛🥚", meatFruitdairy = "🍖🍏🥛", meatDairyPoultry = "🍖🥛🐓", meatVegetableFruitdairy = "🍖🥕🍏🥛", meatVegetableFruitEggs = "🍖🥕🍏🥚", meatVegetableFruitPoultry = "🍖🥕🍏🐓", vegetableFruitEggsPoultry = "🥕🍏🥚🐓", vegetableFruitdairyEggs = "🥕🍏🥛🥚", meatDairyEggsPoultry = "🍖🥛🥚🐓", vegetableFruitdairyEggsPoultry = "🍖🥕🍏🥛🥚🐓", meatVegetableFruitdairyEggs = "🍖🥕🍏🥛🥚"
 }
+
+let MainProduceArray = ["Vegetable", "Fruit", "Dairy", "eggs", "Poultry", "meat"]
