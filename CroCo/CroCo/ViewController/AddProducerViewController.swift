@@ -17,10 +17,11 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBOutlet weak var companyName: UITextField!
     
-    let mainProduct = ["groenten", "fruit", "melk", "eieren", "vlees"]
+    let mainProduct = ["groenten", "fruit", "melk", "eieren", "vlees", "gevogelte", "meerdere"]
     
     var pickerViewMainProduce = UIPickerView()
     var stockList: [Stock] = []
+    var mainProduce = MainProduce.other
     
     //   MARK: -My outlets
     
@@ -67,7 +68,8 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         let address = Address(streetName: streetName, streetNumber: Int(streetNumber)!, postalCode: Int(postalCode)!, place: place)
         
-        let producer = Producer(companyName: companyName, contact: Contact(name: Name(firstName: firstName, lastName: lastName), address: address, telephoneNumber: telephoneNumber, emailAddress: emailAddress), location: nil, locationString: address.fullAddress, delivery: false, mainProduce: .dairy, deliveryHours: "", pickUpHours: "", stocks: stockList)
+        
+        let producer = Producer(companyName: companyName, contact: Contact(name: Name(firstName: firstName, lastName: lastName), address: address, telephoneNumber: telephoneNumber, emailAddress: emailAddress), location: nil, locationString: address.fullAddress, delivery: false, mainProduce: mainProduce, deliveryHours: "", pickUpHours: "", stocks: stockList)
         
         addProducer(producer)
         self.dismiss(animated: true, completion: nil)
@@ -98,8 +100,24 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return mainProduct.count
     }
-    
+//    et mainProduct = ["groenten", "fruit", "melk", "eieren", "vlees", "gevogelte", "meerdere"]
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row {
+        case 0:
+            mainProduce = .vegetable
+        case 1:
+            mainProduce = .fruit
+        case 2:
+            mainProduce = .dairy
+        case 3:
+            mainProduce = .eggs
+        case 4:
+            mainProduce = .meat
+        case 5:
+            mainProduce = .poultry
+        default:
+            mainProduce = .other
+        }
         return mainProduct[row]
     }
     
@@ -138,8 +156,6 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
             testStock.updateValue(testPortion, forKey: stock.portion.portionDescription)
         }
-        
-        print(stockList[0].portion.portionDescription)
 
         let testDictionary: [String: Any] = ["CompanyName": producer.companyName as Any,
                                              "ContactFirstName": producer.contact.name.firstName,
@@ -150,6 +166,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
                                              "StreetNumber": producer.contact.address.streetNumber as Any,
                                              "TelephoneNumber": producer.contact.telephoneNumber as Any,
                                              "EmailAddress": producer.contact.emailAddress as Any,
+                                             "MainProduce": producer.mainProduce.rawValue,
                                              "Stock": testStock]
         reference = dataBase.collection("Producers").addDocument(data: testDictionary) {error in
             if let error = error {
