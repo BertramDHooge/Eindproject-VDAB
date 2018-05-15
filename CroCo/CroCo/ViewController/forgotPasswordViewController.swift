@@ -1,21 +1,20 @@
-//
-//  forgotPasswordViewController.swift
-//  CroCo
-//
-//  Created by Ward Janssen on 05/05/2018.
-//  Copyright © 2018 VDAB. All rights reserved.
-//
 
-import UIKit
-import Firebase
-
-class forgotPasswordViewController: UIViewController {
-
+ //  CroCo
+ //
+ //  Created by Ward Janssen on 05/05/2018.
+ //  Copyright © 2018 VDAB. All rights reserved.
+ //
+ 
+ import UIKit
+ import Firebase
+ 
+ class ForgotPasswordViewController: UIViewController {
+    
     //    MARK: my outlets
     
     @IBOutlet weak var emailTextField: UITextField!
     
-        //  MARK: my actions
+    //  MARK: my actions
     
     /// Dismisses the current ViewController
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -30,15 +29,13 @@ class forgotPasswordViewController: UIViewController {
                     let alertController = UIAlertController(title: "Email verzonden", message: error.localizedDescription, preferredStyle: .alert)
                     let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okayAction)
-                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                    self.present(nextViewController, animated: true, completion: nil)
+                    self.present(alertController, animated: true, completion: {self.dismiss(animated: true, completion: {self.performSegue(withIdentifier: "Back Home from Log In Segue", sender: self)   })})
                     
                 } else {
                     let alertController = UIAlertController(title: "Emailadress onbekend", message: "Gelieve uw Email adres in te geven waarmee je met SLA hebt aangemeld", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    return
-//                    self.present(alertController, animated: true, completion: nil)
+                    let alertAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         }
@@ -46,24 +43,24 @@ class forgotPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+ }

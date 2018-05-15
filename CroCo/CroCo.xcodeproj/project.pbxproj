@@ -19,7 +19,7 @@
 		157AA8CF2099E7780062C2C6 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */; };
 		157B15C820A0805000C94E21 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C720A0805000C94E21 /* ShoppingCart.swift */; };
 		157B15CA20A086C300C94E21 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157B15C920A086C300C94E21 /* Order.swift */; };
-		36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */; };
+		36007664209D7F9D007EEDD2 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36007663209D7F9D007EEDD2 /* ForgotPasswordViewController.swift */; };
 		368EE60620A4F84C0011F3C2 /* stockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368EE60520A4F84C0011F3C2 /* stockViewController.swift */; };
 		D325D55E2090BC1E00840DCD /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D55D2090BC1E00840DCD /* ContactInformation.swift */; };
 		D353DF7220931EFF00D697B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D353DF7120931EFF00D697B0 /* GoogleService-Info.plist */; };
@@ -58,7 +58,7 @@
 		157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
 		157B15C720A0805000C94E21 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		157B15C920A086C300C94E21 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPasswordViewController.swift; sourceTree = "<group>"; };
+		36007663209D7F9D007EEDD2 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		368EE60520A4F84C0011F3C2 /* stockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = stockViewController.swift; path = CroCo/ViewController/stockViewController.swift; sourceTree = SOURCE_ROOT; };
 		6CA31AEE4909AEAEEDA43F49 /* Pods_CroCo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CroCo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A281981FD4B2B51385EA30 /* Pods-CroCo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CroCo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CroCo/Pods-CroCo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				157AA8CE2099E7780062C2C6 /* OrderHistoryTableViewController.swift */,
 				1502AC6D2090B12300EBF16C /* ShoppingCartViewController.swift */,
 				150FBFFE2091F81A002BBA8F /* CropTableViewCell.swift */,
-				36007663209D7F9D007EEDD2 /* forgotPasswordViewController.swift */,
+				36007663209D7F9D007EEDD2 /* ForgotPasswordViewController.swift */,
 				1502AC6F2090B13E00EBF16C /* ProducerInformationViewController.swift */,
 				FB893F812099F9FD00B35505 /* DeliveryInfoTableViewCell.swift */,
 			);
@@ -350,7 +350,7 @@
 				150FBFFF2091F81A002BBA8F /* CropTableViewCell.swift in Sources */,
 				FB473843208F08E900DCE76A /* AppDelegate.swift in Sources */,
 				D3D06DAF20A1B3170079EC7B /* ImageUploadManager.swift in Sources */,
-				36007664209D7F9D007EEDD2 /* forgotPasswordViewController.swift in Sources */,
+				36007664209D7F9D007EEDD2 /* ForgotPasswordViewController.swift in Sources */,
 				FB893F802099F58D00B35505 /* ProducerInfoTableViewCell.swift in Sources */,
 				D3D06DB120A1DB170079EC7B /* AddProducerViewController.swift in Sources */,
 				FB893F822099F9FD00B35505 /* DeliveryInfoTableViewCell.swift in Sources */,

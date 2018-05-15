@@ -757,7 +757,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-zt-Du9">
-                                <rect key="frame" x="92" y="70" width="192" height="215"/>
+                                <rect key="frame" x="92" y="70" width="192" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="JY9-k8-YaB">
                                         <rect key="frame" x="0.0" y="0.0" width="192" height="35"/>
@@ -790,12 +790,21 @@
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="login:" destination="DNw-OF-dkx" eventType="touchUpInside" id="TaL-76-2c5"/>
-                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAT-Tt-gQq">
+                                        <rect key="frame" x="31.5" y="135" width="129" height="35"/>
+                                        <color key="backgroundColor" red="0.2460175902" green="0.55062329769999996" blue="0.63017773629999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6pD-sQ-uO6"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="s87-xf-91q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Log out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js9-PJ-pvS">
-                                        <rect key="frame" x="63" y="135" width="66" height="35"/>
+                                        <rect key="frame" x="63" y="180" width="66" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="GVy-tQ-3ww"/>
                                             <constraint firstAttribute="height" constant="35" id="S8u-4j-KjL"/>
@@ -807,7 +816,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJw-ii-rMJ">
-                                        <rect key="frame" x="38.5" y="180" width="115" height="35"/>
+                                        <rect key="frame" x="38.5" y="225" width="115" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="G2Q-X5-vav"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="atg-kB-Lfm"/>
@@ -826,7 +835,6 @@
                                     <constraint firstAttribute="bottom" secondItem="fJw-ii-rMJ" secondAttribute="bottom" id="ayy-au-Mn8"/>
                                     <constraint firstItem="fJw-ii-rMJ" firstAttribute="top" secondItem="js9-PJ-pvS" secondAttribute="bottom" constant="10" id="kts-Tw-jMF"/>
                                     <constraint firstItem="JY9-k8-YaB" firstAttribute="top" secondItem="3Rf-zt-Du9" secondAttribute="top" id="wwf-Mr-4JA"/>
-                                    <constraint firstItem="js9-PJ-pvS" firstAttribute="top" secondItem="fPE-yt-o7i" secondAttribute="bottom" constant="10" id="xJe-EQ-quP"/>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vJy-ol-4rx">
@@ -838,7 +846,6 @@
                                     <navigationItem title="Title" id="B23-ya-W6k">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="vsV-0i-CxO">
                                             <connections>
-                                                <action selector="backButtonPressed:" destination="DNw-OF-dkx" id="wVB-jm-fzB"/>
                                                 <segue destination="ltZ-vS-OdL" kind="unwind" unwindAction="unwind:" id="xh2-qi-t3O"/>
                                             </connections>
                                         </barButtonItem>
@@ -862,8 +869,12 @@
                         <viewLayoutGuide key="safeArea" id="1lA-lX-mce"/>
                     </view>
                     <connections>
-                        <outlet property="emailAddressTextField" destination="JY9-k8-YaB" id="khY-ue-f6L"/>
-                        <outlet property="passwordTextField" destination="x9l-C6-hRp" id="nVa-Ec-c2T"/>
+                        <outlet property="emailAddressTextField" destination="JY9-k8-YaB" id="7bA-Vy-RsV"/>
+                        <outlet property="forgotPassword" destination="fJw-ii-rMJ" id="ZxB-ul-ZM6"/>
+                        <outlet property="loginButton" destination="fPE-yt-o7i" id="2HJ-Zn-JoX"/>
+                        <outlet property="logoutButton" destination="aAT-Tt-gQq" id="LLa-vZ-wK7"/>
+                        <outlet property="passwordTextField" destination="x9l-C6-hRp" id="aeU-8B-UgO"/>
+                        <outlet property="signUpButton" destination="js9-PJ-pvS" id="g8p-5z-a24"/>
                         <segue destination="15u-5o-wb5" kind="show" identifier="back Home from Log In Segue" id="QGz-Rg-PgX"/>
                     </connections>
                 </viewController>
@@ -1531,7 +1542,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="Adh-7x-j9N">
             <objects>
-                <viewController id="ZnB-RO-S5p" customClass="forgotPasswordViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZnB-RO-S5p" customClass="ForgotPasswordViewController" customModule="CroCo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ov-NZ-Lqb"/>
                         <viewControllerLayoutGuide type="bottom" id="xeM-UA-VDV"/>
