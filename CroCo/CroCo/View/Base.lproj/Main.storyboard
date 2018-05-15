@@ -314,7 +314,7 @@
                                     <navigationItem title="product" id="FpC-la-9jX">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hWT-RK-bEu">
                                             <connections>
-                                                <action selector="cancelButtonPressed:" destination="3IX-iG-ebQ" id="j3V-NB-cFf"/>
+                                                <action selector="cancelButtonTapped:" destination="lb0-hQ-V07" id="kiG-qy-tf4"/>
                                                 <segue destination="3yO-3L-9GQ" kind="unwind" unwindAction="UnwindSegue:" id="ex3-0T-66D"/>
                                             </connections>
                                         </barButtonItem>

@@ -80,5 +80,7 @@ class stockViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         }
     }
     
- 
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

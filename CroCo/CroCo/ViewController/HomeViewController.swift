@@ -140,6 +140,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                     let streetNumber = data["StreetNumber"] as? Int,
                     let streetName = data["StreetName"]as? String,
                     let telephoneNumber = data["TelephoneNumber"] as? String,
+                    let mainProduce = data["MainProduce"] as? String,
                 let stock = data["Stock"] as? [String: [String: Any]]{
                     
                     var stocks: [Stock] = []
@@ -150,6 +151,25 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                         let amount = value["AmountOfPortions"] as! Int
                         let stock = Stock(portion: Portion(portionDescription: key, sellingPriceSinglePortion: sellingPrice), amountOfStockPortionsAvailable: amount)
                         stocks.append(stock)
+                    }
+                    
+                    var usedMainProduce = MainProduce.other
+                    
+                    switch mainProduce {
+                    case "🥕":
+                        usedMainProduce = .vegetable
+                    case "🍏":
+                        usedMainProduce = .fruit
+                    case "🥛":
+                        usedMainProduce = .dairy
+                    case "🥚":
+                        usedMainProduce = .eggs
+                    case "🍖":
+                        usedMainProduce = .meat
+                    case "🐓":
+                        usedMainProduce = .poultry
+                    default:
+                        usedMainProduce = .other
                     }
                     
                     let address = Address(streetName: streetName, streetNumber: streetNumber, postalCode: postalCode, place: place)
@@ -169,7 +189,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                             
                             let location = CLLocation(latitude: latitude, longitude: longitude)
                             
-                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: MainProduce.dairy, deliveryHours: "", pickUpHours: "", stocks: stocks)
+                            let producer = Producer(companyName: companyName, contact: contact, location: location, locationString: address.fullAddress, delivery: false, mainProduce: usedMainProduce, deliveryHours: "", pickUpHours: "", stocks: stocks)
                             
                             let pin = AnnotationPin(with: producer, and: (producer.location?.coordinate)!)
                             self.mapView.addAnnotation(pin)
@@ -195,12 +215,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         } else if let pinAnnotation = annotation as? AnnotationPin{
             let annotationView = MKMarkerAnnotationView(annotation: pinAnnotation, reuseIdentifier: "")
             
-            switch pinAnnotation.producer.mainProduce{
-            case .dairy, .eggs, .fruit, .meat, .poultry, .vegetable:
-                annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
-            default:
-                annotationView.glyphText = "..."
-            }
+           annotationView.glyphText = pinAnnotation.producer.mainProduce.rawValue
             annotationView.markerTintColor = pinAnnotation.annotationColor
             annotationView.titleVisibility = .visible
             annotationView.canShowCallout = true
@@ -317,6 +332,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             if let search = self.locationSearchField.text {
                 
                 self.mapView.searchAndShowMapLocation(for: search)
+                self.resignFirstResponder()
             }
         }
     }
