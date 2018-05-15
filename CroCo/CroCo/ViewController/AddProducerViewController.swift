@@ -14,15 +14,6 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     var dataBase: Firestore!
     
-    func addStock(_ stock: Stock) {
-        
-        if stockList.contains(where: { (closureStock) -> Bool in
-            closureStock.portion.portionDescription == stock.portion.portionDescription
-        }){
-        stockList.append(stock)
-        }
-    }
-    
     
     @IBOutlet weak var companyName: UITextField!
     
@@ -50,6 +41,17 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.dismiss(animated: true, completion: nil)
     }
     
+    func addStock(_ stock: Stock) {
+        
+        print(stock.portion.sellingPriceSinglePortion)
+        if !stockList.contains(where: { (closureStock) -> Bool in
+            closureStock.portion.portionDescription == stock.portion.portionDescription
+        }){
+            print(stock.portion.portionDescription)
+            stockList.append(stock)
+        }
+    }
+    
     //    solve: int for streetnumber is not logic, not for postalCode either. Maybe find dependency for places on Git?
     
     @IBAction func saveBarButonTapped(_ sender: UIBarButtonItem) {
@@ -63,17 +65,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
         guard let telephoneNumber = telephoneNumber.text, !telephoneNumber.isEmpty else {return}
         guard let emailAddress = emailAddress.text, !emailAddress.isEmpty else {return}
         
-        let veltWinkelName = Name(firstName: "Ward", lastName: "Janssen")
-        let locationVeltWinkel = CLLocation(latitude: 50.9794442, longitude: 4.7503198)
-        let adresVeltWinkel = Address(streetName: "Guldentop", streetNumber: 1, postalCode: 3118, place: "Werchter")
-        let veltWinkelInfo = Contact(name: veltWinkelName, address: adresVeltWinkel, telephoneNumber: "0495124115", emailAddress: "veltwinkel@gmail.com")
-        let veltWinkelCrops = [Stock(portion: Portion(portionDescription: "2 kg bintjes", sellingPriceSinglePortion: 1), amountOfStockPortionsAvailable: 30, amountOfStockSelected: 0, totalCostOfSelectedStock: 0.0)]
-        
-        let VeltWinkelProducer: Producer = Producer(companyName: "Veltwinkel", contact: veltWinkelInfo, location: locationVeltWinkel, locationString: "Guldentop 23, Werchter", delivery: true, mainProduce: .vegetable, deliveryHours: "zaterdag tussen 10.00 en 12.00", pickUpHours: "vrijdag tussen 18.00 en 20.00", stocks: veltWinkelCrops)
-        
         let address = Address(streetName: streetName, streetNumber: Int(streetNumber)!, postalCode: Int(postalCode)!, place: place)
-
-        print(address.fullAddress)
         
         let producer = Producer(companyName: companyName, contact: Contact(name: Name(firstName: firstName, lastName: lastName), address: address, telephoneNumber: telephoneNumber, emailAddress: emailAddress), location: nil, locationString: address.fullAddress, delivery: false, mainProduce: .dairy, deliveryHours: "", pickUpHours: "", stocks: stockList)
         
@@ -136,6 +128,18 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //    guard let emailAddress = emailAddress.text, !emailAddress.isEmpty else {return}
     private func addProducer(_ producer: Producer) {
         var reference: DocumentReference? = nil
+        
+        var testStock: [String: Any] = [:]
+        
+        
+        
+        for stock in producer.stocks {
+            let testPortion = ["AmountOfPortions": stock.amountOfStockPortionsAvailable, "SellingPricePerPortion": stock.portion.sellingPriceSinglePortion] as Any
+            
+            testStock.updateValue(testPortion, forKey: stock.portion.portionDescription)
+        }
+        
+        print(stockList[0].portion.portionDescription)
 
         let testDictionary: [String: Any] = ["CompanyName": producer.companyName as Any,
                                              "ContactFirstName": producer.contact.name.firstName,
@@ -146,7 +150,7 @@ class AddProducerViewController: UIViewController, UIPickerViewDelegate, UIPicke
                                              "StreetNumber": producer.contact.address.streetNumber as Any,
                                              "TelephoneNumber": producer.contact.telephoneNumber as Any,
                                              "EmailAddress": producer.contact.emailAddress as Any,
-                                             "Stock": ["stock": "Stock"]]
+                                             "Stock": testStock]
         reference = dataBase.collection("Producers").addDocument(data: testDictionary) {error in
             if let error = error {
                 print(error)
