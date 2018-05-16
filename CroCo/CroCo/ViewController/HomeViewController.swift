@@ -80,6 +80,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLoginAdministrators()
         
         let homebar = false
         if homebar {
@@ -180,18 +181,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
-            self.addProducerAndStockButton.isHidden = false
-        } else {
-            self.addProducerAndStockButton.isHidden = false
-            
-        }
-        
-        
-    }
     
     // MARK: -Managing the MapView
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -315,11 +304,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     // MARK: -IBActions
     
     /// Function that is called whenever the user taps the search (🔍) button
+    
     ///
     /// - Parameter sender: The tapped button (currently unused in the function)
     @IBAction func searchLocation(_ sender: UIButton) {
-        
-        resignFirstResponder()
         mapView.showActivity(activityIndicator) {
             if let search = self.locationSearchField.text {
                 
@@ -385,6 +373,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     @IBAction func unwind(_ sender: UIStoryboardSegue) {
         
+    }
+    
+    func checkLoginAdministrators() {
+        if Auth.auth().currentUser?.email == "wardjanssen1968@gmail.com" || Auth.auth().currentUser?.email == "louis.loeckx@gmail.com" || Auth.auth().currentUser?.email == "bertramdhooge@gmail.com" {
+            self.addProducerAndStockButton.isHidden = false
+        } else {
+            self.addProducerAndStockButton.isHidden = false
+            
+        }
     }
     
 }

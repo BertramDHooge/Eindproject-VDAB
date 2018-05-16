@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>511492934630-36n2f8aefohjt3f3rjfqjcai9igsupe9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.511492934630-36n2f8aefohjt3f3rjfqjcai9igsupe9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDBiujv6uDq44R4rzO1wtX2XDdnEYyDRys</string>
+	<key>GCM_SENDER_ID</key>
+	<string>511492934630</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>be.vdab.bertramDHooge.CroCo</string>
+	<key>PROJECT_ID</key>
+	<string>support-local-agriculture-sla</string>
+	<key>STORAGE_BUCKET</key>
+	<string>support-local-agriculture-sla.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:511492934630:ios:ba9f932099cce95e</string>
+	<key>DATABASE_URL</key>
+	<string>https://support-local-agriculture-sla.firebaseio.com</string>
+</dict>
+</plist>
